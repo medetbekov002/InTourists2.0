@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/fragment_home">
+
+    <fragment
+        android:id="@+id/fragment_home"
+        android:name="com.dev.intourist.ui.screen.home.HomeFragment"
+        tools:layout="@layout/fragment_home">
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_auth"
+        android:name="com.dev.intourist.ui.screen.auth.AuthFragment"
+        tools:layout="@layout/fragment_auth">
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragment_code"
+        android:name="com.dev.intourist.ui.screen.auth.CodeFragment"
+        tools:layout="@layout/fragment_code">
+    </fragment>
+
+</navigation>

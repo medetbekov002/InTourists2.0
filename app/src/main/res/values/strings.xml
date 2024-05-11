@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">In Tourist</string>
+    <string name="image">image</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="authorization">Авторизация</string>
+    <string name="auth_desc">Мы отправим код на этот номер для дальнейшей авторизации</string>
+    <string name="text_continue">Продолжить</string>
+    <string name="rext_skip">Пропустить</string>
+    <string name="text_enter_code">Введите код отправленный на номер</string>
+</resources>
