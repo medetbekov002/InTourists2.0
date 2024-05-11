@@ -1,0 +1,1 @@
+package com.dev.intourist.ui.screen.onboardingimport com.dev.intourist.ui.base.viewmodel.BaseViewModelclass OnBoardingViewModel: BaseViewModel() {}
