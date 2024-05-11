@@ -99,4 +99,7 @@ dependencies {
     implementation (libs.androidx.lifecycle.runtime.ktx)
     implementation (libs.androidx.lifecycle.livedata.ktx)
 
+    // Circle Indicator
+    implementation ("me.relex:circleindicator:2.1.6")
+
 }
