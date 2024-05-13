@@ -35,4 +35,10 @@
         android:label="fragment_on_boarding"
         tools:layout="@layout/fragment_on_boarding" />
 
+    <fragment
+        android:id="@+id/fragment_filters"
+        android:name="com.dev.intourist.ui.screen.filters.FiltersFragment"
+        android:label="fragment_filters"
+        tools:layout="@layout/fragment_filters" />
+
 </navigation>
