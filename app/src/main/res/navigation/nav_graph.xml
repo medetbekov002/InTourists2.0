@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragment_onboarding">
+    app:startDestination="@id/fragment_filters">
 
     <fragment
         android:id="@+id/fragment_home"
@@ -34,5 +34,10 @@
         android:name="com.dev.intourist.ui.screen.onboarding.OnBoardingFragment"
         android:label="fragment_on_boarding"
         tools:layout="@layout/fragment_on_boarding" />
+    <fragment
+        android:id="@+id/fragment_filters"
+        android:name="com.dev.intourist.ui.screen.filters.FiltersFragment"
+        android:label="fragment_filters"
+        tools:layout="@layout/fragment_filters" />
 
 </navigation>

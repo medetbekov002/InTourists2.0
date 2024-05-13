@@ -8,4 +8,13 @@
     <string name="text_continue">Продолжить</string>
     <string name="rext_skip">Пропустить</string>
     <string name="text_enter_code">Введите код отправленный на номер</string>
+    <string name="filter_by_text">Сортировка</string>
+    <string name="default_text">По умолчанию</string>
+    <string name="cheap_first_text">Сначала дешевые</string>
+    <string name="expensive_first_text">Сначала дорогие</string>
+    <string name="difficulty_level_text_filter">Уровень сложности</string>
+    <string name="easy_text_btn_filter">Легкий</string>
+    <string name="price_text_filters">Цена</string>
+    <string name="duraition_text_filters">Длительность</string>
+    <string name="clear_filters_text"><u>Очистить всё</u></string>
 </resources>
