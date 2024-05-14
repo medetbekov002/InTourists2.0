@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentFiltersBinding
+import java.text.NumberFormat
+import java.util.Currency
 
 class FiltersFragment : Fragment() {
 
@@ -22,6 +24,11 @@ class FiltersFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.sbPriceRange.setMax(5000)
+       /* binding.rangeSlider.setLabelFormatter { value: Float ->
+            val format = NumberFormat.getCurrencyInstance()
+            format.maximumFractionDigits = 0
+            format.currency = Currency.getInstance("KGS")
+            format.format(value.toInt())
+        }*/
     }
 }

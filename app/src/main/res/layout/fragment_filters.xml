@@ -42,6 +42,7 @@
 
                     <RadioButton
                         android:id="@+id/r_btn_default"
+                        style="@style/MyRadioButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/default_text"
@@ -50,14 +51,17 @@
 
                     <RadioButton
                         android:id="@+id/r_btn_expensive"
+                        style="@style/MyRadioButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:checked="true"
                         android:text="@string/expensive_first_text"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
 
                     <RadioButton
                         android:id="@+id/r_btn_cheap"
+                        style="@style/MyRadioButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/cheap_first_text"
@@ -135,10 +139,39 @@
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
-            <it.mirko.rangeseekbar.RangeSeekBar
+            <com.google.android.material.slider.RangeSlider
+                android:id="@+id/range_slider"
+                android:layout_width="match_parent"
+                app:labelStyle="@style/ToolTip"
+                android:layout_height="wrap_content"
+                android:valueFrom="0"
+                android:valueTo="5000"
+                android:stepSize="1"
+                app:thumbColor="@color/light_green_for_button_filter"
+                app:thumbHeight="20dp"
+                app:thumbRadius="12dp"
+                app:thumbWidth="20dp"
+                app:tickColor="@android:color/transparent"
+                app:trackColorActive="@color/light_green_for_button_filter"
+                app:trackColorInactive="@color/gray"
+                app:trackHeight="4dp"
+                app:values="@array/values_for_slider" />
+
+           <!-- <com.mohammedalaa.seekbar.DoubleValueSeekBarView
                 android:id="@+id/sb_price_range"
                 android:layout_width="match_parent"
-                android:layout_height="60dp" />
+                android:layout_height="60dp"
+                app:r2CurrentMaxValue="5000"
+                app:r2barHeight="4dp"
+                app:r2circleFillColor="@color/light_green_for_button_filter"
+                app:r2circleRadius="18dp"
+                app:r2circleTextColor="@color/white"
+                app:r2circleTextSize="@dimen/value_bar_circleTextSize"
+                app:r2fillColor="@color/light_green_for_button_filter"
+                app:r2maxValue="5000"
+                app:r2maxValueStep="10"
+                app:r2minValue="1"
+                app:r2minValueStep="5" />-->
 
             <View
                 android:layout_width="match_parent"
@@ -213,14 +246,15 @@
                 android:background="#DEDEDE" />
 
             <Switch
-                android:backgroundTint="@color/green_for_et_right_answer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="24dp"
                 android:text="Туры со скидкой"
                 android:textColor="@color/black"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:thumb="@drawable/bg_switch_thumb"
+                android:track="@drawable/bg_switch" />
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

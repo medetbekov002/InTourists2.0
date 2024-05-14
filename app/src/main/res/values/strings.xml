@@ -17,4 +17,9 @@
     <string name="price_text_filters">Цена</string>
     <string name="duraition_text_filters">Длительность</string>
     <string name="clear_filters_text"><u>Очистить всё</u></string>
+
+    <string-array name="values_for_slider">
+        <item>20</item>
+        <item>500</item>
+    </string-array>
 </resources>

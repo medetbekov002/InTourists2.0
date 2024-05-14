@@ -103,6 +103,7 @@ dependencies {
     implementation ("me.relex:circleindicator:2.1.6")
 
     implementation ("com.github.Mirkoddd:Range-SeekBar:1.0.9")
+    implementation ("com.github.MohammedAlaaMorsi:RangeSeekBar:1.0.6")
 
 
 }
