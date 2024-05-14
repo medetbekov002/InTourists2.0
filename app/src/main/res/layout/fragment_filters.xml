@@ -143,6 +143,7 @@
                 android:id="@+id/range_slider"
                 android:layout_width="match_parent"
                 app:labelStyle="@style/ToolTip"
+                app:labelBehavior = "visible"
                 android:layout_height="wrap_content"
                 android:valueFrom="0"
                 android:valueTo="5000"
