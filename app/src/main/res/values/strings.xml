@@ -17,6 +17,13 @@
     <string name="price_text_filters">Цена</string>
     <string name="duraition_text_filters">Длительность</string>
     <string name="clear_filters_text"><u>Очистить всё</u></string>
+    <string name="order_individual_tour">Заказать индивидуальный тур</string>
+    <string name="contact_with_manager">Связаться с менеджером</string>
+    <string name="text_desc_tour_tools">Rutrum pellentesque eu orci ipsum. Turpis blandit interdum scelerisque scelerisque viverra mauris. Rhoncus at orci dignissim sed. Adipiscing sed pellentesque id quisque etiam sem semper enim vitae.</string>
+    <string name="tour_ditails_rally_point">Точки сбора</string>
+    <string name="tour_ditails_equipment">Экипировка тура</string>
+    <string name="tour_ditail_included_in_price">Что входит в стоимость</string>
+    <string name="tour_ditail_not_included_in_price">Что не входит в стоимость</string>
 
     <string-array name="values_for_slider">
         <item>20</item>

@@ -158,7 +158,7 @@
                 app:trackHeight="4dp"
                 app:values="@array/values_for_slider" />
 
-           <!-- <com.mohammedalaa.seekbar.DoubleValueSeekBarView
+          <!--  <com.mohammedalaa.seekbar.DoubleValueSeekBarView
                 android:id="@+id/sb_price_range"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
