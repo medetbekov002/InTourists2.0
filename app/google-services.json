@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "422427501779",
+    "project_id": "in-tourists",
+    "storage_bucket": "in-tourists.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422427501779:android:74ebc0aa05c4ad004ce026",
+        "android_client_info": {
+          "package_name": "com.dev.intourist"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "422427501779-j50ag45d93knrtu1ulg6ajrahc5oaoaq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAfaAfvdNoedXI0eFdqruSpjCvXprelhmg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "422427501779-j50ag45d93knrtu1ulg6ajrahc5oaoaq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
