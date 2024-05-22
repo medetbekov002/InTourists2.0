@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".ui.screen.filters.FiltersFragment">
 
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -13,7 +22,7 @@
         app:layout_constraintBottom_toTopOf="@id/linear"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,6 +46,7 @@
                     android:textStyle="bold" />
 
                 <RadioGroup
+                    android:id="@+id/rg_sorting"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
@@ -45,6 +55,7 @@
                         style="@style/MyRadioButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:checked="true"
                         android:text="@string/default_text"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
@@ -54,7 +65,6 @@
                         style="@style/MyRadioButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:checked="true"
                         android:text="@string/expensive_first_text"
                         android:textColor="@color/black"
                         android:textSize="16sp" />
@@ -142,12 +152,12 @@
             <com.google.android.material.slider.RangeSlider
                 android:id="@+id/range_slider"
                 android:layout_width="match_parent"
-                app:labelStyle="@style/ToolTip"
-                app:labelBehavior = "visible"
                 android:layout_height="wrap_content"
+                android:stepSize="1"
                 android:valueFrom="0"
                 android:valueTo="5000"
-                android:stepSize="1"
+                app:labelBehavior="visible"
+                app:labelStyle="@style/ToolTip"
                 app:thumbColor="@color/light_green_for_button_filter"
                 app:thumbHeight="20dp"
                 app:thumbRadius="12dp"
@@ -158,21 +168,21 @@
                 app:trackHeight="4dp"
                 app:values="@array/values_for_slider" />
 
-          <!--  <com.mohammedalaa.seekbar.DoubleValueSeekBarView
-                android:id="@+id/sb_price_range"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                app:r2CurrentMaxValue="5000"
-                app:r2barHeight="4dp"
-                app:r2circleFillColor="@color/light_green_for_button_filter"
-                app:r2circleRadius="18dp"
-                app:r2circleTextColor="@color/white"
-                app:r2circleTextSize="@dimen/value_bar_circleTextSize"
-                app:r2fillColor="@color/light_green_for_button_filter"
-                app:r2maxValue="5000"
-                app:r2maxValueStep="10"
-                app:r2minValue="1"
-                app:r2minValueStep="5" />-->
+            <!--  <com.mohammedalaa.seekbar.DoubleValueSeekBarView
+                  android:id="@+id/sb_price_range"
+                  android:layout_width="match_parent"
+                  android:layout_height="60dp"
+                  app:r2CurrentMaxValue="5000"
+                  app:r2barHeight="4dp"
+                  app:r2circleFillColor="@color/light_green_for_button_filter"
+                  app:r2circleRadius="18dp"
+                  app:r2circleTextColor="@color/white"
+                  app:r2circleTextSize="@dimen/value_bar_circleTextSize"
+                  app:r2fillColor="@color/light_green_for_button_filter"
+                  app:r2maxValue="5000"
+                  app:r2maxValueStep="10"
+                  app:r2minValue="1"
+                  app:r2minValueStep="5" />-->
 
             <View
                 android:layout_width="match_parent"

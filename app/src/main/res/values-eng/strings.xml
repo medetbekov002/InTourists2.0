@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">In Tourist</string>
+    <string name="image">image</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="authorization">Authorization</string>
+    <string name="auth_desc">We will send the code to this number for further authorization</string>
+    <string name="text_continue">Continue</string>
+    <string name="rext_skip">Skip</string>
+    <string name="text_enter_code">Enter the code sent to the number</string>
+    <string name="filter_by_text">Filter</string>
+    <string name="default_text">By default</string>
+    <string name="cheap_first_text">Cheap ones first</string>
+    <string name="expensive_first_text">Expensive ones first</string>
+    <string name="difficulty_level_text_filter">Difficulty level</string>
+    <string name="easy_text_btn_filter">Easy</string>
+    <string name="price_text_filters">Price</string>
+    <string name="duraition_text_filters">Duration</string>
+    <string name="clear_filters_text"><u>Clear everything</u></string>
+    <string name="order_individual_tour">Book an individual tour</string>
+    <string name="contact_with_manager">Contact the manager</string>
+    <string name="text_desc_tour_tools">Rutrum pellentesque eu orci ipsum. Turpis blandit interdum scelerisque scelerisque viverra mauris. Rhoncus at orci dignissim sed. Adipiscing sed pellentesque id quisque etiam sem semper enim vitae.</string>
+    <string name="tour_ditails_rally_point">Meeting Point</string>
+    <string name="tour_ditails_equipment">Tour equipment</string>
+    <string name="tour_ditail_included_in_price">What is included in the price</string>
+    <string name="tour_ditail_not_included_in_price">What isn\'t  included in the price</string>
+
+    <string name="terms">terms</string>
+    <string name="privacy_policy">privacy policy</string>
+    <string name="terms_and_privacy_policy">By continuing, you agree to the terms and privacy policy</string>
+
+</resources>

@@ -3,19 +3,21 @@
 
     <item android:state_checked="true">
         <shape android:shape="rectangle">
-            <solid android:color="#32D642" />
+            <solid android:color="@color/light_green_for_button_filter" />
             <corners android:radius="100dp" />
-            <size android:height="34dp"
-                android:width="40dp"/>
+            <stroke android:color="@color/light_green_for_button_filter"
+                android:width="2dp" />
+            <size android:height="30dp"/>
         </shape>
     </item>
 
     <item android:state_checked="false">
         <shape android:shape="rectangle">
             <solid android:color="@color/light_gray" />
+            <stroke android:color="@color/light_gray"
+                android:width="2dp"/>
             <corners android:radius="100dp" />
-            <size android:height="34dp"
-                android:width="40dp"/>
+            <size android:height="30dp"/>
         </shape>
     </item>
 </selector>

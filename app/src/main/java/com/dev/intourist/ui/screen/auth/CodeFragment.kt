@@ -30,6 +30,7 @@ class CodeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initClickers()
+        setupTimer()
         binding.run {
             val textWatchers = listOf<TextWatcher>(
                 createTextWatcher(etCode1, etCode2),
@@ -99,7 +100,7 @@ class CodeFragment : Fragment() {
     private fun initClickers() {
         binding.run {
             btnContinue.setOnClickListener {
-//                findNavController().navigate(R.id.action_codeFragment_to_homeFragment)
+                findNavController().navigate(R.id.fragment_home)
             }
         }
 
@@ -114,8 +115,10 @@ class CodeFragment : Fragment() {
             }
 
             override fun onFinish() {
+                binding.tvSendCodeIn.text = "Отправить повторно"
                 binding.tvSendCodeInTime.visibility = View.INVISIBLE
                 binding.tvSendCodeIn.setOnClickListener {
+                    binding.tvSendCodeIn.text = "Отправить повторно через"
                     setupTimer()
                     binding.tvSendCodeInTime.visibility = View.VISIBLE
                     startTimer()

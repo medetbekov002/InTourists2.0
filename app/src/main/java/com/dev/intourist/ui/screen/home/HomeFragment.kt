@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentHomeBinding
@@ -110,23 +111,31 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.ivFilters.setOnClickListener {
+            findNavController().navigate(R.id.fragment_filters)
+        }
+        binding.svSearchTours.setOnClickListener {
+            findNavController().navigate(R.id.fragment_search)
+        }
         val adapter = TourCardAdapter(this::onClickTour, listTour)
         binding.rvTours.adapter = adapter
 
         val adapterPromo = PromocodeAdapter(this::onClickPromo, listPromo)
         binding.rvPromocode.adapter = adapterPromo
 
-        val adapterCategories = CategoriesAdapter(this::onClickCAtegory, listCategories)
+        val adapterCategories = CategoriesAdapter(this::onClickCategory, listCategories)
         binding.rvCategories.adapter = adapterCategories
 
     }
 
-    private fun onClickCAtegory() {
+    private fun onClickCategory() {
+
     }
 
     private fun onClickTour(tourCardModel: TourCardModel) {
     }
 
     private fun onClickPromo(promocode: PromocodeDitailsModel) {
+        findNavController().navigate(R.id.fragment_promocode)
     }
 }
