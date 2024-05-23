@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">In Tourist</string>
     <string name="image">image</string>
@@ -23,15 +24,8 @@
     <string name="tour_ditails_equipment">Экипировка тура</string>
     <string name="tour_ditail_included_in_price">Что входит в стоимость</string>
     <string name="tour_ditail_not_included_in_price">Что не входит в стоимость</string>
-    <string name="terms">условиями</string>
-    <string name="privacy_policy">политикой конфиденциальности</string>
-    <string name="terms_and_privacy_policy">Продолжая, вы соглашаетесь с условиями и политикой конфиденциальности</string>
-
-
-    <string-array name="values_for_slider">
-        <item>0</item>
-        <item>5000</item>
-    </string-array>
-
+    <string name="terms">шарттар</string>
+    <string name="privacy_policy">купуялык саясаты</string>
+    <string name="terms_and_privacy_policy">Улантуу менен сиз шарттар жана купуялык саясаты менен макул болосуз</string>
 
 </resources>
