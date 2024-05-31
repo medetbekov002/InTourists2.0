@@ -110,8 +110,7 @@ dependencies {
     // Add the dependency for the Firebase Authentication library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation("com.google.firebase:firebase-auth")
-    implementation ("com.github.Mirkoddd:Range-SeekBar:1.0.9")
-    implementation ("com.github.MohammedAlaaMorsi:RangeSeekBar:1.0.6")
+
 
 
 }

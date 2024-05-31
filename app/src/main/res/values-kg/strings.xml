@@ -24,6 +24,8 @@
     <string name="tour_ditails_equipment">Экипировка тура</string>
     <string name="tour_ditail_included_in_price">Что входит в стоимость</string>
     <string name="tour_ditail_not_included_in_price">Что не входит в стоимость</string>
+    <string name="phone_number">Номер телефона</string>
+
     <string name="terms">шарттар</string>
     <string name="privacy_policy">купуялык саясаты</string>
     <string name="terms_and_privacy_policy">Улантуу менен сиз шарттар жана купуялык саясаты менен макул болосуз</string>

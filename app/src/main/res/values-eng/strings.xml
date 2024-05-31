@@ -24,6 +24,7 @@
     <string name="tour_ditails_equipment">Tour equipment</string>
     <string name="tour_ditail_included_in_price">What is included in the price</string>
     <string name="tour_ditail_not_included_in_price">What isn\'t  included in the price</string>
+    <string name="phone_number">Phone number</string>
 
     <string name="terms">terms</string>
     <string name="privacy_policy">privacy policy</string>

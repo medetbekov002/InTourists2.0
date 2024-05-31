@@ -49,43 +49,49 @@
         android:maxLength="13"
         android:paddingStart="16dp"
         android:text="+996" />
-    
+
     <TextView
         android:id="@+id/tv_terms"
-        android:gravity="center"
-        android:textSize="12sp"
-        android:layout_marginBottom="16dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:textSize="12sp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_continue"
+        style="@style/NoShadowButtonStyle"
         android:layout_width="320dp"
         android:layout_height="54dp"
         android:backgroundTint="#F5F5F5"
         android:text="@string/text_continue"
+        android:textAllCaps="false"
         android:textColor="#B0B0B0"
         app:cornerRadius="16dp" />
 
     <Button
         android:id="@+id/btn_google"
+        style="@style/NoShadowButtonStyle"
         android:layout_width="320dp"
         android:layout_height="54dp"
+        android:layout_marginTop="100dp"
         android:backgroundTint="#F5F5F5"
         android:drawableLeft="@drawable/ic_google"
         android:paddingStart="48dp"
         android:text="Войти с помощью Google"
-        android:layout_marginTop="100dp"
+        android:textAllCaps="false"
         android:textColor="@color/black"
         app:cornerRadius="16dp" />
 
     <Button
         android:id="@+id/btn_skip"
+        style="@style/NoShadowButtonStyle"
         android:layout_width="320dp"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="70dp"
         android:backgroundTint="@color/white"
         android:text="@string/rext_skip"
+        android:textAllCaps="false"
         android:textColor="@color/black" />
 </LinearLayout>
