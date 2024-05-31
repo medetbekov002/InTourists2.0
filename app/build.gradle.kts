@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.google.gms.google.services)
+//    kotlin("jvm") version "2.0.0"
+    kotlin("plugin.serialization") version "2.0.0"
 }
 
 android {
@@ -52,33 +54,33 @@ dependencies {
     androidTestImplementation(libs.androidx.espresso.core)
 
     // ViewbindingPropertyDelegate
-    implementation (libs.viewbindingpropertydelegate.full)
+    implementation(libs.viewbindingpropertydelegate.full)
 
     // Paging3
-    implementation (libs.androidx.paging.runtime.ktx)
+    implementation(libs.androidx.paging.runtime.ktx)
 
     // Google Play Services
-    implementation (libs.play.services.auth)
-    implementation (libs.play.services.location)
+    implementation(libs.play.services.auth)
+    implementation(libs.play.services.location)
 
     // SplashScreen
-    implementation (libs.androidx.core.splashscreen)
+    implementation(libs.androidx.core.splashscreen)
 
     // Coroutines
-    implementation (libs.kotlinx.coroutines.core)
-    implementation (libs.kotlinx.coroutines.android)
+    implementation(libs.kotlinx.coroutines.core)
+    implementation(libs.kotlinx.coroutines.android)
 
     // Retrofit & OkHTTP
-    implementation (libs.retrofit)
-    implementation (libs.converter.gson)
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
 
     implementation(platform(libs.okhttp3.okhttp.bom))
     implementation(libs.okhttp3.okhttp)
     implementation(libs.okhttp3.logging.interceptor)
 
     // Room
-    implementation (libs.androidx.room.runtime)
-    implementation (libs.androidx.room.ktx)
+    implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
     annotationProcessor(libs.androidx.room.compiler)
 
     // Navigation Component
@@ -86,23 +88,23 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
 
     // JavaX Inject
-    implementation (libs.javax.inject)
+    implementation(libs.javax.inject)
 
     // Glide
-    implementation (libs.glide)
+    implementation(libs.glide)
 
     // Koin
-    implementation (libs.koin.android)
+    implementation(libs.koin.android)
 
     // DataStore
     implementation(libs.androidx.datastore.preferences)
 
     // LifeCycle
-    implementation (libs.androidx.lifecycle.runtime.ktx)
-    implementation (libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
 
     // Circle Indicator
-    implementation ("me.relex:circleindicator:2.1.6")
+    implementation("me.relex:circleindicator:2.1.6")
 
     // Import the BoM for the Firebase platform
     implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
@@ -110,8 +112,12 @@ dependencies {
     // Add the dependency for the Firebase Authentication library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation("com.google.firebase:firebase-auth")
-    implementation ("com.github.Mirkoddd:Range-SeekBar:1.0.9")
-    implementation ("com.github.MohammedAlaaMorsi:RangeSeekBar:1.0.6")
+    implementation("com.github.Mirkoddd:Range-SeekBar:1.0.9")
+    implementation("com.github.MohammedAlaaMorsi:RangeSeekBar:1.0.6")
 
+    // KotlinX Serialization
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
 
+    // Security
+    implementation("androidx.security:security-crypto:1.1.0-alpha04")
 }
