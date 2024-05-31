@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.google.gms.google.services)
 //    kotlin("jvm") version "2.0.0"
     kotlin("plugin.serialization") version "2.0.0"
+//    id ("org.jetbrains.kotlin.plugin.serialization") version "1.8.10"
 }
 
 android {
@@ -120,4 +121,7 @@ dependencies {
 
     // Security
     implementation("androidx.security:security-crypto:1.1.0-alpha04")
+
+    // Retrofit Kotlinx Serialization Converter
+    implementation ("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
 }

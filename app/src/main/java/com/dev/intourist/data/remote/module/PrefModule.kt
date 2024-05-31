@@ -1,1 +1,0 @@
-package com.dev.intourist.data.remote.moduleimport com.dev.intourist.data.local.Prefimport org.koin.dsl.moduleval prefModule = module {    single{ Pref(get()) }}
