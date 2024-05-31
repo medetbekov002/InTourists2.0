@@ -1,130 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".ui.screen.auth.CodeFragment">
 
+
+    <TextView
+        android:layout_width="320dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="84dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/text_enter_code"
+        android:textColor="#757575"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_phone_number"
+        android:layout_width="320dp"
+        android:layout_height="24dp"
+        android:layout_marginBottom="56dp"
+        android:gravity="center_horizontal|top"
+        android:textColor="#757575"
+        android:textSize="16sp"
+        tools:text="+996705478789" />
+
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <TextView
-            android:layout_width="320dp"
-            android:layout_height="24dp"
-            android:layout_marginTop="84dp"
-            android:gravity="center_horizontal|top"
-            android:text="@string/text_enter_code"
-            android:textColor="#757575"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/tv_phone_number"
-            android:layout_width="320dp"
-            android:layout_height="24dp"
-            android:layout_marginBottom="56dp"
-            android:gravity="center_horizontal|top"
-            android:textColor="#757575"
-            android:textSize="16sp"
-            tools:text="+996705478789" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical">
+            android:id="@+id/ll_code"
+            android:layout_width="228dp"
+            android:layout_height="48dp"
+            android:orientation="horizontal">
 
-            <LinearLayout
-                android:id="@+id/ll_code"
-                android:layout_width="228dp"
-                android:layout_height="48dp"
-                android:orientation="horizontal">
+            <EditText
+                android:id="@+id/et_code_1"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="12dp"
+                android:maxLength="1"
+                android:background="@drawable/bg_for_auth_views"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="number" />
 
-                <EditText
-                    android:inputType="number"
-                    android:id="@+id/et_code_1"
-                    android:layout_width="48dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="12dp"
-                    android:background="@drawable/bg_for_auth_views"
-                    android:gravity="center"
-                    android:hint="0" />
+            <EditText
+                android:id="@+id/et_code_2"
+                android:maxLength="1"
+                android:layout_width="48dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bg_for_auth_views"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="number" />
 
-                <EditText
-                    android:inputType="number"
-                    android:id="@+id/et_code_2"
-                    android:layout_width="48dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="12dp"
-                    android:background="@drawable/bg_for_auth_views"
-                    android:gravity="center"
-                    android:hint="0" />
+            <EditText
+                android:id="@+id/et_code_3"
+                android:layout_width="48dp"
+                android:maxLength="1"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="12dp"
+                android:background="@drawable/bg_for_auth_views"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="number" />
 
-                <EditText
-                    android:inputType="number"
-                    android:id="@+id/et_code_3"
-                    android:layout_width="48dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginEnd="12dp"
-                    android:background="@drawable/bg_for_auth_views"
-                    android:gravity="center"
-                    android:hint="0" />
+            <EditText
+                android:id="@+id/et_code_4"
+                android:layout_width="48dp"
+                android:maxLength="1"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_for_auth_views"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="number" />
 
-                <EditText
-                    android:inputType="number"
-                    android:id="@+id/et_code_4"
-                    android:layout_width="48dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/bg_for_auth_views"
-                    android:gravity="center"
-                    android:hint="0" />
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/tv_wrong_code"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:layout_marginTop="8dp"
-                android:text="Неверный код"
-                android:visibility="invisible"
-                android:textColor="@color/red"
-                android:textSize="14sp" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tv_send_code_in"
-            android:layout_width="207dp"
-            android:layout_height="18dp"
-            android:layout_marginTop="26dp"
-            android:gravity="center"
-            android:text="Отправить повторно через" />
-
-        <TextView
-            android:id="@+id/tv_send_code_in_time"
-            android:layout_width="207dp"
-            android:layout_height="18dp"
-            android:gravity="center"
-            android:text="00:59" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_continue"
-            android:layout_width="320dp"
-            android:layout_height="54dp"
-            android:layout_marginTop="56dp"
-            android:backgroundTint="#F5F5F5"
-            android:text="@string/text_continue"
-            android:textColor="#B0B0B0"
-            app:cornerRadius="16dp" />
+            android:id="@+id/tv_wrong_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:layout_marginTop="8dp"
+            android:text="Неверный код"
+            android:textColor="@color/red"
+            android:textSize="14sp"
+            android:visibility="invisible" />
     </LinearLayout>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tv_send_code_in"
+        android:layout_width="207dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="26dp"
+        android:gravity="center"
+        android:text="Отправить повторно через" />
+
+    <TextView
+        android:id="@+id/tv_send_code_in_time"
+        android:layout_width="207dp"
+        android:layout_height="18dp"
+        android:gravity="center"
+        android:text="00:59" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_continue"
+        android:layout_width="320dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="56dp"
+        android:backgroundTint="#F5F5F5"
+        android:text="@string/text_continue"
+        android:textColor="#B0B0B0"
+        app:cornerRadius="16dp" />
+
+
+</LinearLayout>

@@ -1,11 +1,37 @@
 <resources>
     <string name="app_name">In Tourist</string>
     <string name="image">image</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="authorization">Авторизация</string>
     <string name="auth_desc">Мы отправим код на этот номер для дальнейшей авторизации</string>
     <string name="text_continue">Продолжить</string>
     <string name="rext_skip">Пропустить</string>
     <string name="text_enter_code">Введите код отправленный на номер</string>
+    <string name="filter_by_text">Сортировка</string>
+    <string name="default_text">По умолчанию</string>
+    <string name="cheap_first_text">Сначала дешевые</string>
+    <string name="expensive_first_text">Сначала дорогие</string>
+    <string name="difficulty_level_text_filter">Уровень сложности</string>
+    <string name="easy_text_btn_filter">Легкий</string>
+    <string name="price_text_filters">Цена</string>
+    <string name="duraition_text_filters">Длительность</string>
+    <string name="clear_filters_text"><u>Очистить всё</u></string>
+    <string name="order_individual_tour">Заказать индивидуальный тур</string>
+    <string name="contact_with_manager">Связаться с менеджером</string>
+    <string name="text_desc_tour_tools">Rutrum pellentesque eu orci ipsum. Turpis blandit interdum scelerisque scelerisque viverra mauris. Rhoncus at orci dignissim sed. Adipiscing sed pellentesque id quisque etiam sem semper enim vitae.</string>
+    <string name="tour_ditails_rally_point">Точки сбора</string>
+    <string name="tour_ditails_equipment">Экипировка тура</string>
+    <string name="tour_ditail_included_in_price">Что входит в стоимость</string>
+    <string name="tour_ditail_not_included_in_price">Что не входит в стоимость</string>
+    <string name="terms">условиями</string>
+    <string name="privacy_policy">политикой конфиденциальности</string>
+    <string name="terms_and_privacy_policy">Продолжая, вы соглашаетесь с условиями и политикой конфиденциальности</string>
+
+
+    <string-array name="values_for_slider">
+        <item>0</item>
+        <item>5000</item>
+    </string-array>
+
+
 </resources>

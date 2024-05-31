@@ -1,13 +1,20 @@
 package com.dev.intourist.ui.screen.auth
 
+import android.graphics.Typeface
 import android.os.Bundle
 import android.text.Editable
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.TextPaint
 import android.text.TextWatcher
-import androidx.fragment.app.Fragment
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
+import android.text.style.StyleSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentAuthBinding
@@ -24,6 +31,9 @@ class AuthFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        setTermsText()
+
         binding.etPhoneNumber.addTextChangedListener( object :TextWatcher{
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
@@ -33,15 +43,60 @@ class AuthFragment : Fragment() {
         })
 
         binding.btnContinue.setOnClickListener {
-//            findNavController().navigate(R.id.action_authFragment_to_codeFragment)
+            findNavController().navigate(R.id.fragment_code)
         }
 
         binding.btnSkip.setOnClickListener {
-//            findNavController().navigate(R.id.action_authFragment_to_homeFragment)
+            findNavController().navigate(R.id.fragment_home)
         }
 
         binding.btnGoogle.setOnClickListener {
             // inter with google
         }
+    }
+
+    private fun setTermsText() {
+        val terms = getString(R.string.terms)
+        val privacyPolicy = getString(R.string.privacy_policy)
+        val text = getString(R.string.terms_and_privacy_policy)
+
+        val spannableString = SpannableString(text)
+
+        // Span for terms
+        val termsStart = text.indexOf(terms)
+        val termsEnd = termsStart + terms.length
+        val termsClickableSpan = object : ClickableSpan() {
+            override fun onClick(widget: View) {
+                // Handle terms click, navigate to terms page
+            }
+
+            override fun updateDrawState(ds: TextPaint) {
+                super.updateDrawState(ds)
+                ds.isUnderlineText = true
+                ds.color = getResources().getColor(R.color.logo_color)
+            }
+        }
+        spannableString.setSpan(termsClickableSpan, termsStart, termsEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        spannableString.setSpan(StyleSpan(Typeface.BOLD), termsStart, termsEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+        // Span for privacy policy
+        val privacyPolicyStart = text.indexOf(privacyPolicy)
+        val privacyPolicyEnd = privacyPolicyStart + privacyPolicy.length
+        val privacyPolicyClickableSpan = object : ClickableSpan() {
+            override fun onClick(widget: View) {
+                // Handle privacy policy click, navigate to privacy policy page
+            }
+
+            override fun updateDrawState(ds: TextPaint) {
+                super.updateDrawState(ds)
+                ds.isUnderlineText = true
+                ds.color = getResources().getColor(R.color.logo_color)
+            }
+        }
+        spannableString.setSpan(privacyPolicyClickableSpan, privacyPolicyStart, privacyPolicyEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        spannableString.setSpan(StyleSpan(Typeface.BOLD), privacyPolicyStart, privacyPolicyEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+
+        binding.tvTerms.text = spannableString
+        binding.tvTerms.movementMethod = LinkMovementMethod.getInstance()
     }
 }

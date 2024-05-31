@@ -1,92 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="40dp"
     tools:context=".ui.screen.auth.AuthFragment">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="40dp"
-        android:gravity="center_horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <TextView
+        android:id="@+id/tv_auth"
+        android:layout_width="320dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/authorization"
+        android:textColor="@color/black"
+        android:textSize="28sp" />
 
-        <TextView
-            android:layout_marginTop="132dp"
-            android:id="@+id/tv_auth"
-            android:layout_width="320dp"
-            android:layout_height="38dp"
-            android:gravity="center_horizontal|top"
-            android:text="@string/authorization"
-            android:layout_marginBottom="8dp"
-            android:textColor="@color/black"
-            android:textSize="28sp" />
+    <TextView
+        android:id="@+id/tv_auth_desc"
+        android:layout_width="320dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center_horizontal|top"
+        android:text="@string/auth_desc"
+        android:textColor="#757575"
+        android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/tv_auth_desc"
-            android:layout_width="320dp"
-            android:layout_marginBottom="32dp"
-            android:layout_height="38dp"
-            android:gravity="center_horizontal|top"
-            android:text="@string/auth_desc"
-            android:textColor="#757575"
-            android:textSize="16sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="6dp"
+        android:layout_marginBottom="4dp"
+        android:text="Номер телефона" />
 
-        <TextView
-            android:layout_marginBottom="4dp"
-            android:layout_width="wrap_content"
-            android:layout_gravity="start"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="6dp"
-            android:text="Номер телефона" />
+    <EditText
+        android:id="@+id/et_phone_number"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/bg_for_auth_views"
+        android:drawableStart="@drawable/ic_smart_phone"
+        android:drawablePadding="12dp"
+        android:maxLength="13"
+        android:paddingStart="16dp"
+        android:text="+996" />
+    
+    <TextView
+        android:id="@+id/tv_terms"
+        android:gravity="center"
+        android:textSize="12sp"
+        android:layout_marginBottom="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
-        <EditText
-            android:layout_width="320dp"
-            android:layout_marginBottom="24dp"
-            android:id="@+id/et_phone_number"
-            android:text="+996"
-            android:paddingStart="16dp"
-            android:drawablePadding="12dp"
-            android:maxLength="13"
-            android:drawableStart="@drawable/ic_smart_phone"
-            android:background="@drawable/bg_for_auth_views"
-            android:layout_height="48dp" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_continue"
+        android:layout_width="320dp"
+        android:layout_height="54dp"
+        android:backgroundTint="#F5F5F5"
+        android:text="@string/text_continue"
+        android:textColor="#B0B0B0"
+        app:cornerRadius="16dp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:text="@string/text_continue"
-            android:layout_width="320dp"
-            app:cornerRadius="16dp"
-            android:textColor="#B0B0B0"
-            android:id="@+id/btn_continue"
-            android:backgroundTint="#F5F5F5"
-            android:layout_height="54dp" />
+    <Button
+        android:id="@+id/btn_google"
+        android:layout_width="320dp"
+        android:layout_height="54dp"
+        android:backgroundTint="#F5F5F5"
+        android:drawableLeft="@drawable/ic_google"
+        android:paddingStart="48dp"
+        android:text="Войти с помощью Google"
+        android:layout_marginTop="100dp"
+        android:textColor="@color/black"
+        app:cornerRadius="16dp" />
 
-        <Button
-            android:id="@+id/btn_google"
-            android:layout_width="320dp"
-            android:drawableLeft="@drawable/ic_google"
-            android:layout_height="54dp"
-            android:backgroundTint="#F5F5F5"
-            android:layout_marginTop="148dp"
-            android:text="Войти с помощью Google"
-            android:paddingStart="48dp"
-            android:textColor="@color/black"
-            app:cornerRadius="16dp" />
-
-        <Button
-            android:id="@+id/btn_skip"
-            android:layout_width="320dp"
-            android:layout_height="48dp"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="@color/white"
-            android:text="@string/rext_skip"
-            android:textColor="@color/black"
-            android:layout_marginBottom="72dp"/>
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:id="@+id/btn_skip"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="70dp"
+        android:backgroundTint="@color/white"
+        android:text="@string/rext_skip"
+        android:textColor="@color/black" />
+</LinearLayout>
