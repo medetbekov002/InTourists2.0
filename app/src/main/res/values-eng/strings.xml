@@ -29,4 +29,16 @@
     <string name="privacy_policy">privacy policy</string>
     <string name="terms_and_privacy_policy">By continuing, you agree to the terms and privacy policy</string>
 
+    <string name="field_must_be_filled">Field must be filled in</string>
+    <string name="invalid_email">Incorrect email address</string>
+    <string name="incorrect_name">Invalid name</string>
+    <string name="write_in_latin">Write in Latin: a-Z</string>
+    <string name="name_must_contain_at_least_2_characters">The name must contain at least 2 characters</string>
+    <string name="complete_your_phone_number">Complete the phone number</string>
+    <string name="please_accept_the_data_processing_policy">Please accept the data processing policy</string>
+    <string name="please_accept_the_gender">Please select gender</string>
+    <string name="password_do_not_match">Password mismatch</string>
+    <string name="password_must_not_be_less_than_6_characters">The password must not be less than 6 characters</string>
+
+
 </resources>

@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupBottomNav() {
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host) as NavHostFragment
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
         binding.mainBottomMenu.setupWithNavController(navController)
 
