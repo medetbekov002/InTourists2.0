@@ -182,4 +182,19 @@ abstract class BaseRepository {
     protected fun <T : DataMapper<S>, S> doLocalRequestForList(
         request: () -> Flow<List<T>>
     ): Flow<List<S>> = request().map { list -> list.map { data -> data.toDomain() } }
+
+    fun <T> makeNetworkRequest(
+        gatherIsSucceed: ((T) -> Unit)? = null,
+        request: suspend() -> T
+    ) =
+        flow<Either<String, T>> {
+            request().also {
+                gatherIsSucceed?.invoke(it)
+                emit(Either.Right(value = it))
+            }
+        }.flowOn(Dispatchers.IO).catch { exception ->
+            emit(Either.Left(value = exception.localizedMessage ?: "Error Occurred !"))
+        }
+
+
 }
