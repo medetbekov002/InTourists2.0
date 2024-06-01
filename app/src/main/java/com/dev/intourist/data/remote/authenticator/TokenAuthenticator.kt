@@ -1,8 +1,6 @@
 package com.dev.intourist.data.remote.authenticator
 
 import com.dev.intourist.data.local.preferences.UserDataPreferences
-import com.dev.intourist.data.remote.authenticator.AuthenticatorApiService
-import com.dev.intourist.data.remote.authenticator.RefreshToken
 import okhttp3.Authenticator
 import okhttp3.Request
 import okhttp3.Response

@@ -13,7 +13,7 @@ import retrofit2.Retrofit
 import java.util.concurrent.TimeUnit
 
 internal fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit = Retrofit.Builder()
-    .baseUrl(BuildConfig.BASE_URL)
+    .baseUrl(com.dev.intourist.data.BuildConfig.BASE_URL)
     .client(okHttpClient)
     .addConverterFactory(
         jsonClient.asConverterFactory("application/json; charset=UTF8".toMediaType())
@@ -29,5 +29,5 @@ internal fun provideOkHttpClientBuilder(): OkHttpClient.Builder = OkHttpClient()
     .writeTimeout(30, TimeUnit.SECONDS)
 
 private fun provideLoggingInterceptor() = HttpLoggingInterceptor().setLevel(
-    if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
+    if (com.dev.intourist.data.BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
 )

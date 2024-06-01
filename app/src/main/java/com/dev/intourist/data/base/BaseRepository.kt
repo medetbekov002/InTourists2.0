@@ -123,7 +123,7 @@ abstract class BaseRepository {
 
             else -> {
                 val message = exception.localizedMessage ?: "Error Occurred!"
-                if (BuildConfig.DEBUG) Log.d(this@BaseRepository.javaClass.simpleName, message)
+                if (com.dev.intourist.data.BuildConfig.DEBUG) Log.d(this@BaseRepository.javaClass.simpleName, message)
                 emit(Either.Left(NetworkError.Unexpected(message)))
             }
         }
@@ -141,7 +141,7 @@ abstract class BaseRepository {
      *
      * @see BasePagingSource
      */
-    protected fun <ValueDto : DataMapper<Value>, Value : Any, PagingSource : BasePagingSource<ValueDto, Value>> doPagingRequest(
+    protected fun <ValueDto : DataMapper<Value>, Value : Any, PagingSource : com.dev.intourist.data.base.BasePagingSource<ValueDto, Value>> doPagingRequest(
         pagingSource: () -> PagingSource,
         pageSize: Int = 10,
         prefetchDistance: Int = pageSize,
