@@ -40,5 +40,28 @@
     <string name="password_do_not_match">Password mismatch</string>
     <string name="password_must_not_be_less_than_6_characters">The password must not be less than 6 characters</string>
 
+    <string name="save">Save</string>
+    <string name="number_emp">+996 XXX XXX XXX</string>
+    <string name="number_phone">Number phone</string>
+    <string name="birthday_emp">Input birthday</string>
+    <string name="birthday">Birthday</string>
+    <string name="e_mail_emp">Input E-mail</string>
+    <string name="e_mail">E-mail</string>
+    <string name="last_name">Last name</string>
+    <string name="first_name_emp">Input first name</string>
+    <string name="first_name">First name</string>
+    <string name="last_name_emp">Input last name</string>
+    <string name="personal_data">Personal data</string>
+    <string name="profile">Profile</string>
+    <string name="user_number_emp">+996 700 000 000</string>
+    <string name="auth">Authorization</string>
+    <string name="user_name_emp">Азиз Азизов</string>
+    <string name="about_us">About us</string>
+    <string name="contacts">contacts</string>
+    <string name="question_and_answer">Question and answer</string>
+    <string name="notifications">notifications</string>
+    <string name="privacy_and_policy">Privacy and policy</string>
+    <string name="terms_of_use">Terms of use</string>
+    <string name="out_or_exit">Exit</string>
 
 </resources>

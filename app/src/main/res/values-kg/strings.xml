@@ -39,4 +39,29 @@
     <string name="please_accept_the_gender">Please select gender</string>
     <string name="password_do_not_match">Password mismatch</string>
     <string name="password_must_not_be_less_than_6_characters">The password must not be less than 6 characters</string>
+
+    <string name="save">Сактоо</string>
+    <string name="number_emp">+996 XXX XXX XXX</string>
+    <string name="number_phone">Телефон номуру</string>
+    <string name="birthday_emp">Туулган күндү тандаңыз</string>
+    <string name="birthday">Туулган күнү</string>
+    <string name="e_mail_emp">Электрондук почтаны киргизиңиз</string>
+    <string name="e_mail">E-mail</string>
+    <string name="last_name_emp">Фамилияны киргизиңиз</string>
+    <string name="last_name">Фамилия</string>
+    <string name="first_name_emp">Атыңызды киргизиңиз</string>
+    <string name="first_name">Аты</string>
+    <string name="personal_data">Жеке маалымат</string>
+    <string name="profile">Профиль</string>
+    <string name="auth">Кирүү</string>
+    <string name="user_number_emp">+996 700 000 000</string>
+    <string name="user_name_emp">Азиз Азизов</string>
+    <string name="about_us">Биз жөнүндө</string>
+    <string name="contacts">Контакты</string>
+    <string name="question_and_answer">Суроолор жана жооптор</string>
+    <string name="notifications">Эскертмелер</string>
+    <string name="privacy_and_policy">Купуялык саясаты</string>
+    <string name="terms_of_use">Пайдалануу шарттары</string>
+    <string name="out_or_exit">Чыгып кетүү</string>
+
 </resources>

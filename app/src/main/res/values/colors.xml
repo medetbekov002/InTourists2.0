@@ -26,4 +26,6 @@
     <color name="green_for_et_right_answer">#23962E</color>
     <color name="dark_blue_for_button">#042A5C</color>
     <color name="light_green_for_button_filter">#517E73</color>
+    <color name="neutral_n60">#B0B0B0</color>
+    <color name="light_green_for_button_save_personal_info">#5C9084</color>
 </resources>
