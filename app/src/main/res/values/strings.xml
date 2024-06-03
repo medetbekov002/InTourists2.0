@@ -38,6 +38,29 @@
     <string name="password_do_not_match">Пароли не совпадают</string>
     <string name="password_must_not_be_less_than_6_characters">Пароль не должен быть меньше 6 символов</string>
 
+    <string name="save">Сохранить</string>
+    <string name="number_emp">+996 XXX XXX XXX</string>
+    <string name="number_phone">Номер телефона</string>
+    <string name="birthday_emp">Выберите дату рождения</string>
+    <string name="birthday">Дата рождения</string>
+    <string name="e_mail_emp">Введите E-mail</string>
+    <string name="e_mail">E-mail</string>
+    <string name="last_name_emp" >Введите фамилию</string>
+    <string name="last_name">Фамилия</string>
+    <string name="first_name_emp">Введите имя</string>
+    <string name="first_name">Имя</string>
+    <string name="personal_data">Персональные данные</string>
+    <string name="profile">Профиль</string>
+    <string name="auth">Авторизоваться</string>
+    <string name="user_name_emp">Азиз Азизов</string>
+    <string name="about_us">О нас</string>
+    <string name="user_number_emp">+996 700 000 000</string>
+    <string name="contacts">Контакты</string>
+    <string name="question_and_answer">Вопросы и ответы</string>
+    <string name="notifications">Уведомления</string>
+    <string name="privacy_and_policy">Политика конфиденциальности</string>
+    <string name="terms_of_use">Условия использования</string>
+    <string name="out_or_exit">Выйти</string>
 
     <string-array name="values_for_slider">
         <item>0</item>

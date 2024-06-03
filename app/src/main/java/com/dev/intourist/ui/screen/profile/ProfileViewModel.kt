@@ -1,0 +1,1 @@
+package com.dev.intourist.ui.screen.profileimport com.dev.intourist.ui.base.viewmodel.BaseViewModelclass ProfileViewModel : BaseViewModel() {}
