@@ -60,7 +60,7 @@
     <string name="notifications">Уведомления</string>
     <string name="privacy_and_policy">Политика конфиденциальности</string>
     <string name="terms_of_use">Условия использования</string>
-    <string name="out_or_exit">exit</string>
+    <string name="out_or_exit">Выйти</string>
 
     <string-array name="values_for_slider">
         <item>0</item>
