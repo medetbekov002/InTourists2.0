@@ -104,6 +104,8 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_easy"
                     android:layout_width="wrap_content"
+                    android:textAllCaps="false"
+                    style="@style/NoShadowButtonStyle"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/grey"
@@ -118,6 +120,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/grey"
+                    android:textAllCaps="false"
+                    style="@style/NoShadowButtonStyle"
                     android:text="Средний"
                     android:textColor="@color/black"
                     android:textSize="14sp"
@@ -126,6 +130,8 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_difficult"
                     android:layout_width="wrap_content"
+                    android:textAllCaps="false"
+                    style="@style/NoShadowButtonStyle"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/grey"
                     android:text="Сложный"
@@ -210,6 +216,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
+                    android:textAllCaps="false"
+                    style="@style/NoShadowButtonStyle"
                     android:layout_marginBottom="16dp"
                     android:backgroundTint="@color/grey"
                     android:text="Тур на пол дня"
@@ -223,6 +231,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:backgroundTint="@color/grey"
+                    android:textAllCaps="false"
+                    style="@style/NoShadowButtonStyle"
                     android:text="Однодневный"
                     android:textColor="@color/black"
                     android:textSize="14sp"
@@ -236,6 +246,8 @@
                     android:backgroundTint="@color/grey"
                     android:text="Двухдневный"
                     android:textColor="@color/black"
+                    android:textAllCaps="false"
+                    style="@style/NoShadowButtonStyle"
                     android:textSize="14sp"
                     app:cornerRadius="20dp" />
 
@@ -245,6 +257,8 @@
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/grey"
                     android:text="Трехдневный"
+                    android:textAllCaps="false"
+                    style="@style/NoShadowButtonStyle"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:cornerRadius="20dp" />
@@ -288,6 +302,8 @@
             android:layout_marginTop="12dp"
             android:backgroundTint="@color/dark_blue_for_button"
             android:text="Применить"
+            android:textAllCaps="false"
+            style="@style/NoShadowButtonStyle"
             android:textColor="@color/white"
             android:textSize="16sp"
             app:cornerRadius="16dp" />
@@ -295,6 +311,8 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_clear_filters"
             android:layout_width="320dp"
+            android:textAllCaps="false"
+            style="@style/NoShadowButtonStyle"
             android:layout_height="54dp"
             android:layout_marginBottom="24dp"
             android:backgroundTint="@android:color/transparent"

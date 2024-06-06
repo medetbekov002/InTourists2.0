@@ -117,7 +117,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         binding.svSearchTours.setOnClickListener {
             findNavController().navigate(R.id.fragment_search)
         }
-        val adapter = TourCardAdapter(this::onClickTour, listTour)
+        val adapter = TourCardAdapter(requireContext(),false, this::onClickTour, listTour)
         binding.rvTours.adapter = adapter
 
         val adapterPromo = PromocodeAdapter(this::onClickPromo, listPromo)
@@ -133,6 +133,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun onClickTour(tourCardModel: TourCardModel) {
+        findNavController().navigate(R.id.fragment_tour_ditails)
     }
 
     private fun onClickPromo(promocode: PromocodeDitailsModel) {

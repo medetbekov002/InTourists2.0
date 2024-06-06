@@ -41,7 +41,7 @@
                 android:id="@+id/iv_filters"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:background="@drawable/ic_filters_img"
+                android:background="@drawable/ic_filters"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/sv_search_tours"

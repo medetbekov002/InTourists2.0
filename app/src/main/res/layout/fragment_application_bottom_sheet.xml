@@ -16,7 +16,8 @@
             android:id="@+id/btn_cancel"
             android:layout_width="wrap_content"
             style="@style/NoShadowButtonStyle"
-            android:drawableStart="@drawable/ic_cancel_black"
+            android:drawableStart="@drawable/ic_cancel"
+            android:drawableTint="@color/black"
             android:backgroundTint="@android:color/transparent"
             android:layout_height="wrap_content"/>
         <TextView
@@ -89,7 +90,8 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/bg_for_auth_views"
-            android:drawableStart="@drawable/ic_location_2"
+            android:drawableStart="@drawable/ic_location"
+            android:drawableTint="@color/black"
             android:drawablePadding="12dp"
             android:maxLength="13"
             android:paddingStart="16dp"
@@ -129,7 +131,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/bg_for_auth_views"
-            android:drawableStart="@drawable/ic_calendar_promo"
+            android:drawableStart="@drawable/ic_group"
             android:drawablePadding="12dp"
             android:maxLength="13"
             android:inputType="number"

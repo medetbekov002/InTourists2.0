@@ -85,7 +85,7 @@ class FavoriteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvMyTours.adapter = TourCardAdapter(this::onItemClick,listTour)
+        binding.rvMyTours.adapter = TourCardAdapter(requireContext(), false,this::onItemClick,listTour)
     }
 
     private fun onItemClick(tourCardModel: TourCardModel) {

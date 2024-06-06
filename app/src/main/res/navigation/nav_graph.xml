@@ -3,32 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/fragment_tour_ditails">
+    app:startDestination="@id/fragment_home">
 
     <fragment
         android:id="@+id/fragment_home"
         android:name="com.dev.intourist.ui.screen.home.HomeFragment"
         tools:layout="@layout/fragment_home">
     </fragment>
-
     <fragment
         android:id="@+id/fragment_auth"
         android:name="com.dev.intourist.ui.screen.auth.AuthFragment"
         tools:layout="@layout/fragment_auth">
     </fragment>
-
     <fragment
         android:id="@+id/fragment_code"
         android:name="com.dev.intourist.ui.screen.auth.CodeFragment"
         tools:layout="@layout/fragment_code">
     </fragment>
-
     <activity
         android:id="@+id/splashActivity"
         android:name="com.dev.intourist.ui.screen.splash.SplashActivity"
         android:label="activity_splash"
         tools:layout="@layout/activity_splash" />
-
     <fragment
         android:id="@+id/fragment_onboarding"
         android:name="com.dev.intourist.ui.screen.onboarding.OnBoardingFragment"
@@ -54,11 +50,19 @@
         android:name="com.dev.intourist.ui.screen.promocode.PromocodeFragment"
         android:label="fragment_promocode"
         tools:layout="@layout/fragment_promocode" />
-
     <fragment
-        android:id="@+id/fragment_filters"
-        android:name="com.dev.intourist.ui.screen.filters.FiltersFragment"
-        android:label="fragment_filters"
-        tools:layout="@layout/fragment_filters" />
+        android:id="@+id/myTourDitailsFragment"
+        android:name="com.dev.intourist.ui.screen.mytourditails.MyTourDitailsFragment"
+        android:label="MyTourDitailsFragment" />
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.dev.intourist.ui.screen.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/applicationBottomSheetFragment"
+        android:name="com.dev.intourist.ui.screen.application.ApplicationBottomSheetFragment"
+        android:label="fragment_application_bottom_sheet"
+        tools:layout="@layout/fragment_application_bottom_sheet" />
 
 </navigation>

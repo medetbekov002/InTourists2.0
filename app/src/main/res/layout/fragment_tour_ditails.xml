@@ -8,9 +8,11 @@
 
 
     <androidx.core.widget.NestedScrollView
+        android:id="@+id/container_scroll"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/container_buy"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -52,6 +54,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
+                    android:tint="@color/black"
                     android:layout_marginEnd="4dp"
                     android:src="@drawable/ic_location" />
 
@@ -345,6 +348,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
+                    android:tint="@color/red"
                     android:src="@drawable/ic_cancel" />
 
                 <TextView
@@ -364,6 +368,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
+                    android:tint="@color/red"
                     android:src="@drawable/ic_cancel" />
 
                 <TextView
@@ -391,6 +396,7 @@
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_tours_recomindation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -401,7 +407,8 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <LinearLayout
+    <FrameLayout
+        android:id="@+id/container_buy"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -411,6 +418,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
+            android:layout_gravity="start"
             android:layout_width="152dp"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -436,6 +444,7 @@
             android:id="@+id/btn_send"
             style="@style/NoShadowButtonStyle"
             android:layout_width="142dp"
+            android:layout_gravity="end"
             android:layout_height="56dp"
             android:backgroundTint="@color/dark_blue_for_button"
             android:padding="10dp"
@@ -445,5 +454,6 @@
             android:textColor="@color/white"
             android:textSize="15sp"
             app:cornerRadius="16dp" />
-    </LinearLayout>
+    </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
