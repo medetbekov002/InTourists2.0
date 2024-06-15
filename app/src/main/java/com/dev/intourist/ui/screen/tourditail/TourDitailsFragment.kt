@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentTourDitailsBinding
+import com.dev.intourist.ui.screen.buy.BottomSheetFragment
 import com.dev.intourist.ui.screen.home.adapters.TourCardAdapter
 import com.dev.intourist.ui.screen.home.adapters.TourCardModel
 import com.dev.intourist.ui.screen.home.adapters.VPAdapter
@@ -114,6 +115,11 @@ class TourDitailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.btnBuy.setOnClickListener {
+            BottomSheetFragment().show(childFragmentManager, "buy tour tag")
+        }
+
         binding.btnContactWhatsApp.setOnClickListener {
             val phoneNumber = "996700740511" // Номер телефона в международном формате без плюса
             openWhatsApp(phoneNumber)
@@ -122,7 +128,7 @@ class TourDitailsFragment : Fragment() {
             val username = "Kulchoroevva" // Telegram username без @
             openTelegram(username)
         }
-        val adapter = TourCardAdapter(requireContext(),true, this::onClickTour, listTour)
+        val adapter = TourCardAdapter(requireContext(), true, this::onClickTour, listTour)
         binding.rvToursRecomindation.adapter = adapter
 
         val adapterRallyPoint = DitailAdapter(listRallyPoint, R.drawable.ic_location)
@@ -161,6 +167,12 @@ class TourDitailsFragment : Fragment() {
                 "WhatsApp is not installed on your device",
                 Toast.LENGTH_SHORT
             ).show()
+
+            try {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.whatsapp")))
+            } catch (e: ActivityNotFoundException) {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.whatsapp")))
+            }
         }
     }
 
@@ -180,6 +192,12 @@ class TourDitailsFragment : Fragment() {
                 "Telegram is not installed on your device",
                 Toast.LENGTH_SHORT
             ).show()
+
+            try {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=org.telegram.messenger")))
+            } catch (e: ActivityNotFoundException) {
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=org.telegram.messenger")))
+            }
         }
     }
 

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".ui.screen.application.ApplicationBottomSheetFragment">
+    tools:context=".ui.screen.buy.BottomSheetFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -50,6 +50,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/bg_for_auth_views"
+            android:singleLine="true"
             android:drawableStart="@drawable/ic_smart_phone"
             android:drawablePadding="12dp"
             android:maxLength="13"
@@ -65,14 +66,15 @@
             android:layout_marginTop="24dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
+
         <EditText
             android:id="@+id/et_fio"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/bg_for_auth_views"
+            android:singleLine="true"
             android:drawableStart="@drawable/ic_person"
             android:drawablePadding="12dp"
-            android:maxLength="13"
             android:paddingStart="16dp"
             android:textColorHint="@color/grey"
             android:layout_marginTop="4dp"
@@ -90,10 +92,10 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/bg_for_auth_views"
+            android:singleLine="true"
             android:drawableStart="@drawable/ic_location"
             android:drawableTint="@color/black"
             android:drawablePadding="12dp"
-            android:maxLength="13"
             android:paddingStart="16dp"
             android:textColorHint="@color/grey"
             android:layout_marginTop="4dp"
@@ -110,10 +112,11 @@
             android:id="@+id/et_date"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:singleLine="true"
             android:background="@drawable/bg_for_auth_views"
             android:drawableStart="@drawable/ic_calendar_promo"
             android:drawablePadding="12dp"
-            android:maxLength="13"
+            android:maxLength="10"
             android:paddingStart="16dp"
             android:textColorHint="@color/grey"
             android:layout_marginTop="4dp"
@@ -128,12 +131,13 @@
             android:layout_height="wrap_content"/>
         <EditText
             android:id="@+id/et_amount"
+            android:singleLine="true"
+            android:imeOptions="actionDone"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="@drawable/bg_for_auth_views"
             android:drawableStart="@drawable/ic_group"
             android:drawablePadding="12dp"
-            android:maxLength="13"
             android:inputType="number"
             android:paddingStart="16dp"
             android:textColorHint="@color/grey"

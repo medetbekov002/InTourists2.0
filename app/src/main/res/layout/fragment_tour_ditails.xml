@@ -441,7 +441,7 @@
         </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_send"
+            android:id="@+id/btn_buy"
             style="@style/NoShadowButtonStyle"
             android:layout_width="142dp"
             android:layout_gravity="end"

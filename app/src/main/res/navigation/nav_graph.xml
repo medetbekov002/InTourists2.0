@@ -61,8 +61,8 @@
         tools:layout="@layout/fragment_favorite" />
     <fragment
         android:id="@+id/applicationBottomSheetFragment"
-        android:name="com.dev.intourist.ui.screen.application.ApplicationBottomSheetFragment"
+        android:name="com.dev.intourist.ui.screen.buy.BottomSheetFragment"
         android:label="fragment_application_bottom_sheet"
-        tools:layout="@layout/fragment_application_bottom_sheet" />
+        tools:layout="@layout/fragment_bottom_sheet" />
 
 </navigation>
