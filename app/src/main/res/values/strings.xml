@@ -26,6 +26,7 @@
     <string name="terms">условиями</string>
     <string name="privacy_policy">политикой конфиденциальности</string>
     <string name="terms_and_privacy_policy">Продолжая, вы соглашаетесь с условиями и политикой конфиденциальности</string>
+    <string name="phone_number">Номер телефона</string>
 
     <string name="field_must_be_filled">Поле должно быть заполнено</string>
     <string name="invalid_email">Неправильный адрес электронной почты</string>

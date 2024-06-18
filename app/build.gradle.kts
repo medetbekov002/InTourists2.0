@@ -126,6 +126,8 @@ dependencies {
     implementation("androidx.security:security-crypto:1.1.0-alpha04")
 
     // Retrofit Kotlinx Serialization Converter
-    implementation ("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
+    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
+}
+
 
 }

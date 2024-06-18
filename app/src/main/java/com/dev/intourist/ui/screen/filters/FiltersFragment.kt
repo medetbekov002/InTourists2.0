@@ -30,7 +30,7 @@ class FiltersFragment : Fragment() {
         toolbar.apply {
             title = "Фильтры"
             textAlignment = View.TEXT_ALIGNMENT_CENTER
-            setNavigationIcon(R.drawable.ic_cancel_black) // Установка иконки закрытия
+            setNavigationIcon(R.drawable.ic_cancel) // Установка иконки закрытия
             setNavigationOnClickListener {
                 // Обработка нажатия на иконку закрытия
                 findNavController().popBackStack()

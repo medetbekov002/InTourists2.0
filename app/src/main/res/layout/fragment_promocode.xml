@@ -118,14 +118,6 @@
                     android:padding="10dp"
                     android:src="@drawable/ic_copy" />
 
-                <ImageView
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    android:id="@+id/img_info"
-                    android:layout_width="20dp"
-                    android:layout_marginEnd="-2dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/ic_info" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <LinearLayout

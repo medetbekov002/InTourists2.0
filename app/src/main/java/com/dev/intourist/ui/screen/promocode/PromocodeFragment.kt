@@ -40,8 +40,6 @@ class PromocodeFragment : Fragment() {
             R.layout.toast_layout,
             b.toastLayoutContainer
         )
-        b.imageIcon.setImageResource(R.drawable.ic_check_white)
-        b.closeToast.setImageResource(R.drawable.ic_cancel_white)
         b.toastMessege.text = messege
         with(Toast(requireContext())) {
             duration = Toast.LENGTH_SHORT
