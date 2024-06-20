@@ -62,35 +62,33 @@ class AuthFragment : Fragment() {
 
         val spannableString = SpannableString(text)
 
-        // Span for terms
         val termsStart = text.indexOf(terms)
         val termsEnd = termsStart + terms.length
         val termsClickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
-                // Handle terms click, navigate to terms page
+
             }
 
             override fun updateDrawState(ds: TextPaint) {
                 super.updateDrawState(ds)
                 ds.isUnderlineText = true
-                ds.color = getResources().getColor(R.color.logo_color)
+                ds.color = resources.getColor(R.color.logo_color)
             }
         }
         spannableString.setSpan(termsClickableSpan, termsStart, termsEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         spannableString.setSpan(StyleSpan(Typeface.BOLD), termsStart, termsEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 
-        // Span for privacy policy
         val privacyPolicyStart = text.indexOf(privacyPolicy)
         val privacyPolicyEnd = privacyPolicyStart + privacyPolicy.length
         val privacyPolicyClickableSpan = object : ClickableSpan() {
             override fun onClick(widget: View) {
-                // Handle privacy policy click, navigate to privacy policy page
+
             }
 
             override fun updateDrawState(ds: TextPaint) {
                 super.updateDrawState(ds)
                 ds.isUnderlineText = true
-                ds.color = getResources().getColor(R.color.logo_color)
+                ds.color = resources.getColor(R.color.logo_color)
             }
         }
         spannableString.setSpan(privacyPolicyClickableSpan, privacyPolicyStart, privacyPolicyEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
