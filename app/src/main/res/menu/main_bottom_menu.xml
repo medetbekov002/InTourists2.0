@@ -2,7 +2,23 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/fragment_home"
-        android:title="@string/app_name"
+        android:icon="@drawable/ic_search"
+        android:title="Поиск"
         />
+
+    <item
+        android:id="@id/fragment_favorite"
+        android:icon="@drawable/ic_heart"
+        android:title="Избранное" />
+
+    <item
+        android:id="@id/fragment_tours"
+        android:icon="@drawable/ic_tours"
+        android:title="Мои туры" />
+
+    <item
+        android:id="@id/fragment_profile"
+        android:icon="@drawable/ic_user"
+        android:title="Профиль" />
 
 </menu>

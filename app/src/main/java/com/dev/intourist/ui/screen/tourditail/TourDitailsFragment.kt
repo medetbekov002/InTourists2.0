@@ -1,10 +1,12 @@
 package com.dev.intourist.ui.screen.tourditail
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentTourDitailsBinding
 import com.dev.intourist.ui.screen.home.adapters.VPAdapter
@@ -75,6 +77,21 @@ class TourDitailsFragment : Fragment() {
 
         binding.viewPager.adapter = VPAdapter(list1)
         binding.indicator.setViewPager(binding.viewPager)
+
+        binding.apply {
+            btnContactWhatsApp.setOnClickListener {
+                val url = "https://api.whatsapp.com/send?phone=+996704848277"
+                val intentWApp = Intent(Intent.ACTION_VIEW)
+                intentWApp.setData(Uri.parse(url))
+                startActivity(intentWApp)
+            }
+            btnContactTelegram.setOnClickListener {
+                val url = "tg://resolve?domain=mynekogirl"
+                val intentWApp = Intent(Intent.ACTION_VIEW)
+                intentWApp.setData(Uri.parse(url))
+                startActivity(intentWApp)
+            }
+        }
     }
 
 }

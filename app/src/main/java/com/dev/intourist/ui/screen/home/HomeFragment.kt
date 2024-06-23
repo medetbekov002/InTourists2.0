@@ -133,6 +133,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     }
 
     private fun onClickTour(tourCardModel: TourCardModel) {
+        findNavController().navigate(R.id.fragment_tour_ditails)
     }
 
     private fun onClickPromo(promocode: PromocodeDitailsModel) {

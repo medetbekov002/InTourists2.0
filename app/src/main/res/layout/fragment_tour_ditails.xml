@@ -149,6 +149,7 @@
                 android:backgroundTint="@android:color/transparent"
                 android:drawableLeft="@drawable/ic_whatsapp"
                 android:padding="10dp"
+                android:background="@android:color/transparent"
                 android:text="WhatsApp"
                 android:textColor="#757575"
                 android:textSize="12sp" />
@@ -161,6 +162,7 @@
                 android:backgroundTint="@android:color/transparent"
                 android:drawableLeft="@drawable/ic_telegram"
                 android:padding="10dp"
+                android:background="@android:color/transparent"
                 android:text="Telegram"
                 android:textColor="#757575"
                 android:textSize="12sp" />
