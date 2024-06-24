@@ -1,0 +1,1 @@
+package com.dev.intourist.ui.screen.toursimport com.dev.intourist.ui.base.viewmodel.BaseViewModelclass ToursViewModel : BaseViewModel() {}

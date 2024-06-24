@@ -3,6 +3,8 @@ package com.dev.intourist.ui
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.MutableLiveData
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import by.kirich1409.viewbindingdelegate.CreateMethod
@@ -28,6 +30,9 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
                 R.id.fragment_home -> showBottomNav()
+                R.id.fragment_favorite -> showBottomNav()
+                R.id.fragment_tours -> showBottomNav()
+                R.id.fragment_profile -> showBottomNav()
                 else -> hideBottomNav()
             }
         }

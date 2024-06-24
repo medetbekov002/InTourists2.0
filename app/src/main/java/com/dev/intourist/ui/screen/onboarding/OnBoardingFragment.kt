@@ -1,6 +1,7 @@
 package com.dev.intourist.ui.screen.onboarding
 
 import android.util.Log
+import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
@@ -19,7 +20,7 @@ class OnBoardingFragment :
     override val viewModel: OnBoardingViewModel by viewModel()
     private val pref: Pref by lazy { Pref(requireContext()) }
     private val adapter: OnBoardingAdapter by lazy { OnBoardingAdapter(this) }
-    var count = 0
+    private var count = 0
 
     override fun initialize() {
         super.initialize()
@@ -48,12 +49,12 @@ class OnBoardingFragment :
         }
     }
 
-    override fun clickBack(btnBack: MaterialButton) {
+    override fun clickBack(btnBack: ImageButton) {
         count--
         binding.pager.currentItem = count
     }
 
     override fun clickScip() {
-        findNavController().navigateUp()
+        findNavController().navigate(R.id.fragment_auth)
     }
 }

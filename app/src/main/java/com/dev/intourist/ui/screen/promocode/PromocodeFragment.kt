@@ -1,12 +1,11 @@
 package com.dev.intourist.ui.screen.promocode
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentPromocodeBinding
@@ -40,14 +39,18 @@ class PromocodeFragment : Fragment() {
             R.layout.toast_layout,
             b.toastLayoutContainer
         )
-        b.toastMessege.text = messege
+        b.apply {
+            imageIcon.setImageResource(R.drawable.ic_check_white)
+            closeToast.setImageResource(R.drawable.ic_cancel_white)
+            toastMessege.text = messege
+        }
         with(Toast(requireContext())) {
             duration = Toast.LENGTH_SHORT
             view = toastView
             show()
         }
         b.closeToast.setOnClickListener {
-        toastView.visibility = View.GONE
+            toastView.visibility = View.GONE
         }
     }
 }
