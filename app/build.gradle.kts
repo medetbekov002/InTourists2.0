@@ -128,6 +128,14 @@ dependencies {
 
     // Retrofit Kotlinx Serialization Converter
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
+
+    // Kotlin PayBox
+    implementation ("com.github.PayBox:kotlin-paybox-sdk:0.11.0")
+
+    // Google Service wallet
+    implementation ("com.google.android.gms:play-services-wallet:19.2.1")
+
+
 }
 
 
