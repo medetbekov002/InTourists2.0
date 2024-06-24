@@ -2,7 +2,7 @@ package com.dev.intourist.data.local.preferences
 
 object PreferencesConstants {
 
-    const val NAME = "boilerplate.preferences"
+    const val NAME = "intourists.preferences"
     const val PREF_IS_ONBOARDING = "is_onboarding"
     const val PREF_IS_AUTHORIZED = "is_authorized"
     const val PREF_ACCESS_TOKEN = "access_token"
