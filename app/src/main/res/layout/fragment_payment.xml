@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.screen.payment.PaymentFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Button
+            android:id="@+id/buttonInitPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Initialize Payment" />
+
+        <Button
+            android:id="@+id/buttonDirectPayment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Direct Payment" />
+
+        <Button
+            android:id="@+id/buttonShowCards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show Cards" />
+
+        <Button
+            android:id="@+id/buttonAddCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Card" />
+
+        <Button
+            android:id="@+id/buttonRemoveCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remove Card" />
+
+        <Button
+            android:id="@+id/buttonInitRecurring"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Initialize Recurring Payment" />
+
+        <Button
+            android:id="@+id/buttonConfirmRecurring"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirm Recurring Payment" />
+
+        <TextView
+            android:id="@+id/outputTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:padding="8dp"
+            android:text="Output"
+            android:background="#E0E0E0" />
+
+        <com.google.android.gms.wallet.button.PayButton
+            android:id="@+id/buttonPaymentByGoogle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp" />
+
+        <money.paybox.payboxsdk.view.PaymentView
+            android:id="@+id/paymentView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <ProgressBar
+            android:id="@+id/loaderView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+</FrameLayout>
