@@ -124,7 +124,7 @@
                 android:id="@+id/btn_order_individual_tour"
                 style="@style/NoShadowButtonStyle"
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
                 android:backgroundTint="#F5F5F5"

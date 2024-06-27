@@ -7,4 +7,5 @@ data class TourCardModel (
     val price:String,
     val duration: String,
     val dates: String,
+    var isLiked: Boolean,
 )

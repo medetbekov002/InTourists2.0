@@ -64,5 +64,10 @@
         android:name="com.dev.intourist.ui.screen.buy.BottomSheetFragment"
         android:label="fragment_application_bottom_sheet"
         tools:layout="@layout/fragment_bottom_sheet" />
+    <fragment
+        android:id="@+id/myToursFragment"
+        android:name="com.dev.intourist.ui.screen.mytours.MyToursFragment"
+        android:label="fragment_my_tours"
+        tools:layout="@layout/fragment_my_tours" />
 
 </navigation>

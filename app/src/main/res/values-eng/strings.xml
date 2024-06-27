@@ -25,6 +25,12 @@
     <string name="tour_ditail_included_in_price">What is included in the price</string>
     <string name="tour_ditail_not_included_in_price">What isn\'t  included in the price</string>
     <string name="phone_number">Phone number</string>
+    <string name="my_tours">Мои туры</string>
+    <string name="no_my_tours_future">You don\'t have any upcoming trips at the moment.</string>
+    <string name="no_my_tours_past">At the moment, you have no past trips.</string>
+    <string name="no_my_tours_individual_title">Individual tour to order</string>
+    <string name="no_my_tours_individual_desc">Are you planning a unique trip? We will help you create a tour that fully meets your wishes. Fill out the application and our manager will contact you to discuss all the details.</string>
+
 
     <string name="terms">terms</string>
     <string name="privacy_policy">privacy policy</string>

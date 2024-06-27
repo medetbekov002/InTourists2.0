@@ -28,68 +28,55 @@ class FavoriteFragment : Fragment() {
     private val listTour = listOf(
         TourCardModel(
             list1,
-            "Ущелье Ала-Арча",
-            "1900 c.",
-            "1200 c.",
-            "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "Ущелье Ала-Арча", "1900 c.", "1200 c.", "Однодневный тур",
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
         TourCardModel(
             list1,
-            "Ущелье Ала-Арча",
-            "1900 c.",
-            "1200 c.",
-            "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "Ущелье Ала-Арча", "1900 c.", "1200 c.", "Однодневный тур",
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
         TourCardModel(
             list1,
-            "Ущелье Ала-Арча",
-            "1900 c.",
-            "1200 c.",
-            "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "Ущелье Ала-Арча", "1900 c.", "1200 c.", "Однодневный тур",
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
         TourCardModel(
             list1,
-            "Ущелье Ала-Арча",
-            "1900 c.",
-            "1200 c.",
-            "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "Ущелье Ала-Арча", "1900 c.", "1200 c.", "Однодневный тур",
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
         TourCardModel(
             list1,
-            "Ущелье Ала-Арча",
-            "1900 c.",
-            "1200 c.",
-            "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "Ущелье Ала-Арча", "1900 c.", "1200 c.", "Однодневный тур",
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
         TourCardModel(
             list1,
-            "Ущелье Ала-Арча",
-            "1900 c.",
-            "1200 c.",
-            "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "Ущелье Ала-Арча", "1900 c.", "1200 c.", "Однодневный тур",
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
     )
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentFavoriteBinding.inflate(inflater,container,false)
+        binding = FragmentFavoriteBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvMyTours.adapter = TourCardAdapter(requireContext(), false,this::onItemClick,listTour)
+        binding.rvMyTours.adapter =
+            TourCardAdapter(requireContext(), false, this::onItemClick, this::onLikeClick, listTour)
     }
 
     private fun onItemClick(tourCardModel: TourCardModel) {
         findNavController().navigate(R.id.fragment_tour_ditails)
     }
 
+    private fun onLikeClick(tourCardModel: TourCardModel, position: Int) {
+        listTour[position].isLiked = !tourCardModel.isLiked
+    }
 }

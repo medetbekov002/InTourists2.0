@@ -61,7 +61,7 @@ class TourDitailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
         ),
         TourCardModel(
             list1,
@@ -69,7 +69,7 @@ class TourDitailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
         ),
         TourCardModel(
             list1,
@@ -77,7 +77,7 @@ class TourDitailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
         ),
         TourCardModel(
             list1,
@@ -85,7 +85,7 @@ class TourDitailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
         ),
         TourCardModel(
             list1,
@@ -93,7 +93,7 @@ class TourDitailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
         ),
         TourCardModel(
             list1,
@@ -101,7 +101,7 @@ class TourDitailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
         ),
     )
 
@@ -128,7 +128,7 @@ class TourDitailsFragment : Fragment() {
             val username = "Kulchoroevva" // Telegram username без @
             openTelegram(username)
         }
-        val adapter = TourCardAdapter(requireContext(), true, this::onClickTour, listTour)
+        val adapter = TourCardAdapter(requireContext(), true, this::onClickTour, this::onLikeClick,listTour)
         binding.rvToursRecomindation.adapter = adapter
 
         val adapterRallyPoint = DitailAdapter(listRallyPoint, R.drawable.ic_location)
@@ -147,8 +147,11 @@ class TourDitailsFragment : Fragment() {
         binding.indicator.setViewPager(binding.viewPager)
     }
 
-    private fun onClickTour(tourCardModel: TourCardModel) {
+    private fun onLikeClick(tourCardModel: TourCardModel, position: Int) {
+        listTour[position].isLiked = !tourCardModel.isLiked
+    }
 
+    private fun onClickTour(tourCardModel: TourCardModel) {
     }
 
     private fun openWhatsApp(phoneNumber: String) {
