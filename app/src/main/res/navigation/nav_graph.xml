@@ -77,4 +77,9 @@
         android:name="com.dev.intourist.ui.screen.favorite.FavoriteFragment"
         tools:layout="@layout/fragment_favorite" />
 
+    <fragment
+        android:id="@+id/fragment_payment"
+        android:name="com.dev.intourist.ui.screen.payment.PaymentFragment"
+        tools:layout="@layout/fragment_payment" />
+
 </navigation>

@@ -136,7 +136,7 @@ dependencies {
     implementation ("com.google.android.gms:play-services-wallet:19.2.1")
 
     // PayBox Service
-    implementation ("money.paybox:payboxsdk:1.0.0")
+//    implementation (libs.payboxsdk)
 }
 
 

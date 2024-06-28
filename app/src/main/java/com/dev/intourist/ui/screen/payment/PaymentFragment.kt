@@ -89,10 +89,11 @@ package com.dev.intourist.ui.screen.payment
 //                .setTheme(WalletConstants.THEME_LIGHT)
 //                .build()
 //        )
+//
 //        googlePayButton.initialize(
 //            ButtonOptions.newBuilder()
-//                .setButtonTheme(ButtonOptions.ButtonTheme.LIGHT)
-//                .setButtonType(ButtonOptions.ButtonType.BUY)
+////                .setButtonTheme(ButtonOptions.ButtonTheme.LIGHT)
+////                .setButtonType(ButtonOptions.ButtonType.BUY)
 //                .setCornerRadius(100)
 //                .setAllowedPaymentMethods(JSONArray().put(cardPaymentMethod()).toString())
 //                .build()
@@ -211,7 +212,7 @@ package com.dev.intourist.ui.screen.payment
 //                    val message = StringBuilder()
 //
 //                    for (card in cards) {
-//                        message.append("Card ID: ${card.cardId}, PAN: ${card.pan}\n")
+////                        message.append("Card ID: ${card.cardId}, PAN: ${card.pan}\n")
 //                    }
 //
 //                    showInfo(message.toString())
@@ -220,32 +221,41 @@ package com.dev.intourist.ui.screen.payment
 //        }
 //    }
 //
-//    // Реализация метода onLoadFinished из интерфейса WebListener
+//    override fun onLoadStarted() {
+//        // Показать индикатор загрузки
+//        loaderView.visibility = View.VISIBLE
+//    }
+//
 //    override fun onLoadFinished() {
-//        // Ваша реализация
+//        // Скрыть индикатор загрузки
+//        loaderView.visibility = View.GONE
 //    }
 //
-//    override fun onPageStarted(url: String, navigationType: Int) {
-//        // Ваша реализация
-//    }
-//
-//    override fun onPageFinished(url: String) {
-//        // Ваша реализация
-//    }
-//
-//    override fun onError(error: PaymentError) {
-//        // Ваша реализация
-//    }
+////    override fun onPageStarted(url: String, navigationType: Int) {
+////        // Логирование начала загрузки страницы
+////        Log.d("PaymentFragment", "Page started loading: $url with navigation type: $navigationType")
+////    }
+////
+////    override fun onPageFinished(url: String) {
+////        // Логирование окончания загрузки страницы
+////        Log.d("PaymentFragment", "Page finished loading: $url")
+////    }
+////
+////    override fun onError(error: PaymentError) {
+////        // Обработка ошибки и отображение сообщения об ошибке
+////        Log.e("PaymentFragment", "Error: ${error.description}")
+////        showError("Ошибка: ${error.description}")
+////    }
 //
 //    private fun showError(message: String) {
 //        outputTextView.text = message
-//        outputTextView.setTextColor(resources.getColor(R.color.red))
+//        outputTextView.setTextColor(resources.getColor(R.color.red, null))
 //        outputTextView.isVisible = true
 //    }
 //
 //    private fun showInfo(message: String) {
 //        outputTextView.text = message
-//        outputTextView.setTextColor(resources.getColor(R.color.green))
+//        outputTextView.setTextColor(resources.getColor(R.color.green, null))
 //        outputTextView.isVisible = true
 //    }
 //
