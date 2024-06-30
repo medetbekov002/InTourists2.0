@@ -279,7 +279,8 @@
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:thumb="@drawable/bg_switch_thumb"
-                android:track="@drawable/bg_switch" />
+                android:track="@drawable/bg_switch"
+                tools:ignore="UseSwitchCompatOrMaterialXml" />
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

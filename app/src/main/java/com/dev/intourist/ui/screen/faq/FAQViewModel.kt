@@ -1,0 +1,1 @@
+package com.dev.intourist.ui.screen.faqimport com.dev.intourist.ui.base.viewmodel.BaseViewModelclass FAQViewModel : BaseViewModel()

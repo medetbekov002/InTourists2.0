@@ -31,14 +31,6 @@
             android:name=".ui.MainActivity"
             android:exported="true"></activity>
 
-        <service
-            android:name="com.dev.intourist.ui.screen.service.PushNotificationService"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
-            </intent-filter>
-        </service>
-
         <meta-data
             android:name="com.google.android.gms.wallet.api.enabled"
             android:value="true" />

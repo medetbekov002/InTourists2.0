@@ -1,0 +1,1 @@
+package com.dev.intourist.ui.screen.payment.other_wayimport androidx.lifecycle.ViewModelimport com.dev.intourist.ui.base.viewmodel.BaseViewModelclass OtherWayViewModel : BaseViewModel() {}

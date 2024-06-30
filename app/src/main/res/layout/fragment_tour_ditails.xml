@@ -348,8 +348,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
-                    android:tint="@color/red"
-                    android:src="@drawable/ic_cancel" />
+                    android:src="@drawable/ic_cancel"
+                    app:tint="@color/red" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -368,8 +368,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="4dp"
-                    android:tint="@color/red"
-                    android:src="@drawable/ic_cancel" />
+                    android:src="@drawable/ic_cancel"
+                    app:tint="@color/red" />
 
                 <TextView
                     android:layout_width="wrap_content"

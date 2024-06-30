@@ -120,13 +120,18 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.ivFilters.setOnClickListener {
-            //FiltersFragment().show(childFragmentManager, "buy tour tag")
-            findNavController().navigate(R.id.fragment_filters)
+        binding.apply {
+            // filter
+            ivFilters.setOnClickListener {
+                //FiltersFragment().show(childFragmentManager, "buy tour tag")
+                findNavController().navigate(R.id.fragment_filters)
+            }
+            // search
+            svSearchTours.setOnClickListener {
+                findNavController().navigate(R.id.fragment_search)
+            }
         }
-        binding.svSearchTours.setOnClickListener {
-            findNavController().navigate(R.id.fragment_search)
-        }
+
         val adapter =
             TourCardAdapter(requireContext(), false, this::onClickTour, this::onLikeClick, listTour)
         binding.rvTours.adapter = adapter

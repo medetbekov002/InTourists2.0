@@ -24,6 +24,24 @@ class ProfileFragment :
             btnPersonalInfo.setOnClickListener {
                 findNavController().navigate(R.id.fragment_personal_info)
             }
+            btnNotifications.setOnClickListener {
+                findNavController().navigate(R.id.fragment_settings)
+            }
+            btnPrivacyAndPolicy.setOnClickListener {
+                findNavController().navigate(R.id.fragment_privacy_policy)
+            }
+            btnTermsOfUse.setOnClickListener {
+                findNavController().navigate(R.id.fragment_terms_of_use)
+            }
+            btnQuestionAndAnswer.setOnClickListener {
+                findNavController().navigate(R.id.fragment_faq)
+            }
+            btnAboutUs.setOnClickListener {
+                findNavController().navigate(R.id.fragment_about_us)
+            }
+            btnContact.setOnClickListener {
+                findNavController().navigate(R.id.fragment_contacts)
+            }
         }
     }
 
