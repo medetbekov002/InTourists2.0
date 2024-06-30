@@ -70,6 +70,16 @@ class FavoriteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.rvMyTours.adapter =
             TourCardAdapter(requireContext(), false, this::onItemClick, this::onLikeClick, listTour)
+
+            // filter
+            binding.ivFilters.setOnClickListener {
+                //FiltersFragment().show(childFragmentManager, "buy tour tag")
+                findNavController().navigate(R.id.fragment_filters)
+            }
+            // search
+            binding.svSearchTours.setOnClickListener {
+                findNavController().navigate(R.id.fragment_search)
+            }
     }
 
     private fun onItemClick(tourCardModel: TourCardModel) {

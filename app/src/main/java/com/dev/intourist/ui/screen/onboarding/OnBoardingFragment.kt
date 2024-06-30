@@ -1,6 +1,7 @@
 package com.dev.intourist.ui.screen.onboarding
 
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -38,7 +39,7 @@ class OnBoardingFragment :
 
     }
 
-    override fun clickNext(btnNext: MaterialButton, pos: Int) {
+    override fun clickNext(btnNext: Button, pos: Int) {
         if (pos == 2) {
             btnNext.text = "Перейти"
             pref.saveOnBoarding(true)
