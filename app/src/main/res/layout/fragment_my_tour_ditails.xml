@@ -191,6 +191,7 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="20dp"
             android:textSize="16sp"
+            android:textColor="@color/black"
             android:text="@string/text_desc_tour_tools" />
 
         <View
