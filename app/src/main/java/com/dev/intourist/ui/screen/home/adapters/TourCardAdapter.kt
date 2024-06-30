@@ -27,6 +27,10 @@ class TourCardAdapter(
             val layoutParams = itemView.layoutParams as RecyclerView.LayoutParams
             layoutParams.width = 320.dpToPx() // ширинa на 320dp
             itemView.layoutParams = layoutParams
+        }else{
+           /* val layoutParams = itemView.layoutParams as RecyclerView.LayoutParams
+            layoutParams.width = 320.dpToPx() // ширинa на 320dp
+            itemView.layoutParams = layoutParams*/
         }
         return TourCardViewHolder(itemView)
     }

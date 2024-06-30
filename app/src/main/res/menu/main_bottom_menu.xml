@@ -12,7 +12,7 @@
         android:title="Избранное" />
 
     <item
-        android:id="@id/fragment_tours"
+        android:id="@id/myToursFragment"
         android:icon="@drawable/ic_tours"
         android:title="Мои туры" />
 
