@@ -1,1 +1,0 @@
-package com.dev.intourist.ui.screen.filtersimport com.dev.intourist.ui.base.viewmodel.BaseViewModelclass FiltersVIewModel : BaseViewModel()

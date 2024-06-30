@@ -20,6 +20,7 @@ playServicesWallet = "19.4.0"
 rangeSeekbar = "1.0.9"
 rangeseekbarVersion = "1.0.6"
 retrofit = "2.11.0"
+retrofit2KotlinCoroutinesAdapter = "0.9.2"
 retrofit2KotlinxSerializationConverter = "0.8.0"
 roomCompiler = "2.6.1"
 roomRuntime = "2.6.1"
@@ -77,6 +78,7 @@ javax-inject = { module = "javax.inject:javax.inject", version.ref = "javaxInjec
 kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesCore" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinxCoroutinesCore" }
 koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndroid" }
+retrofit2-kotlin-coroutines-adapter = { module = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter", version.ref = "retrofit2KotlinCoroutinesAdapter" }
 retrofit2-kotlinx-serialization-converter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofit2KotlinxSerializationConverter" }
 viewbindingpropertydelegate-full = { module = "com.github.kirich1409:viewbindingpropertydelegate-full", version.ref = "viewbindingpropertydelegateFull" }
 
