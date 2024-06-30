@@ -3,10 +3,9 @@ package com.dev.intourist.ui.screen.tourditail
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.dev.intourist.databinding.ItemCategoriesBinding
 import com.dev.intourist.databinding.ItemDescriptionBinding
 
-class DitailAdapter ( private val list: List<String>, private val image: Int) :
+class DetailAdapter ( private val list: List<String>, private val image: Int) :
     RecyclerView.Adapter<DitailsViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DitailsViewHolder {
         return DitailsViewHolder(
