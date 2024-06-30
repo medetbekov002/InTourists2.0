@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">In Tourist</string>
+    <string name="app_name">InTourists</string>
     <string name="image">image</string>
     <string name="authorization">Авторизация</string>
     <string name="auth_desc">Мы отправим код на этот номер для дальнейшей авторизации</string>
