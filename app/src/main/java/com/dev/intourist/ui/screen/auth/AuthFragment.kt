@@ -34,24 +34,24 @@ class AuthFragment : Fragment() {
 
         setTermsText()
 
-        binding.etPhoneNumber.addTextChangedListener( object :TextWatcher{
-            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                val colorResId = if (s?.length == 13) R.color.dark_blue_for_button else R.color.light_grey
-                binding.btnContinue.backgroundTintList = ContextCompat.getColorStateList(requireContext(), colorResId) }
-            override fun afterTextChanged(s: Editable?) {}
-        })
+        binding.apply {
+            etPhoneNumber.addTextChangedListener( object :TextWatcher{
+                override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+                override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                    val colorResId = if (s?.length == 13) R.color.dark_blue_for_button else R.color.light_grey
+                    binding.btnContinue.backgroundTintList = ContextCompat.getColorStateList(requireContext(), colorResId) }
+                override fun afterTextChanged(s: Editable?) {}
+            })
+            btnContinue.setOnClickListener {
+                findNavController().navigate(R.id.fragment_code)
+            }
+            btnSkip.setOnClickListener {
+                findNavController().navigate(R.id.fragment_home)
+            }
 
-        binding.btnContinue.setOnClickListener {
-            findNavController().navigate(R.id.fragment_code)
-        }
-
-        binding.btnSkip.setOnClickListener {
-            findNavController().navigate(R.id.fragment_home)
-        }
-
-        binding.btnGoogle.setOnClickListener {
-            // inter with google
+            btnGoogle.setOnClickListener {
+                // inter with google
+            }
         }
     }
 
@@ -94,7 +94,9 @@ class AuthFragment : Fragment() {
         spannableString.setSpan(privacyPolicyClickableSpan, privacyPolicyStart, privacyPolicyEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
         spannableString.setSpan(StyleSpan(Typeface.BOLD), privacyPolicyStart, privacyPolicyEnd, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
 
-        binding.tvTerms.text = spannableString
-        binding.tvTerms.movementMethod = LinkMovementMethod.getInstance()
+        binding.apply {
+            tvTerms.text = spannableString
+            tvTerms.movementMethod = LinkMovementMethod.getInstance()
+        }
     }
 }

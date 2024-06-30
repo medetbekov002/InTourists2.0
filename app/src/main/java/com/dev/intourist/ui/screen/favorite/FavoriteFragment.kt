@@ -11,7 +11,6 @@ import com.dev.intourist.databinding.FragmentFavoriteBinding
 import com.dev.intourist.ui.screen.home.adapters.TourCardAdapter
 import com.dev.intourist.ui.screen.home.adapters.TourCardModel
 
-
 class FavoriteFragment : Fragment() {
     private lateinit var binding: FragmentFavoriteBinding
 
@@ -21,8 +20,7 @@ class FavoriteFragment : Fragment() {
         R.drawable.image_view_pager,
         R.drawable.image_view_pager,
         R.drawable.image_view_pager,
-        R.drawable.image_view_pager,
-        R.drawable.image_view_pager,
+        R.drawable.image_view_pager
     )
 
     private val listTour = listOf(
@@ -55,7 +53,7 @@ class FavoriteFragment : Fragment() {
             list1,
             "Ущелье Ала-Арча", "1900 c.", "1200 c.", "Однодневный тур",
             "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
-        ),
+        )
     )
 
     override fun onCreateView(
@@ -70,17 +68,27 @@ class FavoriteFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val adapter =
             TourCardAdapter(requireContext(), false, this::onItemClick, this::onLikeClick, listTour)
-        binding.rvMyTours.adapter = adapter
 
-                // filter
-            binding.ivFilters.setOnClickListener {
-                //FiltersFragment().show(childFragmentManager, "buy tour tag")
+        binding.apply {
+            rvMyTours.adapter = adapter
+
+            ivFilters.setOnClickListener {
                 findNavController().navigate(R.id.fragment_filters)
             }
-        // search
-        binding.svSearchTours.setOnClickListener {
-            findNavController().navigate(R.id.fragment_search)
+            svSearchTours.setOnClickListener {
+                findNavController().navigate(R.id.fragment_search)
+            }
         }
+//
+//        // Filter button click listener
+//        binding.ivFilters.setOnClickListener {
+//            findNavController().navigate(R.id.fragment_filters)
+//        }
+//
+//        // Search button click listener
+//        binding.svSearchTours.setOnClickListener {
+//            findNavController().navigate(R.id.fragment_search)
+//        }
     }
 
     private fun onItemClick(tourCardModel: TourCardModel) {

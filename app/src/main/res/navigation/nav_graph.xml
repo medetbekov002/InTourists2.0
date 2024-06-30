@@ -54,9 +54,9 @@
 
     <fragment
         android:id="@+id/fragment_tour_ditails"
-        android:name="com.dev.intourist.ui.screen.tourditail.TourDitailsFragment"
+        android:name="com.dev.intourist.ui.screen.tourditail.TourDetailsFragment"
         android:label="fragment_tour_ditails"
-        tools:layout="@layout/fragment_tour_ditails" />
+        tools:layout="@layout/fragment_tour_details" />
     <fragment
         android:id="@+id/fragment_search"
         android:name="com.dev.intourist.ui.screen.search.SearchFragment"
@@ -69,7 +69,7 @@
         tools:layout="@layout/fragment_promocode" />
     <fragment
         android:id="@+id/myTourDitailsFragment"
-        android:name="com.dev.intourist.ui.screen.mytourditails.MyTourDitailsFragment"
+        android:name="com.dev.intourist.ui.screen.mytourditails.MyTourDetailsFragment"
         android:label="MyTourDitailsFragment" />
     <fragment
         android:id="@+id/fragment_tours"

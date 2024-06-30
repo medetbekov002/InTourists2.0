@@ -132,8 +132,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             }
         }
 
-        val adapter =
-            TourCardAdapter(requireContext(), false, this::onClickTour, this::onLikeClick, listTour)
+        val adapter = TourCardAdapter(requireContext(), false, this::onClickTour, this::onLikeClick, listTour)
         binding.rvTours.adapter = adapter
 
         val adapterPromo = PromocodeAdapter(this::onClickPromo, listPromo)

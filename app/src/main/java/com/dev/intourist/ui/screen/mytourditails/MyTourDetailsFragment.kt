@@ -10,15 +10,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.dev.intourist.R
-import com.dev.intourist.databinding.FragmentFavoriteBinding
-import com.dev.intourist.databinding.FragmentMyTourDitailsBinding
+import com.dev.intourist.databinding.FragmentMyTourDetailsBinding
 import com.dev.intourist.ui.screen.buy.BottomSheetFragment
 import com.dev.intourist.ui.screen.home.adapters.TourCardModel
 import com.dev.intourist.ui.screen.tourditail.DitailAdapter
 import com.dev.intourist.ui.screen.tourditail.ProgramAdapter
 
 
-class MyTourDitailsFragment : Fragment() {
+class MyTourDetailsFragment : Fragment() {
 
 
     private val listRallyPoint = listOf(
@@ -105,12 +104,12 @@ class MyTourDitailsFragment : Fragment() {
         ),
     )
 
-    private lateinit var binding: FragmentMyTourDitailsBinding
+    private lateinit var binding: FragmentMyTourDetailsBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentMyTourDitailsBinding.inflate(inflater, container, false)
+        binding = FragmentMyTourDetailsBinding.inflate(inflater, container, false)
         return binding.root
     }
 

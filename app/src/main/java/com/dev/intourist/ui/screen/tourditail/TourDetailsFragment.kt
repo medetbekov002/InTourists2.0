@@ -11,16 +11,16 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.dev.intourist.R
-import com.dev.intourist.databinding.FragmentTourDitailsBinding
+import com.dev.intourist.databinding.FragmentTourDetailsBinding
 import com.dev.intourist.ui.screen.buy.BottomSheetFragment
 import com.dev.intourist.ui.screen.home.adapters.TourCardAdapter
 import com.dev.intourist.ui.screen.home.adapters.TourCardModel
 import com.dev.intourist.ui.screen.home.adapters.VPAdapter
 
 
-class TourDitailsFragment : Fragment() {
+class TourDetailsFragment : Fragment() {
 
-    private lateinit var binding: FragmentTourDitailsBinding
+    private lateinit var binding: FragmentTourDetailsBinding
 
     private val listRallyPoint = listOf(
         "1-ая точка сбора: Токтогула / Шопокова, Народный",
@@ -110,7 +110,7 @@ class TourDitailsFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentTourDitailsBinding.inflate(inflater, container, false)
+        binding = FragmentTourDetailsBinding.inflate(inflater, container, false)
         return binding.root
     }
 

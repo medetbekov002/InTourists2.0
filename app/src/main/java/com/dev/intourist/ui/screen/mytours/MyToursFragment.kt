@@ -56,6 +56,9 @@ class MyToursFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.btnSearchTours.setOnClickListener {
+            findNavController().navigate(R.id.fragment_search)
+        }
         binding.rvCategories.adapter =
             CategoriesAdapter(this::onClickCategory, listCategories, requireContext())
 
@@ -72,7 +75,7 @@ class MyToursFragment : Fragment() {
             }
             .setPositiveButton("Удалить") { dialog, i ->
                 //delete
-                if (list.isNotEmpty()){
+                if (list.isNotEmpty()) {
                     list.removeAt(position)
                     binding.rvMyTours.adapter?.notifyItemRemoved(position)
                     updateCategoryAdapter(category)

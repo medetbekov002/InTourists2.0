@@ -55,7 +55,7 @@ class OnBoardingFragment :
         binding.pager.currentItem = count
     }
 
-    override fun clickScip() {
+    override fun clickSkip() {
         findNavController().navigate(R.id.fragment_auth)
     }
 }
