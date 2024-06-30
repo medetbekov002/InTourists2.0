@@ -42,6 +42,7 @@ class ProfileFragment :
             btnContact.setOnClickListener {
                 findNavController().navigate(R.id.fragment_contacts)
             }
+
         }
     }
 

@@ -68,18 +68,19 @@ class FavoriteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.rvMyTours.adapter =
+        val adapter =
             TourCardAdapter(requireContext(), false, this::onItemClick, this::onLikeClick, listTour)
+        binding.rvMyTours.adapter = adapter
 
-            // filter
+                // filter
             binding.ivFilters.setOnClickListener {
                 //FiltersFragment().show(childFragmentManager, "buy tour tag")
                 findNavController().navigate(R.id.fragment_filters)
             }
-            // search
-            binding.svSearchTours.setOnClickListener {
-                findNavController().navigate(R.id.fragment_search)
-            }
+        // search
+        binding.svSearchTours.setOnClickListener {
+            findNavController().navigate(R.id.fragment_search)
+        }
     }
 
     private fun onItemClick(tourCardModel: TourCardModel) {
