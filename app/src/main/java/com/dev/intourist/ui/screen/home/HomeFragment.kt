@@ -8,6 +8,8 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentHomeBinding
+import com.dev.intourist.ui.screen.buy.BottomSheetFragment
+import com.dev.intourist.ui.screen.filters.FiltersFragment
 import com.dev.intourist.ui.screen.home.adapters.CategoriesAdapter
 import com.dev.intourist.ui.screen.home.adapters.PromocodeAdapter
 import com.dev.intourist.ui.screen.home.adapters.PromocodeDitailsModel
@@ -38,7 +40,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",
+            true
         ),
         TourCardModel(
             list1,
@@ -46,7 +49,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",
+            false
         ),
         TourCardModel(
             list1,
@@ -54,7 +58,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",
+            false
         ),
         TourCardModel(
             list1,
@@ -62,7 +67,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",
+            false
         ),
         TourCardModel(
             list1,
@@ -70,7 +76,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",
+            false
         ),
         TourCardModel(
             list1,
@@ -78,7 +85,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая"
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",
+            false
         ),
     )
     private val listPromo = listOf(
@@ -111,25 +119,33 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.ivFilters.setOnClickListener {
+            //FiltersFragment().show(childFragmentManager, "buy tour tag")
             findNavController().navigate(R.id.fragment_filters)
         }
         binding.svSearchTours.setOnClickListener {
             findNavController().navigate(R.id.fragment_search)
         }
-        val adapter = TourCardAdapter(requireContext(),false, this::onClickTour, listTour)
+        val adapter =
+            TourCardAdapter(requireContext(), false, this::onClickTour, this::onLikeClick, listTour)
         binding.rvTours.adapter = adapter
 
         val adapterPromo = PromocodeAdapter(this::onClickPromo, listPromo)
         binding.rvPromocode.adapter = adapterPromo
 
-        val adapterCategories = CategoriesAdapter(this::onClickCategory, listCategories)
+        val adapterCategories =
+            CategoriesAdapter(this::onClickCategory, listCategories, requireContext())
         binding.rvCategories.adapter = adapterCategories
 
     }
 
-    private fun onClickCategory() {
+    private fun onLikeClick(tourCardModel: TourCardModel, position: Int) {
+        listTour[position].isLiked = !tourCardModel.isLiked
+    }
 
+    private fun onClickCategory(category: String) {
+        //update recycler view with category
     }
 
     private fun onClickTour(tourCardModel: TourCardModel) {

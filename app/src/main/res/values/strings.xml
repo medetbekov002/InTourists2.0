@@ -27,6 +27,11 @@
     <string name="privacy_policy">политикой конфиденциальности</string>
     <string name="terms_and_privacy_policy">Продолжая, вы соглашаетесь с условиями и политикой конфиденциальности</string>
     <string name="phone_number">Номер телефона</string>
+    <string name="my_tours">Мои туры</string>
+    <string name="no_my_tours_future">На данный момент у вас нет предстоящих поездок.</string>
+    <string name="no_my_tours_past">На данный момент у вас нет прошедших поездок.</string>
+    <string name="no_my_tours_individual_title">Индивидуальный тур на заказ</string>
+    <string name="no_my_tours_individual_desc">Планируете уникальное путешествие? Мы поможем создать тур, полностью соответствующий вашим пожеланиям. Заполните заявку, и наш менеджер свяжется с вами для обсуждения всех деталей.</string>
 
     <string name="field_must_be_filled">Поле должно быть заполнено</string>
     <string name="invalid_email">Неправильный адрес электронной почты</string>

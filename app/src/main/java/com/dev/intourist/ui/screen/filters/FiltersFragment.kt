@@ -9,10 +9,11 @@ import android.widget.Toolbar
 import androidx.navigation.fragment.findNavController
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentFiltersBinding
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import java.text.NumberFormat
 import java.util.Currency
 
-class FiltersFragment : Fragment() {
+class FiltersFragment : BottomSheetDialogFragment() {
 
     private lateinit var binding: FragmentFiltersBinding
 

@@ -13,7 +13,7 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -103,32 +103,38 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_easy"
+                    style="@style/NoShadowButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/grey"
                     android:text="@string/easy_text_btn_filter"
+                    android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:cornerRadius="20dp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_average"
+                    style="@style/NoShadowButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/grey"
                     android:text="Средний"
+                    android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:cornerRadius="20dp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_difficult"
+                    style="@style/NoShadowButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/grey"
                     android:text="Сложный"
+                    android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:cornerRadius="20dp" />
@@ -207,46 +213,52 @@
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_half_a_day"
+                    style="@style/NoShadowButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_row="0"
-                    android:layout_column="0"
                     android:layout_marginEnd="16dp"
                     android:layout_marginBottom="16dp"
                     android:backgroundTint="@color/grey"
                     android:text="Тур на пол дня"
+                    android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:cornerRadius="20dp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_one_day"
+                    style="@style/NoShadowButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="16dp"
                     android:backgroundTint="@color/grey"
                     android:text="Однодневный"
+                    android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:cornerRadius="20dp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_two_days"
+                    style="@style/NoShadowButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="16dp"
                     android:backgroundTint="@color/grey"
                     android:text="Двухдневный"
+                    android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:cornerRadius="20dp" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_three_days"
+                    style="@style/NoShadowButtonStyle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/grey"
                     android:text="Трехдневный"
+                    android:textAllCaps="false"
                     android:textColor="@color/black"
                     android:textSize="14sp"
                     app:cornerRadius="20dp" />
@@ -285,22 +297,26 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_set_filters"
+            style="@style/NoShadowButtonStyle"
             android:layout_width="320dp"
             android:layout_height="54dp"
             android:layout_marginTop="12dp"
             android:backgroundTint="@color/dark_blue_for_button"
             android:text="Применить"
+            android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="16sp"
             app:cornerRadius="16dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_clear_filters"
+            style="@style/NoShadowButtonStyle"
             android:layout_width="320dp"
-            android:background="@android:color/transparent"
             android:layout_height="54dp"
             android:layout_marginBottom="24dp"
+            android:backgroundTint="@android:color/transparent"
             android:text="@string/clear_filters_text"
+            android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:cornerRadius="16dp" />

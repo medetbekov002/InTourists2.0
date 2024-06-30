@@ -13,7 +13,9 @@ class TourCardAdapter(
     private val context: Context,
     private val isHorizontal: Boolean,
     private val onClick: (tour: TourCardModel) -> Unit,
-    private val list: List<TourCardModel>
+    private val onLikeClick: (tour: TourCardModel, position: Int) -> Unit,
+    private val list: List<TourCardModel>,
+
 ) :
     RecyclerView.Adapter<TourCardViewHolder>() {
 
@@ -32,7 +34,7 @@ class TourCardAdapter(
     override fun getItemCount() = list.size
 
     override fun onBindViewHolder(holder: TourCardViewHolder, position: Int) {
-        holder.bind(list[position])
+        holder.bind(list[position],onLikeClick)
         holder.itemView.setOnClickListener {
             onClick(list[position])
         }
@@ -42,7 +44,16 @@ class TourCardAdapter(
 class TourCardViewHolder(itemView: View) :
     RecyclerView.ViewHolder(itemView) {
     private val binding = ItemTourCardBinding.bind(itemView)
-    fun bind(tourCard: TourCardModel) {
+    fun bind(tourCard: TourCardModel, onClick: (tour: TourCardModel, position: Int) -> Unit) {
+        binding.imgLike.setOnClickListener{
+            onClick(tourCard,adapterPosition)
+            if (tourCard.isLiked) {
+                binding.imgLike.setImageResource(R.drawable.ic_heart_liked)
+            } else {
+                binding.imgLike.setImageResource(R.drawable.ic_heart_like)
+            }
+        }
+
         binding.tvTourDuration.text = tourCard.duration
         binding.tvTourDates.setSingleLine()
         binding.tvTourDates.isSelected = true
