@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.dev.intourist.R
@@ -24,7 +25,7 @@ class PromocodeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.imgCopy.setOnClickListener {
+        binding.containerPromocode.setOnClickListener {
             showToast("Промокод скопирован")
             // Toast.makeText(requireContext(), "Промокод скопирован", Toast.LENGTH_SHORT).show()
         }
@@ -33,24 +34,26 @@ class PromocodeFragment : Fragment() {
         }
     }
 
-    private fun showToast(messege: String) {
-        val b = ToastLayoutBinding.inflate(layoutInflater)
-        val toastView = layoutInflater.inflate(
-            R.layout.toast_layout,
-            b.toastLayoutContainer
-        )
-        b.apply {
-            imageIcon.setImageResource(R.drawable.ic_check_white)
-            closeToast.setImageResource(R.drawable.ic_cancel_white)
-            toastMessege.text = messege
+    private fun showToast(message: String) {
+        val inflater = LayoutInflater.from(requireContext())
+        val binding = ToastLayoutBinding.inflate(inflater)
+        val toastView = binding.root
+
+        val icCheck = ContextCompat.getDrawable(requireContext(), R.drawable.ic_check)
+        icCheck?.setTint(ContextCompat.getColor(requireContext(), R.color.white))
+        val icCancel = ContextCompat.getDrawable(requireContext(), R.drawable.ic_cancel)
+        icCancel?.setTint(ContextCompat.getColor(requireContext(), R.color.white))
+
+        binding.apply {
+            imageIcon.setImageDrawable(icCheck)
+            closeToast.setImageDrawable(icCancel)
+            toastMessege.text = message
         }
+
         with(Toast(requireContext())) {
             duration = Toast.LENGTH_SHORT
             view = toastView
             show()
-        }
-        b.closeToast.setOnClickListener {
-            toastView.visibility = View.GONE
         }
     }
 }

@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentTourDitailsBinding
 import com.dev.intourist.ui.screen.buy.BottomSheetFragment
@@ -117,6 +118,9 @@ class TourDitailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnBuy.setOnClickListener {
+            findNavController().navigate(R.id.byCardFragment)
+        }
+        binding.btnOrderIndividualTour.setOnClickListener {
             BottomSheetFragment().show(childFragmentManager, "buy tour tag")
         }
 
@@ -152,6 +156,7 @@ class TourDitailsFragment : Fragment() {
     }
 
     private fun onClickTour(tourCardModel: TourCardModel) {
+        findNavController().navigate(R.id.fragment_tour_ditails)
     }
 
     private fun openWhatsApp(phoneNumber: String) {
