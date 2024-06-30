@@ -50,7 +50,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
-    implementation(libs.firebase.messaging.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -106,34 +105,29 @@ dependencies {
     implementation(libs.androidx.lifecycle.livedata.ktx)
 
     // Circle Indicator
-    implementation("me.relex:circleindicator:2.1.6")
+    implementation(libs.circleindicator)
 
-    // Import the BoM for the Firebase platform
-    implementation(platform("com.google.firebase:firebase-bom:33.0.0"))
-
-    // Add the dependency for the Firebase Authentication library
-    // When using the BoM, you don't specify versions in Firebase library dependencies
-    implementation("com.google.firebase:firebase-auth")
-    implementation("com.github.Mirkoddd:Range-SeekBar:1.0.9")
-    implementation("com.github.MohammedAlaaMorsi:RangeSeekBar:1.0.6")
+    // RangeSeekBar
+    implementation(libs.range.seekbar)
+    implementation(libs.rangeseekbar)
 
     // KotlinX Serialization
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    implementation(libs.kotlinx.serialization.json)
 
     // KotlinX Serialization JSON
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    implementation(libs.kotlinx.serialization.json)
 
     // Security
-    implementation("androidx.security:security-crypto:1.1.0-alpha04")
+    implementation(libs.androidx.security.crypto)
 
     // Retrofit Kotlinx Serialization Converter
-    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:0.8.0")
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
 
     // Kotlin PayBox
-    implementation ("com.github.PayBox:kotlin-paybox-sdk:0.11.0")
+    implementation (libs.kotlin.paybox.sdk)
 
     // Google Service wallet
-    implementation ("com.google.android.gms:play-services-wallet:19.2.1")
+    implementation (libs.play.services.wallet)
 
     // PayBox Service
 //    implementation (libs.payboxsdk)
