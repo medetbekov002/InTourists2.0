@@ -5,16 +5,22 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentMyToursBinding
+import com.dev.intourist.ui.base.fragment.BaseFragment
 import com.dev.intourist.ui.screen.home.adapters.CategoriesAdapter
 import com.dev.intourist.ui.screen.mytours.adapter.MyTourModel
 import com.dev.intourist.ui.screen.mytours.adapter.MyToursAdapter
 
-class MyToursFragment : Fragment() {
-    private lateinit var binding: FragmentMyToursBinding
+class MyToursFragment : BaseFragment<FragmentMyToursBinding, MyToursViewModel>(R.layout.fragment_my_tours) {
+//    private lateinit var binding: FragmentMyToursBinding
+    override val binding: FragmentMyToursBinding by viewBinding(FragmentMyToursBinding::bind)
+    override val viewModel: MyToursViewModel by viewModel()
+
     private val listCategories = listOf(
         "Предстоящие",
         "Прошедшие",
@@ -40,13 +46,13 @@ class MyToursFragment : Fragment() {
         ),
     )
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentMyToursBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        binding = FragmentMyToursBinding.inflate(inflater, container, false)
+//        return binding.root
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

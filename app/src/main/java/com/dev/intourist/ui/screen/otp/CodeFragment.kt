@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.Editable
 import android.text.TextWatcher
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,20 +13,24 @@ import android.view.ViewGroup
 import android.widget.EditText
 import androidx.appcompat.content.res.AppCompatResources.getColorStateList
 import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentCodeBinding
+import com.dev.intourist.ui.base.fragment.BaseFragment
 
-class CodeFragment : Fragment() {
-    private lateinit var binding: FragmentCodeBinding
+class CodeFragment : BaseFragment<FragmentCodeBinding, CodeViewModel>(R.layout.fragment_code) {
+//    private lateinit var binding: FragmentCodeBinding
+    override val binding: FragmentCodeBinding by viewBinding(FragmentCodeBinding::bind)
+    override val viewModel: CodeViewModel by viewModel()
     private lateinit var countDownTimer: CountDownTimer
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentCodeBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        binding = FragmentCodeBinding.inflate(inflater, container, false)
+//        return binding.root
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

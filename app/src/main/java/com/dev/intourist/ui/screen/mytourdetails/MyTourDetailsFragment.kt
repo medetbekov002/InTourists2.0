@@ -9,15 +9,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentMyTourDetailsBinding
+import com.dev.intourist.ui.base.fragment.BaseFragment
 import com.dev.intourist.ui.screen.buy.BottomSheetFragment
 import com.dev.intourist.ui.screen.home.adapters.TourCardModel
 import com.dev.intourist.ui.screen.tourdetails.DetailAdapter
 import com.dev.intourist.ui.screen.tourdetails.ProgramAdapter
 
 
-class MyTourDetailsFragment : Fragment() {
+class MyTourDetailsFragment :
+    BaseFragment<FragmentMyTourDetailsBinding, MyTourDetailsViewModel>(R.layout.fragment_my_tour_details) {
+
+    override val binding: FragmentMyTourDetailsBinding by viewBinding(FragmentMyTourDetailsBinding::bind)
+    override val viewModel: MyTourDetailsViewModel by viewModel()
 
     private val listRallyPoint = listOf(
         "1-ая точка сбора: Токтогула / Шопокова, Народный",
@@ -103,14 +110,14 @@ class MyTourDetailsFragment : Fragment() {
         ),
     )
 
-    private lateinit var binding: FragmentMyTourDetailsBinding
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentMyTourDetailsBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+//    private lateinit var binding: FragmentMyTourDetailsBinding
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        binding = FragmentMyTourDetailsBinding.inflate(inflater, container, false)
+//        return binding.root
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -4,22 +4,28 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentTourDetailsBinding
+import com.dev.intourist.ui.base.fragment.BaseFragment
 import com.dev.intourist.ui.screen.buy.BottomSheetFragment
 import com.dev.intourist.ui.screen.home.adapters.TourCardAdapter
 import com.dev.intourist.ui.screen.home.adapters.TourCardModel
 import com.dev.intourist.ui.screen.home.adapters.VPAdapter
 
-class TourDetailsFragment : Fragment() {
+class TourDetailsFragment :
+    BaseFragment<FragmentTourDetailsBinding, TourDetailsViewModel>(R.layout.fragment_tour_details) {
 
-    private lateinit var binding: FragmentTourDetailsBinding
+    override val binding: FragmentTourDetailsBinding by viewBinding(FragmentTourDetailsBinding::bind)
+    override val viewModel: TourDetailsViewModel by viewModel()
+//    private lateinit var binding: FragmentTourDetailsBinding
 
     private val listRallyPoint = listOf(
         "1-ая точка сбора: Токтогула / Шопокова, Народный",
@@ -105,13 +111,13 @@ class TourDetailsFragment : Fragment() {
         ),
     )
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentTourDetailsBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        binding = FragmentTourDetailsBinding.inflate(inflater, container, false)
+//        return binding.root
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -132,7 +138,13 @@ class TourDetailsFragment : Fragment() {
                 openTelegram(username)
             }
 
-            rvToursRecomindation.adapter = TourCardAdapter(requireContext(), true, this@TourDetailsFragment::onClickTour, this@TourDetailsFragment::onLikeClick, listTour)
+            rvToursRecomindation.adapter = TourCardAdapter(
+                requireContext(),
+                true,
+                this@TourDetailsFragment::onClickTour,
+                this@TourDetailsFragment::onLikeClick,
+                listTour
+            )
             rvRallyPoint.adapter = DetailAdapter(listRallyPoint, R.drawable.ic_location)
             rvTourProgram.adapter = ProgramAdapter(listTime, listDesc)
             rvIncludedInPrice.adapter = DetailAdapter(listIncludeds, R.drawable.ic_check)
@@ -168,9 +180,19 @@ class TourDetailsFragment : Fragment() {
             ).show()
 
             try {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.whatsapp")))
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("market://details?id=com.whatsapp")
+                    )
+                )
             } catch (e: ActivityNotFoundException) {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.whatsapp")))
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("https://play.google.com/store/apps/details?id=com.whatsapp")
+                    )
+                )
             }
         }
     }
@@ -193,9 +215,19 @@ class TourDetailsFragment : Fragment() {
             ).show()
 
             try {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=org.telegram.messenger")))
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("market://details?id=org.telegram.messenger")
+                    )
+                )
             } catch (e: ActivityNotFoundException) {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=org.telegram.messenger")))
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("https://play.google.com/store/apps/details?id=org.telegram.messenger")
+                    )
+                )
             }
         }
     }

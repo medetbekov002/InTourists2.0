@@ -8,6 +8,7 @@ import android.text.Spanned
 import android.text.TextPaint
 import android.text.TextWatcher
 import android.text.method.LinkMovementMethod
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import android.text.style.ClickableSpan
 import android.text.style.StyleSpan
 import android.view.LayoutInflater
@@ -15,19 +16,25 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentAuthBinding
+import com.dev.intourist.ui.base.fragment.BaseFragment
 
-class AuthFragment : Fragment() {
-    private lateinit var binding: FragmentAuthBinding
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentAuthBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+class AuthFragment : BaseFragment<FragmentAuthBinding, AuthViewModel>(R.layout.fragment_auth) {
+//    private lateinit var binding: FragmentAuthBinding
+    override val binding: FragmentAuthBinding by viewBinding(FragmentAuthBinding::bind)
+    override val viewModel: AuthViewModel by viewModel()
+
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        binding = FragmentAuthBinding.inflate(inflater, container, false)
+//        return binding.root
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

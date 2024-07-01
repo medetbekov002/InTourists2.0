@@ -4,24 +4,31 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentPromocodeBinding
 import com.dev.intourist.databinding.ToastLayoutBinding
+import com.dev.intourist.ui.base.fragment.BaseFragment
 
 
-class PromocodeFragment : Fragment() {
-    private lateinit var binding: FragmentPromocodeBinding
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        binding = FragmentPromocodeBinding.inflate(inflater, container, false)
-        return binding.root
-    }
+class PromocodeFragment :
+    BaseFragment<FragmentPromocodeBinding, PromocodeViewModel>(R.layout.fragment_promocode) {
+    override val binding: FragmentPromocodeBinding by viewBinding(FragmentPromocodeBinding::bind)
+    override val viewModel: PromocodeViewModel by viewModel()
+
+//    private lateinit var binding: FragmentPromocodeBinding
+//    override fun onCreateView(
+//        inflater: LayoutInflater, container: ViewGroup?,
+//        savedInstanceState: Bundle?
+//    ): View? {
+//        binding = FragmentPromocodeBinding.inflate(inflater, container, false)
+//        return binding.root
+//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -8,16 +8,20 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentHomeBinding
+import com.dev.intourist.ui.base.fragment.BaseFragment
 import com.dev.intourist.ui.screen.home.adapters.CategoriesAdapter
 import com.dev.intourist.ui.screen.home.adapters.PromocodeAdapter
 import com.dev.intourist.ui.screen.home.adapters.PromocodeDetailsModel
 import com.dev.intourist.ui.screen.home.adapters.TourCardAdapter
 import com.dev.intourist.ui.screen.home.adapters.TourCardModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home) {
 
-    private val binding: FragmentHomeBinding by viewBinding()
-    private val viewModel: HomeViewModel by viewModels()
+    override val binding: FragmentHomeBinding by viewBinding(FragmentHomeBinding::bind)
+    override val viewModel: HomeViewModel by viewModel()
+//    private val binding: FragmentHomeBinding by viewBinding()
+//    private val viewModel: HomeViewModel by viewModels()
 
     //Пока данные мы не получаем, так что вот вам придуманные данные:
     //image_view_pager потом надо удалить из ресурсов
