@@ -24,20 +24,21 @@ class SearchFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.svSearchTours.setIconifiedByDefault(false)
-        binding.svSearchTours.isIconified = false
-        binding.svSearchTours.requestFocus()
-        binding.svSearchTours.postDelayed({
-            val imm =
-                requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
-            imm.showSoftInput(
-                binding.svSearchTours.findViewById(androidx.appcompat.R.id.search_src_text),
-                InputMethodManager.SHOW_IMPLICIT
-            )
-        }, 200)
-        binding.btnCancel.setOnClickListener {
-            findNavController().navigateUp()
+        binding.apply {
+            svSearchTours.setIconifiedByDefault(false)
+            svSearchTours.isIconified = false
+            svSearchTours.requestFocus()
+            svSearchTours.postDelayed({
+                val imm =
+                    requireContext().getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                imm.showSoftInput(
+                    svSearchTours.findViewById(androidx.appcompat.R.id.search_src_text),
+                    InputMethodManager.SHOW_IMPLICIT
+                )
+            }, 200)
+            btnCancel.setOnClickListener {
+                findNavController().popBackStack()
+            }
         }
     }
-
 }

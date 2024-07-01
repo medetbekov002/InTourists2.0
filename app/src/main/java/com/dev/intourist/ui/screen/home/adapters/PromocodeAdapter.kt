@@ -7,8 +7,8 @@ import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.dev.intourist.databinding.ItemPromocodeBinding
 
 class PromocodeAdapter(
-    private val onClick: (promocode: PromocodeDitailsModel) -> Unit,
-    private val list: List<PromocodeDitailsModel>
+    private val onClick: (promocode: PromocodeDetailsModel) -> Unit,
+    private val list: List<PromocodeDetailsModel>
 ) : Adapter<PromocodeViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PromocodeViewHolder {
         return PromocodeViewHolder(
@@ -32,8 +32,12 @@ class PromocodeAdapter(
 
 class PromocodeViewHolder(private val binding: ItemPromocodeBinding) :
     RecyclerView.ViewHolder(binding.root) {
-    fun bind(data: PromocodeDitailsModel) {
-        binding.tvPromoTitle.text = data.title
-        binding.tvPromoDesc.text = data.description
+    fun bind(data: PromocodeDetailsModel) {
+        binding.apply {
+            tvPromoTitle.text = data.title
+            tvPromoDesc.text = data.description
+        }
+//        binding.tvPromoTitle.text = data.title
+//        binding.tvPromoDesc.text = data.description
     }
 }

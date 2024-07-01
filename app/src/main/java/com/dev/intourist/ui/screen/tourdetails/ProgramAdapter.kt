@@ -1,11 +1,9 @@
-package com.dev.intourist.ui.screen.tourditail
+package com.dev.intourist.ui.screen.tourdetails
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
-import com.dev.intourist.databinding.ItemCategoriesBinding
-import com.dev.intourist.databinding.ItemPromocodeBinding
 import com.dev.intourist.databinding.ItemTourProgramBinding
 
 class ProgramAdapter(private val listTime: List<String>, private val listDesc: List<String>) :

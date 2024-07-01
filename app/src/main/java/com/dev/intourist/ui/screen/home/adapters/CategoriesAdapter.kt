@@ -40,31 +40,52 @@ class CategoriesAdapter(
             item: String,
             onClick: (category: String) -> Unit,
         ) {
-            binding.btnCategory.setOnClickListener {
-                onClick(item)
-                selectedPosition = adapterPosition
-                notifyDataSetChanged()
+
+            binding.apply {
+                btnCategory.setOnClickListener {
+                    onClick(item)
+                    selectedPosition = adapterPosition
+                    notifyDataSetChanged()
+                }
             }
-            if (selectedPosition==adapterPosition) {
-                binding.btnCategory.setTextColor(
-                    ContextCompat.getColor(
-                        itemView.context,
-                        R.color.white
+//            binding.btnCategory.setOnClickListener {
+//                onClick(item)
+//                selectedPosition = adapterPosition
+//                notifyDataSetChanged()
+//            }
+            if (selectedPosition == adapterPosition) {
+                binding.apply {
+                    btnCategory.setTextColor(
+                        ContextCompat.getColor(
+                            itemView.context,
+                            R.color.white
+                        )
                     )
-                )
-                binding.btnCategory.backgroundTintList =
-                    ContextCompat.getColorStateList(context, R.color.light_green_for_button_filter)
+                    btnCategory.backgroundTintList =
+                        ContextCompat.getColorStateList(
+                            context,
+                            R.color.light_green_for_button_filter
+                        )
+                }
+//                binding.btnCategory.backgroundTintList =
+//                    ContextCompat.getColorStateList(context, R.color.light_green_for_button_filter)
             } else {
-                binding.btnCategory.setTextColor(
-                    ContextCompat.getColor(
-                        itemView.context,
-                        R.color.black
+                binding.apply {
+                    btnCategory.setTextColor(
+                        ContextCompat.getColor(
+                            itemView.context,
+                            R.color.black
+                        )
                     )
-                )
-                binding.btnCategory.backgroundTintList =
-                    ContextCompat.getColorStateList(context, R.color.white)
+                    btnCategory.backgroundTintList =
+                        ContextCompat.getColorStateList(context, R.color.white)
+                    btnCategory.text = item
+                }
             }
-            binding.btnCategory.text = item
+//            binding.btnCategory.backgroundTintList =
+//                ContextCompat.getColorStateList(context, R.color.white)
+//        }
+//        binding.btnCategory.text = item
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.dev.intourist.ui.screen.mytourditails
+package com.dev.intourist.ui.screen.mytourdetails
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
@@ -13,12 +13,11 @@ import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentMyTourDetailsBinding
 import com.dev.intourist.ui.screen.buy.BottomSheetFragment
 import com.dev.intourist.ui.screen.home.adapters.TourCardModel
-import com.dev.intourist.ui.screen.tourditail.DitailAdapter
-import com.dev.intourist.ui.screen.tourditail.ProgramAdapter
+import com.dev.intourist.ui.screen.tourdetails.DetailAdapter
+import com.dev.intourist.ui.screen.tourdetails.ProgramAdapter
 
 
 class MyTourDetailsFragment : Fragment() {
-
 
     private val listRallyPoint = listOf(
         "1-ая точка сбора: Токтогула / Шопокова, Народный",
@@ -115,29 +114,49 @@ class MyTourDetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.btnContactWhatsApp.setOnClickListener {
-            val phoneNumber = "996704848277" // Номер телефона в международном формате без плюса
-            openWhatsApp(phoneNumber)
+        binding.apply {
+            btnContactWhatsApp.setOnClickListener {
+                val phoneNumber = "996704848277" // Номер телефона в международном формате без плюса
+                openWhatsApp(phoneNumber)
+            }
+
+            btnContactTelegram.setOnClickListener {
+                val username = "medetbekov002" // Telegram username без @
+                openTelegram(username)
+            }
+
+            val adapterRallyPoint = DetailAdapter(listRallyPoint, R.drawable.ic_location)
+            rvRallyPoint.adapter = adapterRallyPoint
+
+            val adapterProgram = ProgramAdapter(listTime, listDesc)
+            rvTourProgram.adapter = adapterProgram
+
+            val adapterIncluded = DetailAdapter(listIncludeds, R.drawable.ic_check)
+            rvIncludedInPrice.adapter = adapterIncluded
+
+            val adapterEquipment = DetailAdapter(listEquipment, R.drawable.ic_check)
+            rvEquipment.adapter = adapterEquipment
+
+            btnOrderIndividualTour.setOnClickListener {
+                BottomSheetFragment().show(childFragmentManager, "buy tour tag")
+            }
         }
-        binding.btnContactTelegram.setOnClickListener {
-            val username = "medetbekov002" // Telegram username без @
-            openTelegram(username)
-        }
-        val adapterRallyPoint = DitailAdapter(listRallyPoint, R.drawable.ic_location)
-        binding.rvRallyPoint.adapter = adapterRallyPoint
 
-        val adapterProgram = ProgramAdapter(listTime, listDesc)
-        binding.rvTourProgram.adapter = adapterProgram
+//        val adapterRallyPoint = DetailAdapter(listRallyPoint, R.drawable.ic_location)
+//        binding.rvRallyPoint.adapter = adapterRallyPoint
 
-        val adapterIncluded = DitailAdapter(listIncludeds, R.drawable.ic_check)
-        binding.rvIncludedInPrice.adapter = adapterIncluded
+//        val adapterProgram = ProgramAdapter(listTime, listDesc)
+//        binding.rvTourProgram.adapter = adapterProgram
 
-        val adapterEquipment = DitailAdapter(listEquipment, R.drawable.ic_check)
-        binding.rvEquipment.adapter = adapterEquipment
+//        val adapterIncluded = DetailAdapter(listIncludeds, R.drawable.ic_check)
+//        binding.rvIncludedInPrice.adapter = adapterIncluded
 
-        binding.btnOrderIndividualTour.setOnClickListener {
-            BottomSheetFragment().show(childFragmentManager, "buy tour tag")
-        }
+//        val adapterEquipment = DetailAdapter(listEquipment, R.drawable.ic_check)
+//        binding.rvEquipment.adapter = adapterEquipment
+
+//        binding.btnOrderIndividualTour.setOnClickListener {
+//            BottomSheetFragment().show(childFragmentManager, "buy tour tag")
+//        }
 
     }
 

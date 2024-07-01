@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.dev.intourist.databinding.ItemTourImageForVpBinding
 
-class VPAdapter(private  val list: List<Int>) : RecyclerView.Adapter<VPAdapter.VPViewHolder>() {
+class VPAdapter(private val list: List<Int>) : RecyclerView.Adapter<VPAdapter.VPViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VPViewHolder {
         return VPViewHolder(
@@ -26,7 +26,9 @@ class VPAdapter(private  val list: List<Int>) : RecyclerView.Adapter<VPAdapter.V
 
     class VPViewHolder(private val binding: ItemTourImageForVpBinding) : ViewHolder(binding.root) {
         fun bind(image: Int) {
-            binding.imgTour.setImageResource(image)
+            binding.apply {
+                imgTour.setImageResource(image)
+            }
         }
     }
 }

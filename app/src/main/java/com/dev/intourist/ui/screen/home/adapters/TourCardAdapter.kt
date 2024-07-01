@@ -49,22 +49,39 @@ class TourCardViewHolder(itemView: View) :
     RecyclerView.ViewHolder(itemView) {
     private val binding = ItemTourCardBinding.bind(itemView)
     fun bind(tourCard: TourCardModel, onClick: (tour: TourCardModel, position: Int) -> Unit) {
-        binding.imgLike.setOnClickListener{
-            onClick(tourCard,adapterPosition)
-            if (tourCard.isLiked) {
-                binding.imgLike.setImageResource(R.drawable.ic_heart_liked)
-            } else {
-                binding.imgLike.setImageResource(R.drawable.ic_heart_like)
+        binding.apply {
+            imgLike.setOnClickListener{
+                onClick(tourCard,adapterPosition)
+                if (tourCard.isLiked) {
+                    binding.imgLike.setImageResource(R.drawable.ic_heart_liked)
+                } else {
+                    binding.imgLike.setImageResource(R.drawable.ic_heart_like)
+                }
             }
+            tvTourDuration.text = tourCard.duration
+            tvTourDates.setSingleLine()
+            tvTourDates.isSelected = true
+            tvTourDates.text = tourCard.dates
+            tvTourPrice.text = tourCard.price
+            vpTourCardImg.adapter = VPAdapter(tourCard.list)
+            indicator.setViewPager(binding.vpTourCardImg)
         }
+//        binding.imgLike.setOnClickListener{
+//            onClick(tourCard,adapterPosition)
+//            if (tourCard.isLiked) {
+//                binding.imgLike.setImageResource(R.drawable.ic_heart_liked)
+//            } else {
+//                binding.imgLike.setImageResource(R.drawable.ic_heart_like)
+//            }
+//        }
 
-        binding.tvTourDuration.text = tourCard.duration
-        binding.tvTourDates.setSingleLine()
-        binding.tvTourDates.isSelected = true
-        binding.tvTourDates.text = tourCard.dates
-        binding.tvTourPrice.text = tourCard.price
-        binding.vpTourCardImg.adapter = VPAdapter(tourCard.list)
-        binding.indicator.setViewPager(binding.vpTourCardImg)
+//        binding.tvTourDuration.text = tourCard.duration
+//        binding.tvTourDates.setSingleLine()
+//        binding.tvTourDates.isSelected = true
+//        binding.tvTourDates.text = tourCard.dates
+//        binding.tvTourPrice.text = tourCard.price
+//        binding.vpTourCardImg.adapter = VPAdapter(tourCard.list)
+//        binding.indicator.setViewPager(binding.vpTourCardImg)
     }
 
 }

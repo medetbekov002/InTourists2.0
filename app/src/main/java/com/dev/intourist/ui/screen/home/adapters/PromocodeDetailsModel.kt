@@ -1,6 +1,6 @@
 package com.dev.intourist.ui.screen.home.adapters
 
-data class PromocodeDitailsModel(
+data class PromocodeDetailsModel(
     val title: String,
     val description: String,
 )

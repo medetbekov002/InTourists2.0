@@ -1,14 +1,14 @@
-package com.dev.intourist.ui.screen.tourditail
+package com.dev.intourist.ui.screen.tourdetails
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentTourDetailsBinding
@@ -16,7 +16,6 @@ import com.dev.intourist.ui.screen.buy.BottomSheetFragment
 import com.dev.intourist.ui.screen.home.adapters.TourCardAdapter
 import com.dev.intourist.ui.screen.home.adapters.TourCardModel
 import com.dev.intourist.ui.screen.home.adapters.VPAdapter
-
 
 class TourDetailsFragment : Fragment() {
 
@@ -62,7 +61,7 @@ class TourDetailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
         TourCardModel(
             list1,
@@ -70,7 +69,7 @@ class TourDetailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
         TourCardModel(
             list1,
@@ -78,7 +77,7 @@ class TourDetailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
         TourCardModel(
             list1,
@@ -86,7 +85,7 @@ class TourDetailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
         TourCardModel(
             list1,
@@ -94,7 +93,7 @@ class TourDetailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
         TourCardModel(
             list1,
@@ -102,7 +101,7 @@ class TourDetailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
     )
 
@@ -117,38 +116,30 @@ class TourDetailsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.btnBuy.setOnClickListener {
-            findNavController().navigate(R.id.byCardFragment)
+        binding.apply {
+            btnBuy.setOnClickListener {
+                findNavController().navigate(R.id.byCardFragment)
+            }
+            btnOrderIndividualTour.setOnClickListener {
+                BottomSheetFragment().show(childFragmentManager, "buy tour tag")
+            }
+            btnContactWhatsApp.setOnClickListener {
+                val phoneNumber = "996704848277" // Номер телефона в международном формате без плюса
+                openWhatsApp(phoneNumber)
+            }
+            btnContactTelegram.setOnClickListener {
+                val username = "medetbekov002" // Telegram username без @
+                openTelegram(username)
+            }
+
+            rvToursRecomindation.adapter = TourCardAdapter(requireContext(), true, this@TourDetailsFragment::onClickTour, this@TourDetailsFragment::onLikeClick, listTour)
+            rvRallyPoint.adapter = DetailAdapter(listRallyPoint, R.drawable.ic_location)
+            rvTourProgram.adapter = ProgramAdapter(listTime, listDesc)
+            rvIncludedInPrice.adapter = DetailAdapter(listIncludeds, R.drawable.ic_check)
+            rvEquipment.adapter = DetailAdapter(listEquipment, R.drawable.ic_check)
+            viewPager.adapter = VPAdapter(list1)
+            indicator.setViewPager(viewPager)
         }
-        binding.btnOrderIndividualTour.setOnClickListener {
-            BottomSheetFragment().show(childFragmentManager, "buy tour tag")
-        }
-
-        binding.btnContactWhatsApp.setOnClickListener {
-            val phoneNumber = "996704848277" // Номер телефона в международном формате без плюса
-            openWhatsApp(phoneNumber)
-        }
-        binding.btnContactTelegram.setOnClickListener {
-            val username = "medetbekov002" // Telegram username без @
-            openTelegram(username)
-        }
-        val adapter = TourCardAdapter(requireContext(), true, this::onClickTour, this::onLikeClick,listTour)
-        binding.rvToursRecomindation.adapter = adapter
-
-        val adapterRallyPoint = DitailAdapter(listRallyPoint, R.drawable.ic_location)
-        binding.rvRallyPoint.adapter = adapterRallyPoint
-
-        val adapterProgram = ProgramAdapter(listTime, listDesc)
-        binding.rvTourProgram.adapter = adapterProgram
-
-        val adapterIncluded = DitailAdapter(listIncludeds, R.drawable.ic_check)
-        binding.rvIncludedInPrice.adapter = adapterIncluded
-
-        val adapterEquipment = DitailAdapter(listEquipment, R.drawable.ic_check)
-        binding.rvEquipment.adapter = adapterEquipment
-
-        binding.viewPager.adapter = VPAdapter(list1)
-        binding.indicator.setViewPager(binding.viewPager)
     }
 
     private fun onLikeClick(tourCardModel: TourCardModel, position: Int) {

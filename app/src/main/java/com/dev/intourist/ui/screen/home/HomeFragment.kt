@@ -8,11 +8,9 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentHomeBinding
-import com.dev.intourist.ui.screen.buy.BottomSheetFragment
-import com.dev.intourist.ui.screen.filters.FiltersFragment
 import com.dev.intourist.ui.screen.home.adapters.CategoriesAdapter
 import com.dev.intourist.ui.screen.home.adapters.PromocodeAdapter
-import com.dev.intourist.ui.screen.home.adapters.PromocodeDitailsModel
+import com.dev.intourist.ui.screen.home.adapters.PromocodeDetailsModel
 import com.dev.intourist.ui.screen.home.adapters.TourCardAdapter
 import com.dev.intourist.ui.screen.home.adapters.TourCardModel
 
@@ -90,19 +88,19 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         ),
     )
     private val listPromo = listOf(
-        PromocodeDitailsModel(
+        PromocodeDetailsModel(
             "Получите 10% скидку",
             "На любой тур как новый пользователь нашего приложения."
         ),
-        PromocodeDitailsModel(
+        PromocodeDetailsModel(
             "Получите 10% скидку",
             "На любой тур как новый пользователь нашего приложения."
         ),
-        PromocodeDitailsModel(
+        PromocodeDetailsModel(
             "Получите 10% скидку",
             "На любой тур как новый пользователь нашего приложения."
         ),
-        PromocodeDitailsModel(
+        PromocodeDetailsModel(
             "Получите 10% скидку",
             "На любой тур как новый пользователь нашего приложения."
         ),
@@ -133,14 +131,23 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         }
 
         val adapter = TourCardAdapter(requireContext(), false, this::onClickTour, this::onLikeClick, listTour)
-        binding.rvTours.adapter = adapter
+        binding.apply {
+            rvTours.adapter = adapter
+        }
+//        binding.rvTours.adapter = adapter
 
         val adapterPromo = PromocodeAdapter(this::onClickPromo, listPromo)
-        binding.rvPromocode.adapter = adapterPromo
+        binding.apply {
+            rvPromocode.adapter = adapterPromo
+        }
+//        binding.rvPromocode.adapter = adapterPromo
 
         val adapterCategories =
             CategoriesAdapter(this::onClickCategory, listCategories, requireContext())
-        binding.rvCategories.adapter = adapterCategories
+        binding.apply {
+            rvCategories.adapter = adapterCategories
+        }
+//        binding.rvCategories.adapter = adapterCategories
 
     }
 
@@ -156,7 +163,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         findNavController().navigate(R.id.fragment_tour_ditails)
     }
 
-    private fun onClickPromo(promocode: PromocodeDitailsModel) {
+    private fun onClickPromo(promocode: PromocodeDetailsModel) {
         findNavController().navigate(R.id.fragment_promocode)
     }
 }

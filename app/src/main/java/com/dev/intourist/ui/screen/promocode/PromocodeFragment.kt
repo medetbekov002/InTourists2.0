@@ -25,12 +25,13 @@ class PromocodeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.containerPromocode.setOnClickListener {
-            showToast("Промокод скопирован")
-            // Toast.makeText(requireContext(), "Промокод скопирован", Toast.LENGTH_SHORT).show()
-        }
-        binding.imgBack.setOnClickListener {
-            findNavController().navigateUp()
+        binding.apply {
+            containerPromocode.setOnClickListener {
+                showToast("Промокод скопирован")
+            }
+            imgBack.setOnClickListener {
+                findNavController().popBackStack()
+            }
         }
     }
 
