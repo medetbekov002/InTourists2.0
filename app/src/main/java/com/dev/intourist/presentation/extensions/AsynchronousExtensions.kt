@@ -1,4 +1,4 @@
-package com.dev.intourist.ui.extensions
+package com.dev.intourist.presentation.extensions
 
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner

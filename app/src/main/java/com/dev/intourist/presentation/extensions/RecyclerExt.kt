@@ -1,4 +1,4 @@
-package com.dev.intourist.ui.extensions
+package com.dev.intourist.presentation.extensions
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView

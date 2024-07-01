@@ -7,7 +7,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.data.local.preferences.PreferencesClient
 import com.dev.intourist.databinding.FragmentPersonalInfoBinding
-import com.dev.intourist.ui.base.fragment.BaseFragment
+import com.dev.intourist.presentation.base.fragment.BaseFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class PersonalInfoFragment :

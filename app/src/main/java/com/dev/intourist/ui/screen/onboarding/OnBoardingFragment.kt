@@ -8,7 +8,7 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.data.local.Pref
 import com.dev.intourist.databinding.FragmentOnBoardingBinding
-import com.dev.intourist.ui.base.fragment.BaseFragment
+import com.dev.intourist.presentation.base.fragment.BaseFragment
 import com.google.android.material.button.MaterialButton
 import me.relex.circleindicator.CircleIndicator3
 import org.koin.androidx.viewmodel.ext.android.viewModel

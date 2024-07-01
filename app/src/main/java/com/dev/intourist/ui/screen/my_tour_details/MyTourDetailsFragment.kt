@@ -10,7 +10,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentMyTourDetailsBinding
-import com.dev.intourist.ui.base.fragment.BaseFragment
+import com.dev.intourist.presentation.base.fragment.BaseFragment
 import com.dev.intourist.ui.screen.buy.BottomSheetFragment
 import com.dev.intourist.ui.screen.home.adapters.TourCardModel
 import com.dev.intourist.ui.screen.tour_details.DetailAdapter

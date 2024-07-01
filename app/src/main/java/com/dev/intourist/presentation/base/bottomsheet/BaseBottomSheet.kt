@@ -1,4 +1,4 @@
-package com.dev.intourist.ui.base.bottomsheet
+package com.dev.intourist.presentation.base.bottomsheet
 
 import android.app.Dialog
 import android.content.DialogInterface

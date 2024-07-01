@@ -1,4 +1,4 @@
-package com.dev.intourist.ui.base.fragment
+package com.dev.intourist.presentation.base.fragment
 
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +12,7 @@ import androidx.viewbinding.ViewBinding
 import com.dev.intourist.common.Either
 import com.dev.intourist.common.UIState
 import com.dev.intourist.data.local.Pref
-import com.dev.intourist.ui.base.viewmodel.BaseViewModel
+import com.dev.intourist.presentation.base.viewmodel.BaseViewModel
 //import com.example.stylescope.common.Either
 //import com.example.stylescope.common.UIState
 //import com.example.stylescope.data.local.Pref

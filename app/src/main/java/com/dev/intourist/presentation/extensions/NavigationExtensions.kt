@@ -1,4 +1,4 @@
-package com.dev.intourist.ui.extensions
+package com.dev.intourist.presentation.extensions
 
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.addCallback

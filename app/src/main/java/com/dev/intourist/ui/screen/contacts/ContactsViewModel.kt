@@ -1,1 +1,1 @@
-package com.dev.intourist.ui.screen.contactsimport com.dev.intourist.ui.base.viewmodel.BaseViewModelclass ContactsViewModel : BaseViewModel()
+package com.dev.intourist.ui.screen.contactsimport com.dev.intourist.presentation.base.viewmodel.BaseViewModelclass ContactsViewModel : BaseViewModel()

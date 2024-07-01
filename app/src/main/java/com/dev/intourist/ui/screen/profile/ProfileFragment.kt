@@ -6,7 +6,7 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentProfileBinding
-import com.dev.intourist.ui.base.fragment.BaseFragment
+import com.dev.intourist.presentation.base.fragment.BaseFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ProfileFragment :

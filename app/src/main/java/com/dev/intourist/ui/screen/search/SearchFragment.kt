@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentSearchBinding
-import com.dev.intourist.ui.base.fragment.BaseFragment
+import com.dev.intourist.presentation.base.fragment.BaseFragment
 
 
 class SearchFragment : BaseFragment<FragmentSearchBinding, SearchViewModel>(R.layout.fragment_search) {

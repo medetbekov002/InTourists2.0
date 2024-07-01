@@ -1,10 +1,10 @@
-package com.dev.intourist.ui.extensions
+package com.dev.intourist.presentation.extensions
 
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
-import com.dev.intourist.ui.validation.ValidationResult
-import com.dev.intourist.ui.validation.Validator
+import com.dev.intourist.presentation.model.validation.ValidationResult
+import com.dev.intourist.presentation.model.validation.Validator
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 

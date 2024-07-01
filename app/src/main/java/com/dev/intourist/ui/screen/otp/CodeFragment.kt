@@ -16,7 +16,7 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentCodeBinding
-import com.dev.intourist.ui.base.fragment.BaseFragment
+import com.dev.intourist.presentation.base.fragment.BaseFragment
 
 class CodeFragment : BaseFragment<FragmentCodeBinding, CodeViewModel>(R.layout.fragment_code) {
 //    private lateinit var binding: FragmentCodeBinding

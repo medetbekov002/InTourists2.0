@@ -1,4 +1,4 @@
-package com.dev.intourist.ui.validation
+package com.dev.intourist.presentation.model.validation
 
 class ValidationResult(
     val isSuccessful: Boolean,

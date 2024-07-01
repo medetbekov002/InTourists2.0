@@ -1,4 +1,4 @@
-package com.dev.intourist.ui.base.activity
+package com.dev.intourist.presentation.base.activity
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge

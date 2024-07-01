@@ -1,4 +1,4 @@
-package com.dev.intourist.ui.base.viewmodel
+package com.dev.intourist.presentation.base.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -7,8 +7,8 @@ import androidx.paging.cachedIn
 import androidx.paging.map
 import com.dev.intourist.common.Either
 import com.dev.intourist.domain.core.NetworkError
-import com.dev.intourist.ui.extensions.UIState
-import com.dev.intourist.ui.extensions.reset
+import com.dev.intourist.presentation.extensions.UIState
+import com.dev.intourist.presentation.extensions.reset
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow

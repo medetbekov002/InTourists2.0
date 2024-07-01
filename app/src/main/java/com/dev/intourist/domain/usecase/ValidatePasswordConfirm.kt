@@ -1,7 +1,7 @@
 package com.dev.intourist.domain.usecase
 
 import android.content.Context
-import com.dev.intourist.ui.validation.ValidationResult
+import com.dev.intourist.presentation.model.validation.ValidationResult
 import com.dev.intourist.R
 import javax.inject.Inject
 

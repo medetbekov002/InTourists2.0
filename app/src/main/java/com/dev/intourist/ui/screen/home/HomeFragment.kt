@@ -8,7 +8,7 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentHomeBinding
-import com.dev.intourist.ui.base.fragment.BaseFragment
+import com.dev.intourist.presentation.base.fragment.BaseFragment
 import com.dev.intourist.ui.screen.home.adapters.CategoriesAdapter
 import com.dev.intourist.ui.screen.home.adapters.PromocodeAdapter
 import com.dev.intourist.ui.screen.home.adapters.PromocodeDetailsModel
