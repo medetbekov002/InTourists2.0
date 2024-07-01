@@ -61,7 +61,7 @@
 
     <fragment
         android:id="@+id/fragment_tour_ditails"
-        android:name="com.dev.intourist.ui.screen.tourdetails.TourDetailsFragment"
+        android:name="com.dev.intourist.ui.screen.tour_details.TourDetailsFragment"
         android:label="fragment_tour_ditails"
         tools:layout="@layout/fragment_tour_details" />
 
@@ -79,7 +79,7 @@
 
     <fragment
         android:id="@+id/myTourDetailsFragment"
-        android:name="com.dev.intourist.ui.screen.mytourdetails.MyTourDetailsFragment"
+        android:name="com.dev.intourist.ui.screen.my_tour_details.MyTourDetailsFragment"
         android:label="MyTourDetailsFragment"
         tools:layout="@layout/fragment_my_tour_details" />
 
@@ -103,7 +103,7 @@
 
     <fragment
         android:id="@+id/fragment_personal_info"
-        android:name="com.dev.intourist.ui.screen.personalinfo.PersonalInfoFragment"
+        android:name="com.dev.intourist.ui.screen.personal_info.PersonalInfoFragment"
         android:label="fragment_personal_info"
         tools:layout="@layout/fragment_personal_info" />
 
@@ -121,7 +121,7 @@
 
     <fragment
         android:id="@+id/fragment_privacy_policy"
-        android:name="com.dev.intourist.ui.screen.privacypolicy.PrivacyPolicyFragment"
+        android:name="com.dev.intourist.ui.screen.privacy_policy.PrivacyPolicyFragment"
         android:label="fragment_privacy_policy"
         tools:layout="@layout/fragment_privacy_policy" />
 
@@ -145,13 +145,13 @@
 
     <fragment
         android:id="@+id/withoutChildrenFragment"
-        android:name="com.dev.intourist.ui.screen.payment.withoutChildren.WithoutChildrenFragment"
+        android:name="com.dev.intourist.ui.screen.payment.without_children.WithoutChildrenFragment"
         android:label="fragment_without_children"
         tools:layout="@layout/fragment_without_children" />
 
     <fragment
         android:id="@+id/withChildrenFragment"
-        android:name="com.dev.intourist.ui.screen.payment.withChildren.WithChildrenFragment"
+        android:name="com.dev.intourist.ui.screen.payment.with_children.WithChildrenFragment"
         android:label="fragment_with_cildren"
         tools:layout="@layout/fragment_with_children" />
 

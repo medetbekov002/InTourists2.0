@@ -1,13 +1,10 @@
-package com.dev.intourist.ui.screen.mytourdetails
+package com.dev.intourist.ui.screen.my_tour_details
 
 import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -16,8 +13,8 @@ import com.dev.intourist.databinding.FragmentMyTourDetailsBinding
 import com.dev.intourist.ui.base.fragment.BaseFragment
 import com.dev.intourist.ui.screen.buy.BottomSheetFragment
 import com.dev.intourist.ui.screen.home.adapters.TourCardModel
-import com.dev.intourist.ui.screen.tourdetails.DetailAdapter
-import com.dev.intourist.ui.screen.tourdetails.ProgramAdapter
+import com.dev.intourist.ui.screen.tour_details.DetailAdapter
+import com.dev.intourist.ui.screen.tour_details.ProgramAdapter
 
 
 class MyTourDetailsFragment :

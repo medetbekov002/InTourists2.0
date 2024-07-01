@@ -1,4 +1,4 @@
-package com.dev.intourist.ui.screen.personalinfo
+package com.dev.intourist.ui.screen.personal_info
 
 import android.os.Bundle
 import android.view.View
