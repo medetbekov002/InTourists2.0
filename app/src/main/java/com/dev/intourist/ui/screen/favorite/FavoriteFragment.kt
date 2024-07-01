@@ -1,18 +1,14 @@
 package com.dev.intourist.ui.screen.favorite
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentFavoriteBinding
 import com.dev.intourist.presentation.base.fragment.BaseFragment
-import com.dev.intourist.ui.screen.home.adapters.TourCardAdapter
-import com.dev.intourist.ui.screen.home.adapters.TourCardModel
+import com.dev.intourist.ui.screen.home.adapters.tour_card.TourCardAdapter
+import com.dev.intourist.ui.model.tour_card.TourCardModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FavoriteFragment : BaseFragment<FragmentFavoriteBinding, FavoriteViewModel>(R.layout.fragment_favorite) {

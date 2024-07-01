@@ -1,4 +1,4 @@
-package com.dev.intourist.ui.screen.tour_details
+package com.dev.intourist.ui.screen.tour_details.adapter.detail
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

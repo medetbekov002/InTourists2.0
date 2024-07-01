@@ -31,7 +31,7 @@
 
     <activity
         android:id="@+id/splashActivity"
-        android:name="com.dev.intourist.ui.screen.splash.SplashActivity"
+        android:name="com.dev.intourist.ui.activities.splash.SplashActivity"
         android:label="activity_splash"
         tools:layout="@layout/activity_splash" />
 
@@ -97,7 +97,7 @@
 
     <fragment
         android:id="@+id/myToursFragment"
-        android:name="com.dev.intourist.ui.screen.mytours.MyToursFragment"
+        android:name="com.dev.intourist.ui.screen.my_tours.MyToursFragment"
         android:label="fragment_my_tours"
         tools:layout="@layout/fragment_my_tours" />
 

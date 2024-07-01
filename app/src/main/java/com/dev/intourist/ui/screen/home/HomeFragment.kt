@@ -2,18 +2,16 @@ package com.dev.intourist.ui.screen.home
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentHomeBinding
 import com.dev.intourist.presentation.base.fragment.BaseFragment
-import com.dev.intourist.ui.screen.home.adapters.CategoriesAdapter
-import com.dev.intourist.ui.screen.home.adapters.PromocodeAdapter
-import com.dev.intourist.ui.screen.home.adapters.PromocodeDetailsModel
-import com.dev.intourist.ui.screen.home.adapters.TourCardAdapter
-import com.dev.intourist.ui.screen.home.adapters.TourCardModel
+import com.dev.intourist.ui.screen.home.adapters.categories.CategoriesAdapter
+import com.dev.intourist.ui.screen.home.adapters.promocode.PromocodeAdapter
+import com.dev.intourist.ui.model.promocode_details.PromocodeDetailsModel
+import com.dev.intourist.ui.screen.home.adapters.tour_card.TourCardAdapter
+import com.dev.intourist.ui.model.tour_card.TourCardModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home) {

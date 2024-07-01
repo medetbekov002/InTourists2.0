@@ -12,9 +12,9 @@ import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentMyTourDetailsBinding
 import com.dev.intourist.presentation.base.fragment.BaseFragment
 import com.dev.intourist.ui.screen.buy.BottomSheetFragment
-import com.dev.intourist.ui.screen.home.adapters.TourCardModel
-import com.dev.intourist.ui.screen.tour_details.DetailAdapter
-import com.dev.intourist.ui.screen.tour_details.ProgramAdapter
+import com.dev.intourist.ui.model.tour_card.TourCardModel
+import com.dev.intourist.ui.screen.tour_details.adapter.detail.DetailAdapter
+import com.dev.intourist.ui.screen.tour_details.adapter.program.ProgramAdapter
 
 
 class MyTourDetailsFragment :

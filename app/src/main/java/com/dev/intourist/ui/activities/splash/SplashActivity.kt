@@ -1,4 +1,4 @@
-package com.dev.intourist.ui.screen.splash
+package com.dev.intourist.ui.activities.splash
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.dev.intourist.R
-import com.dev.intourist.ui.MainActivity
+import com.dev.intourist.ui.activities.MainActivity
 
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {

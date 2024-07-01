@@ -1,10 +1,11 @@
-package com.dev.intourist.ui.screen.home.adapters
+package com.dev.intourist.ui.screen.home.adapters.promocode
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import com.dev.intourist.databinding.ItemPromocodeBinding
+import com.dev.intourist.ui.model.promocode_details.PromocodeDetailsModel
 
 class PromocodeAdapter(
     private val onClick: (promocode: PromocodeDetailsModel) -> Unit,

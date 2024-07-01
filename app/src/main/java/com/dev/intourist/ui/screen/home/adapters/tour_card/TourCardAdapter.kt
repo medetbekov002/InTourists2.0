@@ -1,4 +1,4 @@
-package com.dev.intourist.ui.screen.home.adapters
+package com.dev.intourist.ui.screen.home.adapters.tour_card
 
 import android.content.Context
 import android.content.res.Resources
@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.dev.intourist.R
 import com.dev.intourist.databinding.ItemTourCardBinding
+import com.dev.intourist.ui.model.tour_card.TourCardModel
+import com.dev.intourist.ui.screen.home.adapters.vp.VPAdapter
 
 class TourCardAdapter(
     private val context: Context,
@@ -16,7 +18,7 @@ class TourCardAdapter(
     private val onLikeClick: (tour: TourCardModel, position: Int) -> Unit,
     private val list: List<TourCardModel>,
 
-) :
+    ) :
     RecyclerView.Adapter<TourCardViewHolder>() {
 
 

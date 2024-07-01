@@ -1,4 +1,4 @@
-package com.dev.intourist.ui.screen.home.adapters
+package com.dev.intourist.ui.model.tour_card
 
 data class TourCardModel(
     val list: List<Int>,

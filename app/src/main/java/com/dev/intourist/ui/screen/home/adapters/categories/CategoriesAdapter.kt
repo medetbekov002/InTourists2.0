@@ -1,4 +1,4 @@
-package com.dev.intourist.ui.screen.home.adapters
+package com.dev.intourist.ui.screen.home.adapters.categories
 
 import android.content.Context
 import android.view.LayoutInflater

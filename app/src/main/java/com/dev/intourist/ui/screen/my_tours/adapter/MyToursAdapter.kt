@@ -1,12 +1,10 @@
-package com.dev.intourist.ui.screen.mytours.adapter
+package com.dev.intourist.ui.screen.my_tours.adapter
 
-import android.app.AlertDialog
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.recyclerview.widget.RecyclerView
 import com.dev.intourist.databinding.ItemMyTourBinding
+import com.dev.intourist.ui.model.my_tour.MyTourModel
 
 class MyToursAdapter(
     private val list: List<MyTourModel>,

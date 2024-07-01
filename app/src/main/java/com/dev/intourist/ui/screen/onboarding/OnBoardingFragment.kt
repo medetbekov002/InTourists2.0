@@ -9,8 +9,7 @@ import com.dev.intourist.R
 import com.dev.intourist.data.local.Pref
 import com.dev.intourist.databinding.FragmentOnBoardingBinding
 import com.dev.intourist.presentation.base.fragment.BaseFragment
-import com.google.android.material.button.MaterialButton
-import me.relex.circleindicator.CircleIndicator3
+import com.dev.intourist.ui.screen.onboarding.adapter.OnBoardingAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class OnBoardingFragment :

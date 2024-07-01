@@ -1,4 +1,4 @@
-package com.dev.intourist.ui.screen.mytours.adapter
+package com.dev.intourist.ui.model.my_tour
 
 data class MyTourModel(
     val img: Int,

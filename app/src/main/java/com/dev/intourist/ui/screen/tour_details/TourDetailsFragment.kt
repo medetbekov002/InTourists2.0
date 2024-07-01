@@ -13,9 +13,11 @@ import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentTourDetailsBinding
 import com.dev.intourist.presentation.base.fragment.BaseFragment
 import com.dev.intourist.ui.screen.buy.BottomSheetFragment
-import com.dev.intourist.ui.screen.home.adapters.TourCardAdapter
-import com.dev.intourist.ui.screen.home.adapters.TourCardModel
-import com.dev.intourist.ui.screen.home.adapters.VPAdapter
+import com.dev.intourist.ui.screen.home.adapters.tour_card.TourCardAdapter
+import com.dev.intourist.ui.model.tour_card.TourCardModel
+import com.dev.intourist.ui.screen.home.adapters.vp.VPAdapter
+import com.dev.intourist.ui.screen.tour_details.adapter.detail.DetailAdapter
+import com.dev.intourist.ui.screen.tour_details.adapter.program.ProgramAdapter
 
 class TourDetailsFragment :
     BaseFragment<FragmentTourDetailsBinding, TourDetailsViewModel>(R.layout.fragment_tour_details) {

@@ -1,20 +1,17 @@
-package com.dev.intourist.ui.screen.mytours
+package com.dev.intourist.ui.screen.my_tours
 
 import android.app.AlertDialog
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentMyToursBinding
 import com.dev.intourist.presentation.base.fragment.BaseFragment
-import com.dev.intourist.ui.screen.home.adapters.CategoriesAdapter
-import com.dev.intourist.ui.screen.mytours.adapter.MyTourModel
-import com.dev.intourist.ui.screen.mytours.adapter.MyToursAdapter
+import com.dev.intourist.ui.screen.home.adapters.categories.CategoriesAdapter
+import com.dev.intourist.ui.model.my_tour.MyTourModel
+import com.dev.intourist.ui.screen.my_tours.adapter.MyToursAdapter
 
 class MyToursFragment : BaseFragment<FragmentMyToursBinding, MyToursViewModel>(R.layout.fragment_my_tours) {
 //    private lateinit var binding: FragmentMyToursBinding
