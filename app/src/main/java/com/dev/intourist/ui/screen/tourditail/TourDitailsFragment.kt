@@ -16,9 +16,15 @@ import com.dev.intourist.ui.screen.buy.BottomSheetFragment
 import com.dev.intourist.ui.screen.home.adapters.TourCardAdapter
 import com.dev.intourist.ui.screen.home.adapters.TourCardModel
 import com.dev.intourist.ui.screen.home.adapters.VPAdapter
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
 
-class TourDitailsFragment : Fragment() {
+class TourDitailsFragment : Fragment(), OnMapReadyCallback {
 
     private lateinit var binding: FragmentTourDitailsBinding
 
@@ -62,7 +68,7 @@ class TourDitailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
         TourCardModel(
             list1,
@@ -70,7 +76,7 @@ class TourDitailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
         TourCardModel(
             list1,
@@ -78,7 +84,7 @@ class TourDitailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
         TourCardModel(
             list1,
@@ -86,7 +92,7 @@ class TourDitailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
         TourCardModel(
             list1,
@@ -94,7 +100,7 @@ class TourDitailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
         TourCardModel(
             list1,
@@ -102,7 +108,7 @@ class TourDitailsFragment : Fragment() {
             "1900 c.",
             "1200 c.",
             "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",false
+            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая", false
         ),
     )
 
@@ -116,14 +122,19 @@ class TourDitailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+        initClickers()
+        initialaize()
+    }
 
+    private fun initClickers() {
         binding.btnBuy.setOnClickListener {
             findNavController().navigate(R.id.byCardFragment)
         }
         binding.btnOrderIndividualTour.setOnClickListener {
             BottomSheetFragment().show(childFragmentManager, "buy tour tag")
         }
-
         binding.btnContactWhatsApp.setOnClickListener {
             val phoneNumber = "996704848277" // Номер телефона в международном формате без плюса
             openWhatsApp(phoneNumber)
@@ -132,7 +143,11 @@ class TourDitailsFragment : Fragment() {
             val username = "medetbekov002" // Telegram username без @
             openTelegram(username)
         }
-        val adapter = TourCardAdapter(requireContext(), true, this::onClickTour, this::onLikeClick,listTour)
+    }
+
+    private fun initialaize() {
+        val adapter =
+            TourCardAdapter(requireContext(), true, this::onClickTour, this::onLikeClick, listTour)
         binding.rvToursRecomindation.adapter = adapter
 
         val adapterRallyPoint = DitailAdapter(listRallyPoint, R.drawable.ic_location)
@@ -177,9 +192,19 @@ class TourDitailsFragment : Fragment() {
             ).show()
 
             try {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.whatsapp")))
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("market://details?id=com.whatsapp")
+                    )
+                )
             } catch (e: ActivityNotFoundException) {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.whatsapp")))
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("https://play.google.com/store/apps/details?id=com.whatsapp")
+                    )
+                )
             }
         }
     }
@@ -202,11 +227,28 @@ class TourDitailsFragment : Fragment() {
             ).show()
 
             try {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=org.telegram.messenger")))
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("market://details?id=org.telegram.messenger")
+                    )
+                )
             } catch (e: ActivityNotFoundException) {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=org.telegram.messenger")))
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse("https://play.google.com/store/apps/details?id=org.telegram.messenger")
+                    )
+                )
             }
         }
+    }
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        var latLng = LatLng(42.8700, 74.5900)
+        googleMap.addMarker(MarkerOptions().position(latLng).title("Bishkek"))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng))
+        googleMap.animateCamera(CameraUpdateFactory.zoomTo(10f))
     }
 
 }

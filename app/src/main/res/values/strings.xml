@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">In Tourist</string>
+
+    <string name="my_api_key">AIzaSyAgzF_qA5rdja3Izrk2DN3qA6TUynI6VDc</string>
+
     <string name="image">image</string>
     <string name="authorization">Авторизация</string>
     <string name="auth_desc">Мы отправим код на этот номер для дальнейшей авторизации</string>

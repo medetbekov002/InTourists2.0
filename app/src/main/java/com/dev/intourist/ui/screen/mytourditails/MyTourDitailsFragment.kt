@@ -16,9 +16,15 @@ import com.dev.intourist.ui.screen.buy.BottomSheetFragment
 import com.dev.intourist.ui.screen.home.adapters.TourCardModel
 import com.dev.intourist.ui.screen.tourditail.DitailAdapter
 import com.dev.intourist.ui.screen.tourditail.ProgramAdapter
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
 
-class MyTourDitailsFragment : Fragment() {
+class MyTourDitailsFragment : Fragment(), OnMapReadyCallback {
 
 
     private val listRallyPoint = listOf(
@@ -116,6 +122,10 @@ class MyTourDitailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val mapFragment =
+            childFragmentManager.findFragmentById(R.id.map_my_tour) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+
         binding.btnContactWhatsApp.setOnClickListener {
             val phoneNumber = "996704848277" // Номер телефона в международном формате без плюса
             openWhatsApp(phoneNumber)
@@ -212,4 +222,10 @@ class MyTourDitailsFragment : Fragment() {
         }
     }
 
+    override fun onMapReady(googleMap: GoogleMap) {
+        var latLng = LatLng(42.8700, 74.5900)
+        googleMap.addMarker(MarkerOptions().position(latLng).title("Bishkek"))
+        googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng))
+        googleMap.animateCamera(CameraUpdateFactory.zoomTo(10f))
+    }
 }
