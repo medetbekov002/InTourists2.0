@@ -1,1 +1,0 @@
-package com.dev.intourist.ui.screen.payment.withoutChildrenimport com.dev.intourist.ui.base.viewmodel.BaseViewModelclass WithoutChildrenViewModel : BaseViewModel() {}

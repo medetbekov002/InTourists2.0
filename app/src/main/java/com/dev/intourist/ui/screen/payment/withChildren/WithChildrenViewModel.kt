@@ -1,1 +1,0 @@
-package com.dev.intourist.ui.screen.payment.withChildrenimport androidx.lifecycle.ViewModelimport com.dev.intourist.ui.base.viewmodel.BaseViewModelclass WithChildrenViewModel : BaseViewModel() {}

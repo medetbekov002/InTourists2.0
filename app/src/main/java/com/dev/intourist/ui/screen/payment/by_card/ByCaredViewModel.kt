@@ -1,1 +1,1 @@
-package com.dev.intourist.ui.screen.payment.by_cardimport com.dev.intourist.ui.base.viewmodel.BaseViewModelclass ByCaredViewModel : BaseViewModel() {}
+package com.dev.intourist.ui.screen.payment.by_cardimport com.dev.intourist.presentation.base.viewmodel.BaseViewModelclass ByCaredViewModel : BaseViewModel() {}

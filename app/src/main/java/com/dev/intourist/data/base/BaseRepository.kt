@@ -1,10 +1,13 @@
 package com.dev.intourist.data.base
 
 import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.liveData
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.dev.intourist.common.Either
+import com.dev.intourist.common.UIState
 import com.dev.intourist.data.BuildConfig
 import com.dev.intourist.data.local.mapper.DataMapper
 import com.dev.intourist.data.utils.toApiError
@@ -25,6 +28,19 @@ import java.io.InterruptedIOException
  * @author London
  */
 abstract class BaseRepository {
+
+    fun <T> performRequest(apiCall: suspend () -> T): LiveData<UIState<T>> =
+        liveData(Dispatchers.IO) {
+            emit(UIState.Loading())
+            try {
+                val response = apiCall.invoke()
+                Log.e("ololo", "performRequest: success $response", )
+                emit(UIState.Success(response))
+            } catch (e: Exception) {
+                emit(UIState.Error(e.message.toString()))
+                Log.e("ololo", "performRequest error: ${e.message}", )
+            }
+        }
 
     /**
      * Perform a network request and map the response using the provided mapper function.

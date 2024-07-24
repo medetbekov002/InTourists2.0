@@ -1,0 +1,1 @@
+package com.dev.intourist.ui.screen.payment.with_childrenimport com.dev.intourist.presentation.base.viewmodel.BaseViewModelclass WithChildrenViewModel : BaseViewModel() {}

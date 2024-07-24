@@ -1,108 +1,48 @@
 package com.dev.intourist.ui.screen.home
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.core.os.bundleOf
+import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
+import com.dev.intourist.common.UIState
+import com.dev.intourist.data.remote.dtos.tours.ToursModel
 import com.dev.intourist.databinding.FragmentHomeBinding
-import com.dev.intourist.ui.screen.buy.BottomSheetFragment
+import com.dev.intourist.presentation.base.fragment.BaseFragment
+import com.dev.intourist.ui.screen.home.adapters.categories.CategoriesAdapter
+import com.dev.intourist.ui.screen.home.adapters.promocode.PromocodeAdapter
+import com.dev.intourist.ui.model.promocode_details.PromocodeDetailsModel
+import com.dev.intourist.ui.screen.home.adapters.tour_card.TourCardAdapter
+import com.dev.intourist.ui.model.tour_card.TourCardModel
 import com.dev.intourist.ui.screen.filters.FiltersFragment
-import com.dev.intourist.ui.screen.home.adapters.CategoriesAdapter
-import com.dev.intourist.ui.screen.home.adapters.PromocodeAdapter
-import com.dev.intourist.ui.screen.home.adapters.PromocodeDitailsModel
-import com.dev.intourist.ui.screen.home.adapters.TourCardAdapter
-import com.dev.intourist.ui.screen.home.adapters.TourCardModel
+import com.google.android.gms.maps.GoogleMap
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class HomeFragment : Fragment(R.layout.fragment_home) {
+class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home) {
 
-    private val binding: FragmentHomeBinding by viewBinding()
-    private val viewModel: HomeViewModel by viewModels()
+    override val binding: FragmentHomeBinding by viewBinding(FragmentHomeBinding::bind)
+    override val viewModel: HomeViewModel by viewModel()
 
-    //Пока данные мы не получаем, так что вот вам придуманные данные:
-    //image_view_pager потом надо удалить из ресурсов
-    private val list1 = listOf(
-        R.drawable.image_view_pager,
-        R.drawable.image_view_pager,
-        R.drawable.image_view_pager,
-        R.drawable.image_view_pager,
-        R.drawable.image_view_pager,
-        R.drawable.image_view_pager,
-        R.drawable.image_view_pager,
-    )
-
-    private val listTour = listOf(
-        TourCardModel(
-            list1,
-            "Ущелье Ала-Арча",
-            "1900 c.",
-            "1200 c.",
-            "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",
-            true
-        ),
-        TourCardModel(
-            list1,
-            "Ущелье Ала-Арча",
-            "1900 c.",
-            "1200 c.",
-            "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",
-            false
-        ),
-        TourCardModel(
-            list1,
-            "Ущелье Ала-Арча",
-            "1900 c.",
-            "1200 c.",
-            "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",
-            false
-        ),
-        TourCardModel(
-            list1,
-            "Ущелье Ала-Арча",
-            "1900 c.",
-            "1200 c.",
-            "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",
-            false
-        ),
-        TourCardModel(
-            list1,
-            "Ущелье Ала-Арча",
-            "1900 c.",
-            "1200 c.",
-            "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",
-            false
-        ),
-        TourCardModel(
-            list1,
-            "Ущелье Ала-Арча",
-            "1900 c.",
-            "1200 c.",
-            "Однодневный тур",
-            "15 мая, 16 мая, 17 мая, 18 мая, 19 мая, 20 мая, 21 мая",
-            false
-        ),
-    )
     private val listPromo = listOf(
-        PromocodeDitailsModel(
+        PromocodeDetailsModel(
             "Получите 10% скидку",
             "На любой тур как новый пользователь нашего приложения."
         ),
-        PromocodeDitailsModel(
+        PromocodeDetailsModel(
             "Получите 10% скидку",
             "На любой тур как новый пользователь нашего приложения."
         ),
-        PromocodeDitailsModel(
+        PromocodeDetailsModel(
             "Получите 10% скидку",
             "На любой тур как новый пользователь нашего приложения."
         ),
-        PromocodeDitailsModel(
+        PromocodeDetailsModel(
             "Получите 10% скидку",
             "На любой тур как новый пользователь нашего приложения."
         ),
@@ -119,45 +59,74 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.apply {
             // filter
             ivFilters.setOnClickListener {
-                //FiltersFragment().show(childFragmentManager, "buy tour tag")
-                findNavController().navigate(R.id.fragment_filters)
+                FiltersFragment().show(childFragmentManager, "buy tour tag")
+                //findNavController().navigate(R.id.fragment_filters)
             }
             // search
             svSearchTours.setOnClickListener {
                 findNavController().navigate(R.id.fragment_search)
             }
         }
-
-        val adapter =
-            TourCardAdapter(requireContext(), false, this::onClickTour, this::onLikeClick, listTour)
-        binding.rvTours.adapter = adapter
+        CoroutineScope(Dispatchers.Main).launch {
+            viewModel.getAllTours().stateHandler(
+                success = {
+                    Log.e("ololo", "Success: ${it}")
+                    val adapter =
+                        TourCardAdapter(
+                            requireContext(),
+                            false,
+                            this@HomeFragment::onClickTour,
+                            this@HomeFragment::onLikeClick,
+                            it.results
+                        )
+                    binding.apply {
+                        rvTours.adapter = adapter
+                    }
+                },
+                state = { state ->
+                    binding.apply {
+                        progressBar.isVisible = state is UIState.Loading
+                    }
+                }
+            )
+        }
 
         val adapterPromo = PromocodeAdapter(this::onClickPromo, listPromo)
-        binding.rvPromocode.adapter = adapterPromo
+        binding.apply {
+            rvPromocode.adapter = adapterPromo
+        }
+
 
         val adapterCategories =
             CategoriesAdapter(this::onClickCategory, listCategories, requireContext())
-        binding.rvCategories.adapter = adapterCategories
+        binding.apply {
+            rvCategories.adapter = adapterCategories
+        }
 
     }
 
-    private fun onLikeClick(tourCardModel: TourCardModel, position: Int) {
-        listTour[position].isLiked = !tourCardModel.isLiked
+    override fun onMapReady(googleMap: GoogleMap) {
+    }
+
+    private fun onLikeClick(tour: ToursModel.Result) {
+        //listTour[position].isLiked = !tourCardModel.isLiked
     }
 
     private fun onClickCategory(category: String) {
         //update recycler view with category
     }
 
-    private fun onClickTour(tourCardModel: TourCardModel) {
-        findNavController().navigate(R.id.fragment_tour_ditails)
+    private fun onClickTour(tour: ToursModel.Result) {
+        findNavController().navigate(R.id.fragment_tour_ditails, bundleOf(TOUR_ID to tour.id))
     }
 
-    private fun onClickPromo(promocode: PromocodeDitailsModel) {
+    private fun onClickPromo(promocode: PromocodeDetailsModel) {
         findNavController().navigate(R.id.fragment_promocode)
+    }
+    companion object {
+        const val   TOUR_ID = "tour_id"
     }
 }

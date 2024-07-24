@@ -1,0 +1,1 @@
+package com.dev.intourist.data.baseclass BaseMainResponse<T> : ArrayList<T>()
