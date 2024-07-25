@@ -52,14 +52,14 @@ class TourDetailsFragment :
                 success = {
                     whatsAppNumber = it.results[0].whatsapp_link
                     telegrammName = it.results[0].telegram_link
-                    Log.e("ololo", "contacts: ${it.results}", )
-                    Log.e("ololo", "contacts: $telegrammName $whatsAppNumber", )
+                    Log.e("ololo", "contacts: ${it.results}")
                 }
             )
-            if (id!=-1){
+            if (id != -1) {
                 viewModel.getTourById(id).stateHandler(
                     success = {
                         binding.run {
+                            tvRegion.text = it.region_country
                             tvTourPrice.text = it.price
                             tvTourTitle.text = it.title
                             tvTourDesc.text = it.description
@@ -70,7 +70,8 @@ class TourDetailsFragment :
                             rvTourProgram.adapter = ProgramAdapter(it.program)
                             rvIncludedInPrice.adapter =
                                 IncludesAdapter(it.included, R.drawable.ic_check)
-                            rvEquipment.adapter = EquipmentAdapter(it.equipment, R.drawable.ic_check)
+                            rvEquipment.adapter =
+                                EquipmentAdapter(it.equipment, R.drawable.ic_check)
                             viewPager.adapter = VPAdapter(it.images)
                             indicator.setViewPager(viewPager)
                             rvNotIncluded.adapter =
@@ -79,7 +80,7 @@ class TourDetailsFragment :
                     }
                 )
             }
-            viewModel.getAllTours().stateHandler(
+            viewModel.getAllTours(1).stateHandler(
                 success = {
                     Log.e("ololo", "Success: ${it}")
                     val adapter =
@@ -118,7 +119,7 @@ class TourDetailsFragment :
     }
 
     private fun onClickTour(tour: ToursModel.Result) {
-        findNavController().navigate(R.id.fragment_tour_ditails,  bundleOf(TOUR_ID to tour.id))
+        findNavController().navigate(R.id.fragment_tour_ditails, bundleOf(TOUR_ID to tour.id))
     }
 
     private fun openWhatsApp(phoneNumber: String) {

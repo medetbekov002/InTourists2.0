@@ -1,11 +1,14 @@
 package com.dev.intourist.ui.screen.home
 
+import android.nfc.tech.MifareUltralight.PAGE_SIZE
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.common.UIState
@@ -28,6 +31,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
 
     override val binding: FragmentHomeBinding by viewBinding(FragmentHomeBinding::bind)
     override val viewModel: HomeViewModel by viewModel()
+    private var pageCount = 1
 
     private val listPromo = listOf(
         PromocodeDetailsModel(
@@ -59,7 +63,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.apply {
+        binding.run {
             // filter
             ivFilters.setOnClickListener {
                 FiltersFragment().show(childFragmentManager, "buy tour tag")
@@ -69,9 +73,47 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
             svSearchTours.setOnClickListener {
                 findNavController().navigate(R.id.fragment_search)
             }
+
+            requestTours()
+
+            rvTours.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                    super.onScrolled(recyclerView, dx, dy)
+                    val layoutManager = recyclerView.layoutManager as LinearLayoutManager
+                    val visibleItemCount = layoutManager.childCount
+                    val totalItemCount = layoutManager.itemCount
+                    val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
+
+                    if ((visibleItemCount + firstVisibleItemPosition) >= totalItemCount
+                        && firstVisibleItemPosition >= 0
+                        && totalItemCount >= PAGE_SIZE
+                    ) {
+                        pageCount++
+                        requestTours()
+                        Log.e("ololo", "onScrolled: ${pageCount}")
+                    }
+                }
+            })
         }
+
+
+        val adapterPromo = PromocodeAdapter(this::onClickPromo, listPromo)
+        binding.apply {
+            rvPromocode.adapter = adapterPromo
+        }
+
+
+        val adapterCategories =
+            CategoriesAdapter(this::onClickCategory, listCategories, requireContext())
+        binding.apply {
+            rvCategories.adapter = adapterCategories
+        }
+
+    }
+
+    private fun requestTours() {
         CoroutineScope(Dispatchers.Main).launch {
-            viewModel.getAllTours().stateHandler(
+            viewModel.getAllTours(pageSize = pageCount).stateHandler(
                 success = {
                     Log.e("ololo", "Success: ${it}")
                     val adapter =
@@ -93,19 +135,6 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
                 }
             )
         }
-
-        val adapterPromo = PromocodeAdapter(this::onClickPromo, listPromo)
-        binding.apply {
-            rvPromocode.adapter = adapterPromo
-        }
-
-
-        val adapterCategories =
-            CategoriesAdapter(this::onClickCategory, listCategories, requireContext())
-        binding.apply {
-            rvCategories.adapter = adapterCategories
-        }
-
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
@@ -126,7 +155,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
     private fun onClickPromo(promocode: PromocodeDetailsModel) {
         findNavController().navigate(R.id.fragment_promocode)
     }
+
     companion object {
-        const val   TOUR_ID = "tour_id"
+        const val TOUR_ID = "tour_id"
     }
 }

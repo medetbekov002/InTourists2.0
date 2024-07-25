@@ -11,5 +11,5 @@ import com.dev.intourist.presentation.base.viewmodel.BaseViewModel
 
 class HomeViewModel(private val useCase: TourUseCase): BaseViewModel() {
 
-    suspend fun getAllTours(): LiveData<UIState<ToursModel>> = useCase.getAllTours()
+    suspend fun getAllTours(pageSize: Int): LiveData<UIState<ToursModel>> = useCase.getAllTours(pageSize = pageSize)
 }

@@ -11,8 +11,8 @@ import com.dev.intourist.domain.repository.TourRepisitoryInt
 
 class ToursRepository(private val apiService: ApiService) : BaseRepository(), TourRepisitoryInt {
 
-    override suspend fun getAllTours(): LiveData<UIState<ToursModel>> = performRequest {
-        apiService.getAllTours()
+    override suspend fun getAllTours(pageSize: Int): LiveData<UIState<ToursModel>> = performRequest {
+        apiService.getAllTours(pageSize = pageSize)
     }
 
     override suspend fun getTourById(id: Int): LiveData<UIState<ToursModel.Result>> =
