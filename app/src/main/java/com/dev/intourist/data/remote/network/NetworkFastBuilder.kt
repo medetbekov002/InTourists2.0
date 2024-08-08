@@ -29,5 +29,5 @@ internal fun provideOkHttpClientBuilder(): OkHttpClient.Builder = OkHttpClient()
     .writeTimeout(30, TimeUnit.SECONDS)
 
 private fun provideLoggingInterceptor() = HttpLoggingInterceptor().setLevel(
-    if (com.dev.intourist.data.BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
+    if (BuildConfig.DEBUG) HttpLoggingInterceptor.Level.BODY else HttpLoggingInterceptor.Level.NONE
 )
