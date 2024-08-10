@@ -4,9 +4,8 @@ import android.content.Context
 import com.dev.intourist.presentation.model.validation.ValidationResult
 import com.dev.intourist.presentation.model.validation.Validator
 import com.dev.intourist.R
-import javax.inject.Inject
 
-class ValidateName @Inject constructor(
+class ValidateName constructor(
     private val context: Context,
 ) : Validator {
 

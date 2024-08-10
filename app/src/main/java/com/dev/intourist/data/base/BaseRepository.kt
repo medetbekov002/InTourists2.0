@@ -6,11 +6,11 @@ import androidx.lifecycle.liveData
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import com.dev.intourist.common.Either
 import com.dev.intourist.common.UIState
 import com.dev.intourist.data.BuildConfig
 import com.dev.intourist.data.local.mapper.DataMapper
 import com.dev.intourist.data.utils.toApiError
+import com.dev.intourist.domain.core.Either
 import com.dev.intourist.domain.core.NetworkError
 //import com.alish.boilerplate.data.BuildConfig
 //import com.alish.boilerplate.data.core.utils.DataMapper

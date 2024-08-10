@@ -5,7 +5,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import androidx.paging.map
-import com.dev.intourist.common.Either
+import com.dev.intourist.domain.core.Either
 import com.dev.intourist.domain.core.NetworkError
 import com.dev.intourist.presentation.extensions.UIState
 import com.dev.intourist.presentation.extensions.reset

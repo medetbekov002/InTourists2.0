@@ -7,7 +7,7 @@ import com.dev.intourist.presentation.model.validation.Validator
 import com.dev.intourist.R
 import javax.inject.Inject
 
-class ValidateEmail @Inject constructor(
+class ValidateEmail constructor(
     private val context: Context,
 ) : Validator {
 

@@ -6,7 +6,7 @@ import com.dev.intourist.presentation.model.validation.Validator
 import com.dev.intourist.R
 import javax.inject.Inject
 
-class ValidatePassword @Inject constructor(
+class ValidatePassword constructor(
     private val context: Context,
 ) : Validator {
 

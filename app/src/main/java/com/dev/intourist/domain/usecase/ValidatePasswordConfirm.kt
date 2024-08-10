@@ -6,7 +6,7 @@ import com.dev.intourist.R
 import javax.inject.Inject
 
 // TODO: implement Validator
-class ValidatePasswordConfirm @Inject constructor(
+class ValidatePasswordConfirm constructor(
     private val context: Context,
 ) {
 

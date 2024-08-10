@@ -114,9 +114,6 @@ dependencies {
     // KotlinX Serialization
     implementation(libs.kotlinx.serialization.json)
 
-    // KotlinX Serialization JSON
-    implementation(libs.kotlinx.serialization.json)
-
     // Security
     implementation(libs.androidx.security.crypto)
 
