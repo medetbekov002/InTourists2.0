@@ -131,6 +131,11 @@ dependencies {
 
     // Retrofit Coroutines
     implementation(libs.retrofit2.kotlin.coroutines.adapter)
+    
+    // Google Services
+    implementation(libs.googleid)
+    implementation(libs.androidx.credentials)
+    implementation(libs.androidx.credentials.play.services.auth)
 }
 
 

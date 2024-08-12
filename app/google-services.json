@@ -35,5 +35,12 @@
       }
     }
   ],
+  "installed": {
+    "client_id": "96342439104-1maet21v9gqsbid4atgfno8vgo889j40.apps.googleusercontent.com",
+    "project_id": "intourist-430915",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs"
+  },
   "configuration_version": "1"
 }

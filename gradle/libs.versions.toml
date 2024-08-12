@@ -37,6 +37,8 @@ koinAndroid = "3.5.3"
 securityCrypto = "1.1.0-alpha06"
 viewbindingpropertydelegateFull = "1.5.9"
 googleGmsGoogleServices = "4.4.1"
+googleid = "1.1.1"
+credentials = "1.2.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -81,6 +83,11 @@ koin-android = { module = "io.insert-koin:koin-android", version.ref = "koinAndr
 retrofit2-kotlin-coroutines-adapter = { module = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter", version.ref = "retrofit2KotlinCoroutinesAdapter" }
 retrofit2-kotlinx-serialization-converter = { module = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter", version.ref = "retrofit2KotlinxSerializationConverter" }
 viewbindingpropertydelegate-full = { module = "com.github.kirich1409:viewbindingpropertydelegate-full", version.ref = "viewbindingpropertydelegateFull" }
+
+googleid = { module = "com.google.android.libraries.identity.googleid:googleid", version.ref = "googleid" }
+#noinspection CredentialDependency
+androidx-credentials = { module = "androidx.credentials:credentials", version.ref = "credentials" }
+androidx-credentials-play-services-auth = { module = "androidx.credentials:credentials-play-services-auth", version.ref = "credentials" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

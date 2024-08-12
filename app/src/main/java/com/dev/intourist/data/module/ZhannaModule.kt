@@ -8,13 +8,13 @@ import com.dev.intourist.domain.repository.ContactsRepositoryInt
 import com.dev.intourist.domain.repository.TourRepisitoryInt
 import com.dev.intourist.domain.usecase.ContactsUseCase
 import com.dev.intourist.domain.usecase.TourUseCase
+import com.dev.intourist.ui.screen.auth.AuthViewModel
 import com.dev.intourist.ui.screen.home.HomeViewModel
 import com.dev.intourist.ui.screen.tour_details.TourDetailsViewModel
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.dsl.module
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -62,6 +62,7 @@ val viewModelModule = module {
     viewModel {
         HomeViewModel(get())
     }
+    viewModelOf(::AuthViewModel)
 }
 
 val zhannaModule = listOf(networkModule, repositoryModule, useCasesModule, viewModelModule)

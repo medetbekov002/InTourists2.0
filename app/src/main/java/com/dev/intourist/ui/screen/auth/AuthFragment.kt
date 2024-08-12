@@ -8,21 +8,17 @@ import android.text.Spanned
 import android.text.TextPaint
 import android.text.TextWatcher
 import android.text.method.LinkMovementMethod
-import org.koin.androidx.viewmodel.ext.android.viewModel
 import android.text.style.ClickableSpan
 import android.text.style.StyleSpan
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.databinding.FragmentAuthBinding
 import com.dev.intourist.presentation.base.fragment.BaseFragment
 import com.google.android.gms.maps.GoogleMap
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AuthFragment : BaseFragment<FragmentAuthBinding, AuthViewModel>(R.layout.fragment_auth) {
 //    private lateinit var binding: FragmentAuthBinding
@@ -58,7 +54,7 @@ class AuthFragment : BaseFragment<FragmentAuthBinding, AuthViewModel>(R.layout.f
             }
 
             btnGoogle.setOnClickListener {
-                // inter with google
+                viewModel.googleSignInApp(requireContext())
             }
         }
     }
