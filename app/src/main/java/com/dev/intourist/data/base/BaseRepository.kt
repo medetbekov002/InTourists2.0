@@ -12,6 +12,7 @@ import com.dev.intourist.data.BuildConfig
 import com.dev.intourist.data.local.mapper.DataMapper
 import com.dev.intourist.data.utils.toApiError
 import com.dev.intourist.domain.core.NetworkError
+import kotlinx.coroutines.CoroutineScope
 //import com.alish.boilerplate.data.BuildConfig
 //import com.alish.boilerplate.data.core.utils.DataMapper
 //import com.alish.boilerplate.data.core.utils.toApiError
@@ -27,21 +28,21 @@ import java.io.InterruptedIOException
  *
  * @author London
  */
-abstract class BaseRepository {
+abstract class BaseRepository() {
 
-    fun <T> performRequest(apiCall: suspend () -> T): LiveData<UIState<T>> =
-        liveData(Dispatchers.IO) {
+  /*  private val scope: CoroutineScope = CoroutineScope(Dispatchers.IO)
+
+    fun <T> performRequest(apiCall: suspend () -> T): StateFlow<UIState<T>> =
+        flow {
             emit(UIState.Loading())
             try {
                 val response = apiCall.invoke()
-                Log.e("ololo", "performRequest: success $response", )
                 emit(UIState.Success(response))
             } catch (e: Exception) {
                 emit(UIState.Error(e.message.toString()))
-                Log.e("ololo", "performRequest error: ${e.message}", )
             }
-        }
-
+        }.stateIn(scope, SharingStarted.Lazily, UIState.Idle())
+*/
     /**
      * Perform a network request and map the response using the provided mapper function.
      *

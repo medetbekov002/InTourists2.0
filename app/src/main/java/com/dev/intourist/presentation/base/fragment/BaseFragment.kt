@@ -31,26 +31,29 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>
     (@LayoutRes layoutId: Int) : Fragment(layoutId) {
 
-    fun <T> LiveData<UIState<T>>.stateHandler(
+ /*   fun <T> StateFlow<UIState<T>>.stateHandler(
+        fragment: Fragment,
         success: (data: T) -> Unit,
         state: ((res: UIState<T>) -> Unit)? = null
     ) {
-        observe(this@BaseFragment) { res ->
-            state?.invoke(res)
-            when (res) {
-                is UIState.Error -> {
-                    this@BaseFragment.requireContext().showToast(res.error!!)
-                }
-                is UIState.Loading -> {}
-                is UIState.Success -> {
-                    if (res.data != null) {
-                        success(res.data)
+        fragment.viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            this@stateHandler.collect { res ->
+                state?.invoke(res)
+                when (res) {
+                    is UIState.Error -> {
+                        fragment.requireContext().showToast(res.error!!)
                     }
+                    is UIState.Loading -> { }
+                    is UIState.Success -> {
+                        res.data?.let {
+                            success(it)
+                        }
+                    }
+                    is UIState.Idle -> { }
                 }
-                is UIState.Idle -> {}
             }
         }
-    }
+    }*/
     protected abstract val binding: Binding
     protected abstract val viewModel: ViewModel
     private val pref: Pref by lazy { Pref(requireContext()) }

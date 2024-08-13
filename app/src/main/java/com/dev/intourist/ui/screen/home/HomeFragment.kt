@@ -1,6 +1,7 @@
 package com.dev.intourist.ui.screen.home
 
 import android.nfc.tech.MifareUltralight.PAGE_SIZE
+import android.os.Build.VERSION_CODES.R
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -32,6 +33,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
     override val binding: FragmentHomeBinding by viewBinding(FragmentHomeBinding::bind)
     override val viewModel: HomeViewModel by viewModel()
     private var pageCount = 1
+    lateinit var adapter: TourCardAdapter
 
     private val listPromo = listOf(
         PromocodeDetailsModel(
@@ -63,19 +65,46 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        adapter = TourCardAdapter(
+            requireContext(),
+            false,
+            this@HomeFragment::onClickTour,
+            this@HomeFragment::onLikeClick
+        )
+
+       /* viewModel.tours.spectateUiState(
+            success = {
+                adapter.addData(it.results)
+            },
+            loading = { state ->
+                binding.progressBar.isVisible = state is UIState.Loading
+            })
+*/
+        val adapterPromo = PromocodeAdapter(this::onClickPromo, listPromo)
+        binding.apply {
+            rvPromocode.adapter = adapterPromo
+        }
+        val adapterCategories =
+            CategoriesAdapter(this::onClickCategory, listCategories, requireContext())
+        binding.apply {
+            rvCategories.adapter = adapterCategories
+        }
+
+      //  requestTours()
+
         binding.run {
+            rvTours.adapter = adapter
             // filter
             ivFilters.setOnClickListener {
-                FiltersFragment().show(childFragmentManager, "buy tour tag")
-                //findNavController().navigate(R.id.fragment_filters)
+                //FiltersFragment().show(childFragmentManager, "buy tour tag")
+                findNavController().navigate(R.id.fragment_filters)
             }
             // search
             svSearchTours.setOnClickListener {
                 findNavController().navigate(R.id.fragment_search)
             }
-
-            requestTours()
-
+            // paging
             rvTours.addOnScrollListener(object : RecyclerView.OnScrollListener() {
                 override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                     super.onScrolled(recyclerView, dx, dy)
@@ -89,53 +118,27 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
                         && totalItemCount >= PAGE_SIZE
                     ) {
                         pageCount++
-                        requestTours()
-                        Log.e("ololo", "onScrolled: ${pageCount}")
+                      //  addTours()
                     }
+
                 }
             })
         }
-
-
-        val adapterPromo = PromocodeAdapter(this::onClickPromo, listPromo)
-        binding.apply {
-            rvPromocode.adapter = adapterPromo
-        }
-
-
-        val adapterCategories =
-            CategoriesAdapter(this::onClickCategory, listCategories, requireContext())
-        binding.apply {
-            rvCategories.adapter = adapterCategories
-        }
-
     }
+/*
 
     private fun requestTours() {
         CoroutineScope(Dispatchers.Main).launch {
-            viewModel.getAllTours(pageSize = pageCount).stateHandler(
-                success = {
-                    Log.e("ololo", "Success: ${it}")
-                    val adapter =
-                        TourCardAdapter(
-                            requireContext(),
-                            false,
-                            this@HomeFragment::onClickTour,
-                            this@HomeFragment::onLikeClick,
-                            it.results
-                        )
-                    binding.apply {
-                        rvTours.adapter = adapter
-                    }
-                },
-                state = { state ->
-                    binding.apply {
-                        progressBar.isVisible = state is UIState.Loading
-                    }
-                }
-            )
+            viewModel.getAllTours(pageSize = pageCount)
         }
     }
+
+    private fun addTours() {
+        CoroutineScope(Dispatchers.Main).launch {
+            viewModel.getAllTours(pageSize = pageCount)
+        }
+    }
+*/
 
     override fun onMapReady(googleMap: GoogleMap) {
     }
@@ -146,6 +149,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
 
     private fun onClickCategory(category: String) {
         //update recycler view with category
+        if (category != "\uD83D\uDD25 Все") {
+            binding.run {
+                rvPromocode.visibility = View.GONE
+            }
+        } else {
+            binding.run {
+                rvPromocode.visibility = View.VISIBLE
+            }
+        }
     }
 
     private fun onClickTour(tour: ToursModel.Result) {
@@ -159,4 +171,5 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
     companion object {
         const val TOUR_ID = "tour_id"
     }
+
 }

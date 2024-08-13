@@ -18,6 +18,7 @@ import com.dev.intourist.presentation.base.fragment.BaseFragment
 import com.dev.intourist.ui.screen.buy.BottomSheetFragment
 import com.dev.intourist.ui.screen.home.HomeFragment
 import com.dev.intourist.ui.screen.home.HomeFragment.Companion.TOUR_ID
+import com.dev.intourist.ui.screen.home.adapters.categories.CategoriesAdapter
 import com.dev.intourist.ui.screen.home.adapters.tour_card.TourCardAdapter
 import com.dev.intourist.ui.screen.home.adapters.vp.VPAdapter
 import com.dev.intourist.ui.screen.tour_details.adapter.equipment.EquipmentAdapter
@@ -38,9 +39,20 @@ class TourDetailsFragment :
 
     override val binding: FragmentTourDetailsBinding by viewBinding(FragmentTourDetailsBinding::bind)
     override val viewModel: TourDetailsViewModel by viewModel()
+    lateinit var adapter: TourCardAdapter
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        adapter =
+            TourCardAdapter(
+                requireContext(),
+                true,
+                this@TourDetailsFragment::onClickTour,
+                this@TourDetailsFragment::onLikeClick,
+            )
+        binding.apply {
+            rvToursRecomindation.adapter = adapter
+        }
         var whatsAppNumber = "996704848277"
         var telegrammName = "medetbekov002"
         var id = -1
@@ -58,42 +70,14 @@ class TourDetailsFragment :
             if (id != -1) {
                 viewModel.getTourById(id).stateHandler(
                     success = {
-                        binding.run {
-                            tvRegion.text = it.region_country
-                            tvTourPrice.text = it.price
-                            tvTourTitle.text = it.title
-                            tvTourDesc.text = it.description
-                            tvTourDuration.text = it.duration.title
-                            tvTourDates.text = it.tour_dates[0].date
-                            rvRallyPoint.adapter =
-                                DetailAdapter(it.pickup_locations, R.drawable.ic_location)
-                            rvTourProgram.adapter = ProgramAdapter(it.program)
-                            rvIncludedInPrice.adapter =
-                                IncludesAdapter(it.included, R.drawable.ic_check)
-                            rvEquipment.adapter =
-                                EquipmentAdapter(it.equipment, R.drawable.ic_check)
-                            viewPager.adapter = VPAdapter(it.images)
-                            indicator.setViewPager(viewPager)
-                            rvNotIncluded.adapter =
-                                NotIncludedAdapter(it.not_included, R.drawable.ic_cancel)
-                        }
+                        showData(it)
                     }
                 )
             }
             viewModel.getAllTours(1).stateHandler(
                 success = {
                     Log.e("ololo", "Success: ${it}")
-                    val adapter =
-                        TourCardAdapter(
-                            requireContext(),
-                            false,
-                            this@TourDetailsFragment::onClickTour,
-                            this@TourDetailsFragment::onLikeClick,
-                            it.results
-                        )
-                    binding.apply {
-                        rvToursRecomindation.adapter = adapter
-                    }
+                    adapter.reloadData(it.results)
                 })
         }
         binding.apply {
@@ -111,6 +95,30 @@ class TourDetailsFragment :
             }
 
 
+        }
+    }
+
+    private fun showData(it: ToursModel.Result) {
+        binding.run {
+            rvDates.adapter = CategoriesAdapter(this::onClickDate, it.tour_dates.map { it.date }, requireContext())
+            tvRegion.text = it.region_country
+            tvTourPrice.text = it.price
+            tvTourTitle.text = it.title
+            tvTourDesc.text = it.description
+            tvTourDuration.text = it.duration.title
+            tvTourDates.text = it.tour_dates[0].date
+
+            rvRallyPoint.adapter =
+                DetailAdapter(it.pickup_locations, R.drawable.ic_location)
+            rvTourProgram.adapter = ProgramAdapter(it.program)
+            rvIncludedInPrice.adapter =
+                IncludesAdapter(it.included, R.drawable.ic_check)
+            rvEquipment.adapter =
+                EquipmentAdapter(it.equipment, R.drawable.ic_check)
+            viewPager.adapter = VPAdapter(it.images)
+            indicator.setViewPager(viewPager)
+            rvNotIncluded.adapter =
+                NotIncludedAdapter(it.not_included, R.drawable.ic_cancel)
         }
     }
 
@@ -198,5 +206,9 @@ class TourDetailsFragment :
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng))
         googleMap.animateCamera(CameraUpdateFactory.zoomTo(10f))
     }
+}
+
+private fun FragmentTourDetailsBinding.onClickDate(date: String) {
+
 }
 

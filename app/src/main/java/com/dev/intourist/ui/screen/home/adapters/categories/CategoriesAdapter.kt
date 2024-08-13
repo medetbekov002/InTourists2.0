@@ -1,6 +1,7 @@
 package com.dev.intourist.ui.screen.home.adapters.categories
 
 import android.content.Context
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
@@ -40,19 +41,17 @@ class CategoriesAdapter(
             item: String,
             onClick: (category: String) -> Unit,
         ) {
-
             binding.apply {
+                btnCategory.text = item
                 btnCategory.setOnClickListener {
-                    onClick(item)
+                    val previousSelectedPosition = selectedPosition
                     selectedPosition = adapterPosition
-                    notifyDataSetChanged()
+                    notifyItemChanged(previousSelectedPosition)
+                    notifyItemChanged(selectedPosition)
+                    onClick(item)
                 }
             }
-//            binding.btnCategory.setOnClickListener {
-//                onClick(item)
-//                selectedPosition = adapterPosition
-//                notifyDataSetChanged()
-//            }
+
             if (selectedPosition == adapterPosition) {
                 binding.apply {
                     btnCategory.setTextColor(
@@ -67,8 +66,6 @@ class CategoriesAdapter(
                             R.color.light_green_for_button_filter
                         )
                 }
-//                binding.btnCategory.backgroundTintList =
-//                    ContextCompat.getColorStateList(context, R.color.light_green_for_button_filter)
             } else {
                 binding.apply {
                     btnCategory.setTextColor(
@@ -82,10 +79,7 @@ class CategoriesAdapter(
                     btnCategory.text = item
                 }
             }
-//            binding.btnCategory.backgroundTintList =
-//                ContextCompat.getColorStateList(context, R.color.white)
-//        }
-//        binding.btnCategory.text = item
+
         }
     }
 }
