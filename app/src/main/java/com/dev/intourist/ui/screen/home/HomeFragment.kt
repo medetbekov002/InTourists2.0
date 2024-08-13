@@ -73,14 +73,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
             this@HomeFragment::onLikeClick
         )
 
-       /* viewModel.tours.spectateUiState(
+        viewModel.tours.spectateUiState(
             success = {
                 adapter.addData(it.results)
             },
             loading = { state ->
                 binding.progressBar.isVisible = state is UIState.Loading
             })
-*/
         val adapterPromo = PromocodeAdapter(this::onClickPromo, listPromo)
         binding.apply {
             rvPromocode.adapter = adapterPromo
@@ -91,7 +90,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
             rvCategories.adapter = adapterCategories
         }
 
-      //  requestTours()
+        requestTours()
 
         binding.run {
             rvTours.adapter = adapter
@@ -118,14 +117,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
                         && totalItemCount >= PAGE_SIZE
                     ) {
                         pageCount++
-                      //  addTours()
+                        requestTours()
                     }
 
                 }
             })
         }
     }
-/*
 
     private fun requestTours() {
         CoroutineScope(Dispatchers.Main).launch {
@@ -133,12 +131,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
         }
     }
 
-    private fun addTours() {
-        CoroutineScope(Dispatchers.Main).launch {
-            viewModel.getAllTours(pageSize = pageCount)
-        }
-    }
-*/
+
 
     override fun onMapReady(googleMap: GoogleMap) {
     }

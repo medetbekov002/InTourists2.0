@@ -30,7 +30,7 @@ import java.io.InterruptedIOException
  */
 abstract class BaseRepository() {
 
-  /*  private val scope: CoroutineScope = CoroutineScope(Dispatchers.IO)
+    private val scope: CoroutineScope = CoroutineScope(Dispatchers.IO)
 
     fun <T> performRequest(apiCall: suspend () -> T): StateFlow<UIState<T>> =
         flow {
@@ -42,7 +42,6 @@ abstract class BaseRepository() {
                 emit(UIState.Error(e.message.toString()))
             }
         }.stateIn(scope, SharingStarted.Lazily, UIState.Idle())
-*/
     /**
      * Perform a network request and map the response using the provided mapper function.
      *

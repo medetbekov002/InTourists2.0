@@ -13,12 +13,12 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
 class HomeViewModel(private val useCase: TourUseCase): BaseViewModel() {
-   /* private val _tours = MutableStateFlow<UIState<ToursModel>>(UIState.Idle())
+    private val _tours = MutableStateFlow<UIState<ToursModel>>(UIState.Idle())
     val tours = _tours.asStateFlow()
 
     suspend fun getAllTours(pageSize: Int){
         useCase.getAllTours(pageSize).collect { uiState : UIState<ToursModel>->
             _tours.value = uiState
         }
-    }*/
+    }
 }

@@ -7,8 +7,7 @@ import com.dev.intourist.data.remote.service.ApiService
 import com.dev.intourist.domain.repository.TourRepositoryInt
 import kotlinx.coroutines.flow.StateFlow
 
-class ToursRepository(private val apiService: ApiService) : BaseRepository() {
-/*
+class ToursRepository(private val apiService: ApiService) : BaseRepository(), TourRepositoryInt {
 
     override suspend fun getAllTours(pageSize: Int): StateFlow<UIState<ToursModel>> = performRequest {
         apiService.getAllTours(pageSize = pageSize)
@@ -18,6 +17,5 @@ class ToursRepository(private val apiService: ApiService) : BaseRepository() {
         performRequest {
             apiService.getTourById(id)
         }
-*/
 
 }
