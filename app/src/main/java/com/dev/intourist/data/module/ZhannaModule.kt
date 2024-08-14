@@ -42,7 +42,8 @@ val repositoryModule = module {
     /*single { CoroutineScope(Dispatchers.IO + SupervisorJob()) }*/
 
     single<TourRepositoryInt> { ToursRepository(get()) }
-    
+
+    single<ContactsRepositoryInt> { ContactRepository(get()) }
     single<ContactRepository> { ContactRepository(get()) }
 
     single<ToursRepository> { ToursRepository(get()) }
