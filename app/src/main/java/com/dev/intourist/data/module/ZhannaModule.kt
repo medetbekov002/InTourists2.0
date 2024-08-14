@@ -1,8 +1,8 @@
 package com.dev.intourist.data.module
 
-import ContactRepository
 import com.dev.intourist.data.BuildConfig
 import com.dev.intourist.data.remote.service.ApiService
+import com.dev.intourist.data.repository.ContactRepository
 //import com.dev.intourist.data.repository.ContactRepository
 import com.dev.intourist.data.repository.ToursRepository
 import com.dev.intourist.domain.repository.ContactsRepositoryInt
@@ -43,7 +43,7 @@ val repositoryModule = module {
 
     single<TourRepositoryInt> { ToursRepository(get()) }
     
-    single<ContactsRepositoryInt> { ContactRepository(get()) }
+    single<ContactRepository> { ContactRepository(get()) }
 
     single<ToursRepository> { ToursRepository(get()) }
 

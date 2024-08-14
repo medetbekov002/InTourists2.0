@@ -5,11 +5,10 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import android.view.View
 import android.widget.Toast
 import androidx.core.os.bundleOf
-import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
@@ -17,13 +16,14 @@ import com.dev.intourist.data.remote.dtos.tours.ToursModel
 import com.dev.intourist.databinding.FragmentTourDetailsBinding
 import com.dev.intourist.presentation.base.fragment.BaseFragment
 import com.dev.intourist.ui.screen.buy.BottomSheetFragment
+import com.dev.intourist.ui.screen.home.HomeFragment
 import com.dev.intourist.ui.screen.home.HomeFragment.Companion.TOUR_ID
 import com.dev.intourist.ui.screen.home.adapters.categories.CategoriesAdapter
 import com.dev.intourist.ui.screen.home.adapters.tour_card.TourCardAdapter
 import com.dev.intourist.ui.screen.home.adapters.vp.VPAdapter
 import com.dev.intourist.ui.screen.tour_details.adapter.equipment.EquipmentAdapter
-import com.dev.intourist.ui.screen.tour_details.adapter.includes.IncludesAdapter
 import com.dev.intourist.ui.screen.tour_details.adapter.notincluded.NotIncludedAdapter
+import com.dev.intourist.ui.screen.tour_details.adapter.includes.IncludesAdapter
 import com.dev.intourist.ui.screen.tour_details.adapter.pickuplocetions.DetailAdapter
 import com.dev.intourist.ui.screen.tour_details.adapter.program.ProgramAdapter
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -33,8 +33,6 @@ import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.flow.StateFlow
-import com.dev.intourist.common.UIState
 
 class TourDetailsFragment :
     BaseFragment<FragmentTourDetailsBinding, TourDetailsViewModel>(R.layout.fragment_tour_details) {
@@ -62,7 +60,7 @@ class TourDetailsFragment :
             id = it.getInt(TOUR_ID)
         }
         CoroutineScope(Dispatchers.Main).launch {
-            viewModel.getContacts().stateHandler(
+           /* viewModel.getContacts().stateHandler(
                 success = {
                     whatsAppNumber = it.results[0].whatsapp_link
                     telegrammName = it.results[0].telegram_link
@@ -80,8 +78,7 @@ class TourDetailsFragment :
                 success = {
                     Log.e("ololo", "Success: ${it}")
                     adapter.reloadData(it.results)
-                }
-            )
+                })*/
         }
         binding.apply {
             btnBuy.setOnClickListener {
@@ -96,6 +93,8 @@ class TourDetailsFragment :
             btnContactTelegram.setOnClickListener {
                 openTelegram(telegrammName)
             }
+
+
         }
     }
 
@@ -202,7 +201,7 @@ class TourDetailsFragment :
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-        val latLng = LatLng(42.8700, 74.5900)
+        var latLng = LatLng(42.8700, 74.5900)
         googleMap.addMarker(MarkerOptions().position(latLng).title("Bishkek"))
         googleMap.moveCamera(CameraUpdateFactory.newLatLng(latLng))
         googleMap.animateCamera(CameraUpdateFactory.zoomTo(10f))
@@ -210,6 +209,6 @@ class TourDetailsFragment :
 }
 
 private fun FragmentTourDetailsBinding.onClickDate(date: String) {
-    // Handle date click
+
 }
 

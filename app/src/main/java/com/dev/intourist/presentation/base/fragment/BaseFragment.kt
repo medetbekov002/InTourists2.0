@@ -1,47 +1,60 @@
 package com.dev.intourist.presentation.base.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.viewbinding.ViewBinding
+//import com.dev.intourist.common.Either
 import com.dev.intourist.common.UIState
 import com.dev.intourist.data.local.Pref
 import com.dev.intourist.data.utils.showToast
 import com.dev.intourist.domain.core.Either
 import com.dev.intourist.presentation.base.viewmodel.BaseViewModel
 import com.google.android.gms.maps.GoogleMap
+//import com.example.stylescope.common.Either
+//import com.example.stylescope.common.UIState
+//import com.example.stylescope.data.local.Pref
+//import com.example.stylescope.presentation.model.token.GetTokenUI
+//import com.example.stylescope.presentation.model.token.RefreshTokenUI
+//import com.example.stylescope.presentation.model.token.VerifyTokenUI
+//import com.example.stylescope.presentation.ui.token.TokenViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>
     (@LayoutRes layoutId: Int) : Fragment(layoutId) {
 
-    // Универсальная функция для обработки состояния StateFlow
-    fun <T> StateFlow<UIState<T>>.stateHandler(
+    /*fun <T> StateFlow<UIState<T>>.stateHandler(
+        fragment: Fragment,
         success: (data: T) -> Unit,
-        loading: (() -> Unit)? = null,
-        error: ((message: String) -> Unit)? = null,
-        idle: (() -> Unit)? = null,
-        additionalStateHandling: ((state: UIState<T>) -> Unit)? = null
+        state: ((res: UIState<T>) -> Unit)? = null
     ) {
-        viewLifecycleOwner.lifecycleScope.launch {
-            collect { state ->
-                additionalStateHandling?.invoke(state)
-                when (state) {
-                    is UIState.Success -> state.data?.let { success(it) }
-                    is UIState.Loading -> loading?.invoke()
-                    is UIState.Error -> state.error?.let { error?.invoke(it) }
-                    is UIState.Idle -> idle?.invoke()
+        fragment.viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            this@stateHandler.collect { res ->
+                state?.invoke(res)
+                when (res) {
+                    is UIState.Error -> {
+                        fragment.requireContext().showToast(res.error!!)
+                    }
+                    is UIState.Loading -> { }
+                    is UIState.Success -> {
+                        res.data?.let {
+                            success(it)
+                        }
+                    }
+                    is UIState.Idle -> { }
                 }
             }
         }
-    }
-
+    }*/
     protected abstract val binding: Binding
     protected abstract val viewModel: ViewModel
     private val pref: Pref by lazy { Pref(requireContext()) }
