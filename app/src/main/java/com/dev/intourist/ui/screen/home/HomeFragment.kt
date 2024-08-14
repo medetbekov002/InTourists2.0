@@ -1,7 +1,6 @@
 package com.dev.intourist.ui.screen.home
 
 import android.nfc.tech.MifareUltralight.PAGE_SIZE
-import android.os.Build.VERSION_CODES.R
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -14,18 +13,14 @@ import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.common.UIState
 import com.dev.intourist.data.remote.dtos.tours.ToursModel
+import com.dev.intourist.data.utils.showToast
 import com.dev.intourist.databinding.FragmentHomeBinding
 import com.dev.intourist.presentation.base.fragment.BaseFragment
+import com.dev.intourist.ui.model.promocode_details.PromocodeDetailsModel
 import com.dev.intourist.ui.screen.home.adapters.categories.CategoriesAdapter
 import com.dev.intourist.ui.screen.home.adapters.promocode.PromocodeAdapter
-import com.dev.intourist.ui.model.promocode_details.PromocodeDetailsModel
 import com.dev.intourist.ui.screen.home.adapters.tour_card.TourCardAdapter
-import com.dev.intourist.ui.model.tour_card.TourCardModel
-import com.dev.intourist.ui.screen.filters.FiltersFragment
 import com.google.android.gms.maps.GoogleMap
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.fragment_home) {
@@ -79,7 +74,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
             },
             loading = { state ->
                 binding.progressBar.isVisible = state is UIState.Loading
-            })
+            },
+            error = {requireContext().showToast(message = it)})
         val adapterPromo = PromocodeAdapter(this::onClickPromo, listPromo)
         binding.apply {
             rvPromocode.adapter = adapterPromo
@@ -111,11 +107,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
                     val visibleItemCount = layoutManager.childCount
                     val totalItemCount = layoutManager.itemCount
                     val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
+                    Log.e("ololo", "Visible items: $visibleItemCount, Total items: $totalItemCount, First visible item: $firstVisibleItemPosition, dy: $dy", )
 
-                    if ((visibleItemCount + firstVisibleItemPosition) >= totalItemCount
+                    if ( (visibleItemCount + firstVisibleItemPosition) >= totalItemCount
                         && firstVisibleItemPosition >= 0
                         && totalItemCount >= PAGE_SIZE
                     ) {
+                        Log.e("ololo", "Loading more data...", )
                         pageCount++
                         requestTours()
                     }
@@ -126,19 +124,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
     }
 
     private fun requestTours() {
-        CoroutineScope(Dispatchers.Main).launch {
-            viewModel.getAllTours(pageSize = pageCount)
-        }
+        Log.e("ololo", "requestTours: $pageCount", )
+        viewModel.getAllTours(pageSize = pageCount)
     }
 
 
 
-    override fun onMapReady(googleMap: GoogleMap) {
-    }
+    override fun onMapReady(googleMap: GoogleMap) {}
 
-    private fun onLikeClick(tour: ToursModel.Result) {
-        //listTour[position].isLiked = !tourCardModel.isLiked
-    }
+    private fun onLikeClick(tour: ToursModel.Result) {}
 
     private fun onClickCategory(category: String) {
         //update recycler view with category

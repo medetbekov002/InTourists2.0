@@ -31,7 +31,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>
     (@LayoutRes layoutId: Int) : Fragment(layoutId) {
 
-    fun <T> StateFlow<UIState<T>>.stateHandler(
+    /*fun <T> StateFlow<UIState<T>>.stateHandler(
         fragment: Fragment,
         success: (data: T) -> Unit,
         state: ((res: UIState<T>) -> Unit)? = null
@@ -53,7 +53,7 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>
                 }
             }
         }
-    }
+    }*/
     protected abstract val binding: Binding
     protected abstract val viewModel: ViewModel
     private val pref: Pref by lazy { Pref(requireContext()) }
@@ -86,7 +86,6 @@ abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>
                     is UIState.Idle -> idle?.invoke(it)
                     is UIState.Loading -> loading?.invoke(it)
                     is UIState.Error -> error?.invoke(it.error)
-
                     is UIState.Success -> success?.invoke(it.data)
                 }
             }

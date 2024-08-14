@@ -60,7 +60,7 @@ class TourDetailsFragment :
             id = it.getInt(TOUR_ID)
         }
         CoroutineScope(Dispatchers.Main).launch {
-            viewModel.getContacts().stateHandler(
+           /* viewModel.getContacts().stateHandler(
                 success = {
                     whatsAppNumber = it.results[0].whatsapp_link
                     telegrammName = it.results[0].telegram_link
@@ -78,7 +78,7 @@ class TourDetailsFragment :
                 success = {
                     Log.e("ololo", "Success: ${it}")
                     adapter.reloadData(it.results)
-                })
+                })*/
         }
         binding.apply {
             btnBuy.setOnClickListener {

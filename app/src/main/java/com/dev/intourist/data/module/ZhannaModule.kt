@@ -40,7 +40,7 @@ val repositoryModule = module {
 
     single<TourRepositoryInt> { ToursRepository(get()) }
     
-    single<ContactsRepositoryInt> { ContactRepository(get()) }
+    single<ContactRepository> { ContactRepository(get()) }
 
     single<ToursRepository> { ToursRepository(get()) }
 

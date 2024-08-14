@@ -7,9 +7,9 @@ import com.dev.intourist.data.remote.dtos.contacts.ContactModel
 import com.dev.intourist.data.remote.service.ApiService
 import com.dev.intourist.domain.repository.ContactsRepositoryInt
 
-class ContactRepository(private val apiService: ApiService) : BaseRepository(), ContactsRepositoryInt {
-    override suspend fun getContacts(): LiveData<UIState<ContactModel>> =
+class ContactRepository(private val apiService: ApiService) : BaseRepository()/*, ContactsRepositoryInt*/ {
+   /* override suspend fun getContacts(): <UIState<ContactModel>> =
         performRequest {
             apiService.getContacts()
-        }
+        }*/
 }
