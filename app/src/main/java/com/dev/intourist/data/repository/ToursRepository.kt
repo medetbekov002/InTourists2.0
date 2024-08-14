@@ -1,24 +1,21 @@
 package com.dev.intourist.data.repository
 
-import androidx.lifecycle.LiveData
 import com.dev.intourist.common.UIState
-import com.dev.intourist.data.base.BaseMainResponse
 import com.dev.intourist.data.base.BaseRepository
-import com.dev.intourist.data.remote.dtos.contacts.ContactModel
 import com.dev.intourist.data.remote.dtos.tours.ToursModel
 import com.dev.intourist.data.remote.service.ApiService
-import com.dev.intourist.domain.repository.TourRepisitoryInt
+import com.dev.intourist.domain.repository.TourRepositoryInt
+import kotlinx.coroutines.flow.StateFlow
 
-class ToursRepository(private val apiService: ApiService) : BaseRepository(), TourRepisitoryInt {
+class ToursRepository(private val apiService: ApiService) : BaseRepository(), TourRepositoryInt {
 
-    override suspend fun getAllTours(pageSize: Int): LiveData<UIState<ToursModel>> = performRequest {
+    override suspend fun getAllTours(pageSize: Int): StateFlow<UIState<ToursModel>> = performRequest {
         apiService.getAllTours(pageSize = pageSize)
     }
 
-    override suspend fun getTourById(id: Int): LiveData<UIState<ToursModel.Result>> =
+    override suspend fun getTourById(id: Int): StateFlow<UIState<ToursModel.Result>> =
         performRequest {
             apiService.getTourById(id)
         }
-
 
 }

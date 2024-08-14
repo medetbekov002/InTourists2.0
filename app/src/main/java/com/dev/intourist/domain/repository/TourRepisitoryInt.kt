@@ -1,12 +1,10 @@
 package com.dev.intourist.domain.repository
 
-import androidx.lifecycle.LiveData
 import com.dev.intourist.common.UIState
-import com.dev.intourist.data.base.BaseMainResponse
-import com.dev.intourist.data.remote.dtos.contacts.ContactModel
 import com.dev.intourist.data.remote.dtos.tours.ToursModel
+import kotlinx.coroutines.flow.StateFlow
 
-interface TourRepisitoryInt {
-    suspend fun getAllTours(pageSize: Int): LiveData<UIState<ToursModel>>
-    suspend fun getTourById(id:Int): LiveData<UIState<ToursModel.Result>>
+interface TourRepositoryInt {
+    suspend fun getAllTours(pageSize: Int): StateFlow<UIState<ToursModel>>
+    suspend fun getTourById(id:Int): StateFlow<UIState<ToursModel.Result>>
 }

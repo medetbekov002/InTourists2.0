@@ -20,22 +20,13 @@ import com.dev.intourist.presentation.base.fragment.BaseFragment
 import com.google.android.gms.maps.GoogleMap
 
 class CodeFragment : BaseFragment<FragmentCodeBinding, CodeViewModel>(R.layout.fragment_code) {
-//    private lateinit var binding: FragmentCodeBinding
     override val binding: FragmentCodeBinding by viewBinding(FragmentCodeBinding::bind)
     override val viewModel: CodeViewModel by viewModel()
     private lateinit var countDownTimer: CountDownTimer
 
-//    override fun onCreateView(
-//        inflater: LayoutInflater, container: ViewGroup?,
-//        savedInstanceState: Bundle?
-//    ): View? {
-//        binding = FragmentCodeBinding.inflate(inflater, container, false)
-//        return binding.root
-//    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         setupViews()
         setupTimer()
         initClickers()
@@ -146,5 +137,10 @@ class CodeFragment : BaseFragment<FragmentCodeBinding, CodeViewModel>(R.layout.f
 
     private fun startTimer() {
         countDownTimer.start()
+    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        // Остановка таймера и освобождение binding
+        countDownTimer.cancel()
     }
 }

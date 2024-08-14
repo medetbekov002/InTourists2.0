@@ -1,11 +1,12 @@
 package com.dev.intourist.data.module
 
+import ContactRepository
 import com.dev.intourist.data.BuildConfig
 import com.dev.intourist.data.remote.service.ApiService
-import com.dev.intourist.data.repository.ContactRepository
+//import com.dev.intourist.data.repository.ContactRepository
 import com.dev.intourist.data.repository.ToursRepository
 import com.dev.intourist.domain.repository.ContactsRepositoryInt
-import com.dev.intourist.domain.repository.TourRepisitoryInt
+import com.dev.intourist.domain.repository.TourRepositoryInt
 import com.dev.intourist.domain.usecase.ContactsUseCase
 import com.dev.intourist.domain.usecase.TourUseCase
 import com.dev.intourist.ui.screen.auth.AuthViewModel
@@ -21,7 +22,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 val networkModule = module {
-
 
     single {
         provideAppService(get())
@@ -39,13 +39,13 @@ val networkModule = module {
 }
 
 val repositoryModule = module {
+    /*single { CoroutineScope(Dispatchers.IO + SupervisorJob()) }*/
 
-    single<TourRepisitoryInt> { ToursRepository(get()) }
+    single<TourRepositoryInt> { ToursRepository(get()) }
+    
     single<ContactsRepositoryInt> { ContactRepository(get()) }
 
-    single {
-        ToursRepository(get())
-    }
+    single<ToursRepository> { ToursRepository(get()) }
 
 
 }
@@ -88,11 +88,6 @@ fun provideOkHttpClientTours(
         .callTimeout(20, TimeUnit.SECONDS)
         .addInterceptor(interceptor)
         .build()
-}
-
-
-fun provideTourRepositoryInt(api: ApiService): TourRepisitoryInt {
-    return ToursRepository(api)
 }
 
 fun provideLogginInterseptor(): HttpLoggingInterceptor {
