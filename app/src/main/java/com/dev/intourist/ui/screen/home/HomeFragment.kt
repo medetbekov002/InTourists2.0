@@ -107,13 +107,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
                     val visibleItemCount = layoutManager.childCount
                     val totalItemCount = layoutManager.itemCount
                     val firstVisibleItemPosition = layoutManager.findFirstVisibleItemPosition()
-                    Log.e("ololo", "Visible items: $visibleItemCount, Total items: $totalItemCount, First visible item: $firstVisibleItemPosition, dy: $dy", )
+                   // Log.e("ololo", "Visible items: $visibleItemCount, Total items: $totalItemCount, First visible item: $firstVisibleItemPosition, dy: $dy", )
 
                     if ( (visibleItemCount + firstVisibleItemPosition) >= totalItemCount
                         && firstVisibleItemPosition >= 0
                         && totalItemCount >= PAGE_SIZE
                     ) {
-                        Log.e("ololo", "Loading more data...", )
+                       // Log.e("ololo", "Loading more data...", )
                         pageCount++
                         requestTours()
                     }
@@ -124,7 +124,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, HomeViewModel>(R.layout.f
     }
 
     private fun requestTours() {
-        Log.e("ololo", "requestTours: $pageCount", )
+        //Log.e("ololo", "requestTours: $pageCount", )
         viewModel.getAllTours(pageSize = pageCount)
     }
 

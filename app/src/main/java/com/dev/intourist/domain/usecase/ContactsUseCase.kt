@@ -6,5 +6,5 @@ import com.dev.intourist.data.remote.dtos.contacts.ContactModel
 import com.dev.intourist.domain.repository.ContactsRepositoryInt
 
 class ContactsUseCase(private val repository: ContactsRepositoryInt) {
-    suspend fun getContacts(): LiveData<UIState<ContactModel>> = repository.getContacts()
+    suspend fun getContacts() = repository.getContacts()
 }

@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
 import com.dev.intourist.data.remote.dtos.tours.ToursModel
+import com.dev.intourist.data.utils.showToast
 import com.dev.intourist.databinding.FragmentTourDetailsBinding
 import com.dev.intourist.presentation.base.fragment.BaseFragment
 import com.dev.intourist.ui.screen.buy.BottomSheetFragment
@@ -59,27 +60,45 @@ class TourDetailsFragment :
         arguments?.let {
             id = it.getInt(TOUR_ID)
         }
-        CoroutineScope(Dispatchers.Main).launch {
-           /* viewModel.getContacts().stateHandler(
+        if (id != -1) {
+            Log.e("ololo", "tour id is:  $id ", )
+            viewModel.getContacts()
+            Log.e("ololo", "after loading contacts ", )
+
+            viewModel.getAllTours(1)
+            Log.e("ololo", "after loading tours ", )
+
+            viewModel.getTourById(id)
+            Log.e("ololo", "after loading tour ", )
+
+            viewModel.tour.spectateUiState(
+                success = {
+                    Log.e("ololo", "before showing data ", )
+                    showData(it)
+                    Log.e("ololo", "after showing data ", )
+                },
+                error = {
+                    requireContext().showToast(it)
+                }
+            )
+           /* viewModel.contacts.spectateUiState(
                 success = {
                     whatsAppNumber = it.results[0].whatsapp_link
                     telegrammName = it.results[0].telegram_link
-                    Log.e("ololo", "contacts: ${it.results}")
+                },
+                error = {
+                    requireContext().showToast(it)
                 }
-            )
-            if (id != -1) {
-                viewModel.getTourById(id).stateHandler(
-                    success = {
-                        showData(it)
-                    }
-                )
-            }
-            viewModel.getAllTours(1).stateHandler(
+            )*/
+            viewModel.tours.spectateUiState(
                 success = {
-                    Log.e("ololo", "Success: ${it}")
-                    adapter.reloadData(it.results)
-                })*/
+                        adapter.reloadData(it.results)
+                },
+                error = {
+                    requireContext().showToast(it)
+                })
         }
+
         binding.apply {
             btnBuy.setOnClickListener {
                 findNavController().navigate(R.id.byCardFragment)
@@ -99,8 +118,13 @@ class TourDetailsFragment :
     }
 
     private fun showData(it: ToursModel.Result) {
+        Log.e("ololo", "showData: working ", )
         binding.run {
-            rvDates.adapter = CategoriesAdapter(this::onClickDate, it.tour_dates.map { it.date }, requireContext())
+            rvDates.adapter = CategoriesAdapter(
+                this::onClickDate,
+                it.tour_dates.map { it.date },
+                requireContext()
+            )
             tvRegion.text = it.region_country
             tvTourPrice.text = it.price
             tvTourTitle.text = it.title

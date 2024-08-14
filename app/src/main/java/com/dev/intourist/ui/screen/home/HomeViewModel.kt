@@ -22,6 +22,7 @@ class HomeViewModel(private val useCase: TourUseCase): BaseViewModel() {
         viewModelScope.launch {
             useCase.getAllTours(pageSize).collect { uiState : UIState<ToursModel>->
                 //  _tours.value = uiState
+                //если что можно список добавлять в адаптере а здесь не париться
                 _tours.update {state ->
                     when(state){
                         is UIState.Success -> {
