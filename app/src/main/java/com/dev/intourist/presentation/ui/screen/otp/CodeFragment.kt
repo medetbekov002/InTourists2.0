@@ -1,5 +1,6 @@
 package com.dev.intourist.presentation.ui.screen.otp
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.text.Editable
@@ -109,6 +110,7 @@ class CodeFragment : BaseFragment<FragmentCodeBinding, CodeViewModel>(R.layout.f
 
     private fun setupTimer() {
         countDownTimer = object : CountDownTimer(60000, 1000) {
+            @SuppressLint("SetTextI18n", "DefaultLocale")
             override fun onTick(millisUntilFinished: Long) {
                 val secondsUntilFinished = millisUntilFinished / 1000
                 binding.tvSendCodeInTime.text = "${secondsUntilFinished / 60}:${

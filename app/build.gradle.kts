@@ -127,7 +127,7 @@ dependencies {
     implementation (libs.play.services.wallet)
 
     // PayBox Service
-//    implementation (libs.payboxsdk)
+    implementation (libs.payboxsdk)
 
     // Retrofit Coroutines
     implementation(libs.retrofit2.kotlin.coroutines.adapter)
