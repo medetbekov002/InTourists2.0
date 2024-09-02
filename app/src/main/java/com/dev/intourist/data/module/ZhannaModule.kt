@@ -9,9 +9,9 @@ import com.dev.intourist.domain.repository.ContactsRepositoryInt
 import com.dev.intourist.domain.repository.TourRepositoryInt
 import com.dev.intourist.domain.usecase.ContactsUseCase
 import com.dev.intourist.domain.usecase.TourUseCase
-import com.dev.intourist.ui.screen.auth.AuthViewModel
-import com.dev.intourist.ui.screen.home.HomeViewModel
-import com.dev.intourist.ui.screen.tour_details.TourDetailsViewModel
+import com.dev.intourist.presentation.ui.screen.auth.AuthViewModel
+import com.dev.intourist.presentation.ui.screen.home.HomeViewModel
+import com.dev.intourist.presentation.ui.screen.tour_details.TourDetailsViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.androidx.viewmodel.dsl.viewModel

@@ -7,79 +7,79 @@
 
     <fragment
         android:id="@+id/fragment_home"
-        android:name="com.dev.intourist.ui.screen.home.HomeFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/fragment_profile"
-        android:name="com.dev.intourist.ui.screen.profile.ProfileFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/fragment_auth"
-        android:name="com.dev.intourist.ui.screen.auth.AuthFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.auth.AuthFragment"
         android:label="fragment_auth"
         tools:layout="@layout/fragment_auth" />
 
     <fragment
         android:id="@+id/fragment_code"
-        android:name="com.dev.intourist.ui.screen.otp.CodeFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.otp.CodeFragment"
         android:label="fragment_code"
         tools:layout="@layout/fragment_code" />
 
     <activity
         android:id="@+id/splashActivity"
-        android:name="com.dev.intourist.ui.activities.splash.SplashActivity"
+        android:name="com.dev.intourist.presentation.ui.activities.splash.SplashActivity"
         android:label="activity_splash"
         tools:layout="@layout/activity_splash" />
 
     <fragment
         android:id="@+id/fragment_onboarding"
-        android:name="com.dev.intourist.ui.screen.onboarding.OnBoardingFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.onboarding.OnBoardingFragment"
         android:label="fragment_on_boarding"
         tools:layout="@layout/fragment_on_boarding" />
 
     <fragment
         android:id="@+id/fragment_filters"
-        android:name="com.dev.intourist.ui.screen.filters.FiltersFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.filters.FiltersFragment"
         android:label="fragment_filters"
         tools:layout="@layout/fragment_filters" />
 
     <fragment
         android:id="@+id/fragment_favorite"
-        android:name="com.dev.intourist.ui.screen.favorite.FavoriteFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.favorite.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" />
 
     <fragment
         android:id="@+id/fragment_bottom_sheet"
-        android:name="com.dev.intourist.ui.screen.buy.BottomSheetFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.buy.BottomSheetFragment"
         android:label="fragment_bottom_sheet"
         tools:layout="@layout/fragment_bottom_sheet" />
 
     <fragment
         android:id="@+id/fragment_tour_ditails"
-        android:name="com.dev.intourist.ui.screen.tour_details.TourDetailsFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.tour_details.TourDetailsFragment"
         android:label="fragment_tour_ditails"
         tools:layout="@layout/fragment_tour_details" />
 
     <fragment
         android:id="@+id/fragment_search"
-        android:name="com.dev.intourist.ui.screen.search.SearchFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.search.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" />
 
     <fragment
         android:id="@+id/fragment_promocode"
-        android:name="com.dev.intourist.ui.screen.promocode.PromocodeFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.promocode.PromocodeFragment"
         android:label="fragment_promocode"
         tools:layout="@layout/fragment_promocode" />
 
     <fragment
         android:id="@+id/myTourDetailsFragment"
-        android:name="com.dev.intourist.ui.screen.my_tour_details.MyTourDetailsFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.my_tour_details.MyTourDetailsFragment"
         android:label="MyTourDetailsFragment"
         tools:layout="@layout/fragment_my_tour_details" />
 
@@ -91,85 +91,85 @@
 
     <fragment
         android:id="@+id/applicationBottomSheetFragment"
-        android:name="com.dev.intourist.ui.screen.buy.BottomSheetFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.buy.BottomSheetFragment"
         android:label="fragment_application_bottom_sheet"
         tools:layout="@layout/fragment_bottom_sheet" />
 
     <fragment
         android:id="@+id/myToursFragment"
-        android:name="com.dev.intourist.ui.screen.my_tours.MyToursFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.my_tours.MyToursFragment"
         android:label="fragment_my_tours"
         tools:layout="@layout/fragment_my_tours" />
 
     <fragment
         android:id="@+id/fragment_personal_info"
-        android:name="com.dev.intourist.ui.screen.personal_info.PersonalInfoFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.personal_info.PersonalInfoFragment"
         android:label="fragment_personal_info"
         tools:layout="@layout/fragment_personal_info" />
 
     <fragment
         android:id="@+id/fragment_faq"
-        android:name="com.dev.intourist.ui.screen.faq.FAQFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.faq.FAQFragment"
         android:label="fragment_FAQ"
         tools:layout="@layout/fragment_faq" />
 
     <fragment
         android:id="@+id/fragment_settings"
-        android:name="com.dev.intourist.ui.screen.settings.SettingsFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.settings.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/fragment_privacy_policy"
-        android:name="com.dev.intourist.ui.screen.privacy_policy.PrivacyPolicyFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.privacy_policy.PrivacyPolicyFragment"
         android:label="fragment_privacy_policy"
         tools:layout="@layout/fragment_privacy_policy" />
 
     <fragment
         android:id="@+id/fragment_terms_of_use"
-        android:name="com.dev.intourist.ui.screen.terms_of_use.TermsOfUseFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.terms_of_use.TermsOfUseFragment"
         android:label="fragment_terms_of_use"
         tools:layout="@layout/fragment_terms_of_use" />
 
     <fragment
         android:id="@+id/fragment_about_us"
-        android:name="com.dev.intourist.ui.screen.about_us.AboutUsFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.about_us.AboutUsFragment"
         android:label="fragment_about_us"
         tools:layout="@layout/fragment_about_us" />
 
     <fragment
         android:id="@+id/byCardFragment"
-        android:name="com.dev.intourist.ui.screen.payment.by_card.ByCardFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.payment.by_card.ByCardFragment"
         android:label="fragment_other_way"
         tools:layout="@layout/fragment_by_card" />
 
     <fragment
         android:id="@+id/withoutChildrenFragment"
-        android:name="com.dev.intourist.ui.screen.payment.without_children.WithoutChildrenFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.payment.without_children.WithoutChildrenFragment"
         android:label="fragment_without_children"
         tools:layout="@layout/fragment_without_children" />
 
     <fragment
         android:id="@+id/withChildrenFragment"
-        android:name="com.dev.intourist.ui.screen.payment.with_children.WithChildrenFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.payment.with_children.WithChildrenFragment"
         android:label="fragment_with_cildren"
         tools:layout="@layout/fragment_with_children" />
 
     <fragment
         android:id="@+id/fragment_contacts"
-        android:name="com.dev.intourist.ui.screen.contacts.ContactsFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.contacts.ContactsFragment"
         android:label="fragment_contacts"
         tools:layout="@layout/fragment_contacts" />
 
     <dialog
         android:id="@+id/sendCheckFragment"
-        android:name="com.dev.intourist.ui.screen.payment.other_way.bottomsheetdialog.SendCheckFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.payment.other_way.bottomsheetdialog.SendCheckFragment"
         android:label="fragment_send_check"
         tools:layout="@layout/fragment_send_check" />
 
     <fragment
         android:id="@+id/SuccessFragment"
-        android:name="com.dev.intourist.ui.screen.payment.success.SuccessFragment"
+        android:name="com.dev.intourist.presentation.ui.screen.payment.success.SuccessFragment"
         android:label="fragment_success"
         tools:layout="@layout/fragment_success" />
 

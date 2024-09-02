@@ -1,0 +1,1 @@
+package com.dev.intourist.presentation.ui.screen.privacy_policyimport com.dev.intourist.presentation.base.viewmodel.BaseViewModelclass PrivacyPolicyViewModel : BaseViewModel()

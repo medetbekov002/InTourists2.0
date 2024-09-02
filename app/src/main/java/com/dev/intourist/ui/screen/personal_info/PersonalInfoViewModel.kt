@@ -1,1 +1,0 @@
-package com.dev.intourist.ui.screen.personal_infoimport com.dev.intourist.presentation.base.viewmodel.BaseViewModelclass PersonalInfoViewModel : BaseViewModel()

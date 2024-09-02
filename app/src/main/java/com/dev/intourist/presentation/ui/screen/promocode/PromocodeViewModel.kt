@@ -1,0 +1,1 @@
+package com.dev.intourist.presentation.ui.screen.promocodeimport com.dev.intourist.presentation.base.viewmodel.BaseViewModelclass PromocodeViewModel : BaseViewModel()

@@ -1,1 +1,0 @@
-package com.dev.intourist.ui.screen.payment.other_way.bottomsheetdialogimport com.dev.intourist.presentation.base.viewmodel.BaseViewModelclass SendCheckViewModel : BaseViewModel() {}

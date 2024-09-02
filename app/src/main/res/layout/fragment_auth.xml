@@ -7,7 +7,7 @@
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="40dp"
-    tools:context=".ui.screen.auth.AuthFragment">
+    tools:context=".presentation.ui.screen.auth.AuthFragment">
 
     <TextView
         android:id="@+id/tv_auth"

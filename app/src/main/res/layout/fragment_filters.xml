@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ui.screen.filters.FiltersFragment">
+    tools:context=".presentation.ui.screen.filters.FiltersFragment">
 
     <Toolbar
         android:id="@+id/toolbar"

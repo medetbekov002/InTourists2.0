@@ -1,1 +1,0 @@
-package com.dev.intourist.ui.screen.payment.paymentimport com.dev.intourist.presentation.base.viewmodel.BaseViewModelclass PaymentViewModel : BaseViewModel()

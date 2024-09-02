@@ -1,1 +1,0 @@
-package com.dev.intourist.ui.screen.payment.modeldata class PaymentError(    val code: Int,    val description: String,    val errorType: String,    val errorDetail: String?)

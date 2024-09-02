@@ -7,7 +7,7 @@
     android:background="#F5F5F5"
     android:orientation="vertical"
     android:paddingHorizontal="20dp"
-    tools:context=".ui.screen.my_tours.MyToursFragment">
+    tools:context=".presentation.ui.screen.my_tours.MyToursFragment">
 
 
     <TextView

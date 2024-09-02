@@ -1,0 +1,1 @@
+package com.dev.intourist.presentation.ui.screen.about_usimport com.dev.intourist.presentation.base.viewmodel.BaseViewModelclass AboutUsViewModel : BaseViewModel()

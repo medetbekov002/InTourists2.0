@@ -1,0 +1,1 @@
+package com.dev.intourist.presentation.ui.screen.payment.successimport com.dev.intourist.presentation.base.viewmodel.BaseViewModelclass SuccessViewModel : BaseViewModel()

@@ -1,1 +1,0 @@
-package com.dev.intourist.ui.screen.terms_of_useimport com.dev.intourist.presentation.base.viewmodel.BaseViewModelclass TermsOfUseViewModel : BaseViewModel()

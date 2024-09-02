@@ -1,0 +1,1 @@
+package com.dev.intourist.presentation.ui.screen.settingsimport com.dev.intourist.presentation.base.viewmodel.BaseViewModelclass SettingsViewModel : BaseViewModel()

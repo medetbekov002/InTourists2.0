@@ -1,0 +1,1 @@
+package com.dev.intourist.presentation.ui.screen.favoriteimport com.dev.intourist.presentation.base.viewmodel.BaseViewModelclass FavoriteViewModel : BaseViewModel() {}

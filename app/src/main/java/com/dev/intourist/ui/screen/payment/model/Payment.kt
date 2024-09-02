@@ -1,1 +1,0 @@
-package com.dev.intourist.ui.screen.payment.modeldata class Payment(    val paymentId: Int,    val amount: Float,    val currency: String,    val status: String,    val description: String,    val title: String,    val createTime: Long,    val expireTime: Long,    val state: String)

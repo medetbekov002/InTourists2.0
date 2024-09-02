@@ -1,0 +1,1 @@
+package com.dev.intourist.presentation.ui.model.onboardingdata class OnBoarding(    val isBack:Boolean,    val title:String,    val desc:String,    val img:Int)
