@@ -2,13 +2,13 @@ package com.dev.intourist.data.module
 
 import com.dev.intourist.data.BuildConfig
 import com.dev.intourist.data.remote.service.ApiService
-import com.dev.intourist.data.repository.ContactRepository
-//import com.dev.intourist.data.repository.ContactRepository
-import com.dev.intourist.data.repository.ToursRepository
-import com.dev.intourist.domain.repository.ContactsRepositoryInt
-import com.dev.intourist.domain.repository.TourRepositoryInt
-import com.dev.intourist.domain.usecase.ContactsUseCase
-import com.dev.intourist.domain.usecase.TourUseCase
+import com.dev.intourist.data.repository.contacts.ContactRepository
+//import com.dev.intourist.data.repository.contacts.ContactRepository
+import com.dev.intourist.data.repository.tour.ToursRepository
+import com.dev.intourist.domain.repository.contacts.ContactsRepositoryInt
+import com.dev.intourist.domain.repository.tours.TourRepositoryInt
+import com.dev.intourist.domain.usecase.contacts.ContactsUseCase
+import com.dev.intourist.domain.usecase.tours.TourUseCase
 import com.dev.intourist.presentation.ui.screen.auth.AuthViewModel
 import com.dev.intourist.presentation.ui.screen.home.HomeViewModel
 import com.dev.intourist.presentation.ui.screen.tour_details.TourDetailsViewModel

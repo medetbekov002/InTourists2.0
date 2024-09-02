@@ -1,4 +1,4 @@
-package com.dev.intourist.domain.repository
+package com.dev.intourist.domain.repository.tours
 
 import com.dev.intourist.common.UIState
 import com.dev.intourist.data.remote.dtos.tours.ToursModel

@@ -1,13 +1,9 @@
 package com.dev.intourist.presentation.ui.screen.home
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dev.intourist.common.UIState
-import com.dev.intourist.data.base.BaseMainResponse
 import com.dev.intourist.data.remote.dtos.tours.ToursModel
-import com.dev.intourist.domain.usecase.TourUseCase
+import com.dev.intourist.domain.usecase.tours.TourUseCase
 import com.dev.intourist.presentation.base.viewmodel.BaseViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow

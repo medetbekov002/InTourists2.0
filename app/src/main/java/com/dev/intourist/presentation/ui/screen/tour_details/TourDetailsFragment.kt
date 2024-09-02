@@ -147,7 +147,7 @@ class TourDetailsFragment :
     }
 
     private fun onLikeClick(tourCardModel: ToursModel.Result) {
-        // listTour[position].isLiked = !tourCardModel.isLiked
+//         listTour[position].isLiked = !tourCardModel.isLiked
     }
 
     private fun onClickTour(tour: ToursModel.Result) {

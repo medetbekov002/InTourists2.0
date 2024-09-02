@@ -1,12 +1,11 @@
-package com.dev.intourist.domain.usecase
+package com.dev.intourist.domain.usecase.validate
 
 import android.content.Context
 import com.dev.intourist.presentation.model.validation.ValidationResult
 import com.dev.intourist.presentation.model.validation.Validator
 import com.dev.intourist.R
-import javax.inject.Inject
 
-class ValidatePhone constructor(
+class ValidateName constructor(
     private val context: Context,
 ) : Validator {
 
@@ -18,10 +17,24 @@ class ValidatePhone constructor(
             )
         }
 
-        text.length < 18 -> {
+        text.matches(Regex(".*\\p{InCyrillic}.*")) -> {
             ValidationResult(
                 isSuccessful = false,
-                context.getString(R.string.complete_your_phone_number)
+                context.getString(R.string.write_in_latin)
+            )
+        }
+
+        !text.matches(Regex("^[\\p{L} ]+$")) -> {
+            ValidationResult(
+                isSuccessful = false,
+                context.getString(R.string.incorrect_name)
+            )
+        }
+
+        text.length < 2 -> {
+            ValidationResult(
+                isSuccessful = false,
+                context.getString(R.string.name_must_contain_at_least_2_characters)
             )
         }
 

@@ -1,6 +1,6 @@
-package com.dev.intourist.domain.usecase
+package com.dev.intourist.domain.usecase.tours
 
-import com.dev.intourist.domain.repository.TourRepositoryInt
+import com.dev.intourist.domain.repository.tours.TourRepositoryInt
 
 class TourUseCase(private val toursRepositoryInt: TourRepositoryInt) {
 

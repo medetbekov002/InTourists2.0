@@ -1,6 +1,5 @@
-package com.dev.intourist.domain.repository
+package com.dev.intourist.domain.repository.contacts
 
-import androidx.lifecycle.LiveData
 import com.dev.intourist.common.UIState
 import com.dev.intourist.data.remote.dtos.contacts.ContactModel
 import kotlinx.coroutines.flow.StateFlow
