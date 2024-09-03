@@ -1,7 +1,7 @@
 package com.dev.intourist.domain.usecase.validate
 
 import android.content.Context
-import com.dev.intourist.presentation.model.validation.ValidationResult
+import com.dev.intourist.presentation.ui.model.validation.ValidationResult
 import com.dev.intourist.R
 
 // TODO: implement Validator

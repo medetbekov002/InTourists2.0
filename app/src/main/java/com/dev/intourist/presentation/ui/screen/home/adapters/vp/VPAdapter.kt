@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.dev.intourist.data.remote.dtos.tours.ToursModel
 import com.dev.intourist.databinding.ItemTourImageForVpBinding
-import com.dev.intourist.presentation.util.loadImage
+import com.dev.intourist.presentation.extensions.loadImage
 
 class VPAdapter(private val list: List<ToursModel.Result.Image>) : RecyclerView.Adapter<VPAdapter.VPViewHolder>() {
 

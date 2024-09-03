@@ -1,4 +1,4 @@
-package com.dev.intourist.data.repository.tour
+package com.dev.intourist.data.remote.repository.tour
 
 import com.dev.intourist.common.UIState
 import com.dev.intourist.data.base.BaseRepository
