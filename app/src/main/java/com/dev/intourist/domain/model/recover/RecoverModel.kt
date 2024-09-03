@@ -1,0 +1,1 @@
+package com.dev.intourist.domain.model.recoverdata class RecoverModel(    val email:String)

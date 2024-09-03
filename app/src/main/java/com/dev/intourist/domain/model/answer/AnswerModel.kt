@@ -1,0 +1,1 @@
+package com.dev.intourist.domain.model.answerdata class AnswerModel(    val data:String?=null)data class ListAnswerModel(    val data: List<String>)

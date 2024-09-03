@@ -1,0 +1,1 @@
+package com.dev.intourist.data.remote.dtos.recoverimport com.dev.intourist.data.local.mapper.DataMapperimport com.dev.intourist.domain.model.recover.RecoverModeldata class RecoverDto(    val email:String): DataMapper<RecoverModel> {    override fun toDomain()=RecoverModel(email)}fun RecoverModel.toRecoverDto()=RecoverDto(email)

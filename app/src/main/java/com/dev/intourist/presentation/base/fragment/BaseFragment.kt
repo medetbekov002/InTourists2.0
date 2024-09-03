@@ -14,7 +14,6 @@ import androidx.viewbinding.ViewBinding
 import com.dev.intourist.common.UIState
 import com.dev.intourist.data.local.Pref
 import com.dev.intourist.data.utils.showToast
-import com.dev.intourist.domain.core.Either
 import com.dev.intourist.presentation.base.viewmodel.BaseViewModel
 import com.google.android.gms.maps.GoogleMap
 //import com.example.stylescope.common.Either

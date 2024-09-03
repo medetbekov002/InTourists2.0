@@ -10,7 +10,6 @@ import com.dev.intourist.common.UIState
 import com.dev.intourist.data.BuildConfig
 import com.dev.intourist.data.local.mapper.DataMapper
 import com.dev.intourist.data.utils.toApiError
-import com.dev.intourist.domain.core.Either
 import com.dev.intourist.domain.core.NetworkError
 import kotlinx.coroutines.CoroutineScope
 //import com.alish.boilerplate.data.BuildConfig
@@ -211,6 +210,7 @@ abstract class BaseRepository() {
         }.flowOn(Dispatchers.IO).catch { exception ->
             emit(Either.Left(value = exception.localizedMessage ?: "Error Occurred !"))
         }
+
 
 
 }

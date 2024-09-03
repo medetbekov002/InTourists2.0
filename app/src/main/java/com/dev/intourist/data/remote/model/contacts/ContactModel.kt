@@ -1,4 +1,4 @@
-package com.dev.intourist.data.remote.dtos.contacts
+package com.dev.intourist.data.remote.model.contacts
 
 data class ContactModel(
     val count: Int,

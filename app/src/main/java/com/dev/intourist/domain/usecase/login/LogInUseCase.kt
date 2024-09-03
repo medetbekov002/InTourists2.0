@@ -1,0 +1,1 @@
+package com.dev.intourist.domain.usecase.loginimport com.dev.intourist.domain.model.login.LoginModelimport com.dev.intourist.domain.repository.login.LogInRepositoryclass LogInUseCase(private val repository: LogInRepository) {    operator fun invoke(body: LoginModel) = repository.logIn(body)}

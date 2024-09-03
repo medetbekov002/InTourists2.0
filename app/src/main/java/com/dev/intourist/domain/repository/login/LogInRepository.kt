@@ -1,0 +1,1 @@
+package com.dev.intourist.domain.repository.loginimport com.dev.intourist.domain.model.answer.AnswerModelimport com.dev.intourist.domain.model.login.LoginModelimport kotlinx.coroutines.flow.Flowinterface LogInRepository {    fun logIn(body: LoginModel): Flow<Either<String, AnswerModel>>}

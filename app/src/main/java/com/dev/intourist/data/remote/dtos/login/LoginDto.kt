@@ -1,0 +1,1 @@
+package com.dev.intourist.data.remote.dtos.loginimport com.dev.intourist.data.local.mapper.DataMapperimport com.dev.intourist.domain.model.login.LoginModeldata class LoginDto(    val username: String,    val password: String): DataMapper<LoginModel> {    override fun toDomain()=LoginModel(username,password)}fun LoginModel.toLoginDto()= LoginDto(username,password)
