@@ -1,6 +1,6 @@
 package com.dev.intourist.data.module
 
-import com.dev.intourist.data.BuildConfig
+import com.dev.intourist.data.utils.BuildConfig
 import com.dev.intourist.data.remote.service.ApiService
 import com.dev.intourist.data.remote.repository.contacts.ContactRepository
 //import com.dev.intourist.data.repository.contacts.ContactRepository

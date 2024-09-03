@@ -1,1 +1,1 @@
-package com.dev.intourist.data.moduleimport com.dev.intourist.data.local.Prefimport org.koin.dsl.moduleval prefModule = module {    single{ Pref(get()) }}
+package com.dev.intourist.data.moduleimport com.dev.intourist.data.local.preferences.Prefimport org.koin.dsl.moduleval prefModule = module {    single{ Pref(get()) }}

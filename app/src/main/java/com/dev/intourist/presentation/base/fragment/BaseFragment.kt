@@ -1,18 +1,16 @@
 package com.dev.intourist.presentation.base.fragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.viewbinding.ViewBinding
 //import com.dev.intourist.common.Either
 import com.dev.intourist.common.UIState
-import com.dev.intourist.data.local.Pref
+import com.dev.intourist.data.local.preferences.Pref
 import com.dev.intourist.data.utils.showToast
 import com.dev.intourist.presentation.base.viewmodel.BaseViewModel
 import com.google.android.gms.maps.GoogleMap
@@ -26,7 +24,6 @@ import com.google.android.gms.maps.GoogleMap
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 abstract class BaseFragment<Binding : ViewBinding, ViewModel : BaseViewModel>
     (@LayoutRes layoutId: Int) : Fragment(layoutId) {

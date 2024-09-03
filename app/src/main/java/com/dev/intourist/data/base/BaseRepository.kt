@@ -1,13 +1,11 @@
 package com.dev.intourist.data.base
 
 import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.liveData
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.dev.intourist.common.UIState
-import com.dev.intourist.data.BuildConfig
+import com.dev.intourist.data.utils.BuildConfig
 import com.dev.intourist.data.local.mapper.DataMapper
 import com.dev.intourist.data.utils.toApiError
 import com.dev.intourist.domain.core.NetworkError
@@ -138,7 +136,7 @@ abstract class BaseRepository() {
 
             else -> {
                 val message = exception.localizedMessage ?: "Error Occurred!"
-                if (com.dev.intourist.data.BuildConfig.DEBUG) Log.d(this@BaseRepository.javaClass.simpleName, message)
+                if (BuildConfig.DEBUG) Log.d(this@BaseRepository.javaClass.simpleName, message)
                 emit(Either.Left(NetworkError.Unexpected(message)))
             }
         }

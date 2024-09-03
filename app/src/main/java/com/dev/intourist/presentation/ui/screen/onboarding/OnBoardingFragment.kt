@@ -6,7 +6,7 @@ import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.dev.intourist.R
-import com.dev.intourist.data.local.Pref
+import com.dev.intourist.data.local.preferences.Pref
 import com.dev.intourist.databinding.FragmentOnBoardingBinding
 import com.dev.intourist.presentation.base.fragment.BaseFragment
 import com.dev.intourist.presentation.ui.screen.onboarding.adapter.OnBoardingAdapter

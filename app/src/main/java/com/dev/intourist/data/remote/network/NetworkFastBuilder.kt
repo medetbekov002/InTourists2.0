@@ -2,7 +2,7 @@ package com.dev.intourist.data.remote.network
 
 //import com.alish.boilerplate.data.BuildConfig
 //import com.alish.boilerplate.data.core.utils.jsonClient
-import com.dev.intourist.data.BuildConfig
+import com.dev.intourist.data.utils.BuildConfig
 import com.dev.intourist.data.utils.jsonClient
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import okhttp3.*
